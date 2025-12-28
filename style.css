@@ -2,9 +2,10 @@
 :root {
     --hoofdkleur-rood: #ff3b3b;
     --hoofdkleur-groen: #57ff24;
-    --tekst-donker: #333333;
+    --tekst-donker: #1d1d1b;
     --wit: #ffffff;
     --grijze-achtergrond: #f4f4f4;
+    --zwart: #000000;
 }
 
 html, body {
@@ -100,10 +101,18 @@ nav ul:not(.sidebar) a {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+
+    /* Zorg voor een zachte overgang voor alle eigenschappen */
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 50px; /* Maakt de hover-vorm volledig rond aan de zijkanten */
 }
 
 nav ul:not(.sidebar) a:hover {
-    background-color: rgba(149, 149, 149, 0.8);
+    /* Gebruik een heel lichte versie van je rode kleur of een zacht grijs */
+    background-color: rgba(104, 104, 104, 0.2); 
+    
+    /* Een hele kleine schaalvergroting maakt het 'levendig' */
+    transform: translateY(-2px);
 }
 
 /* 4. Hamburger Button */
@@ -147,7 +156,7 @@ nav ul:not(.sidebar) a:hover {
     height: 100vh;
     width: 250px;
     z-index: 3000;
-    background-color: rgba(255, 255, 255, 0.98);
+    background-color: var(--wit);
     backdrop-filter: blur(10px);
     list-style: none;
     display: flex;
@@ -173,7 +182,7 @@ nav ul:not(.sidebar) a:hover {
 .sidebar li {
     width: 100%;
     flex-shrink: 0; /* Voorkomt platdrukken */
-    border-top: 1px solid rgba(0,0,0,0.2);
+    border-top: 1px solid var(--tekst-donker);
 }
 
 .sidebar a {
@@ -189,7 +198,7 @@ nav ul:not(.sidebar) a:hover {
     transition: all 0.3s;
 }
 
-.sidebar a:hover {
+.sidebar :active {
     background-color: rgba(0, 0, 0, 0.03);
     color: var(--hoofdkleur-rood);
     padding-left: 30px; /* Subtiel effect */
@@ -210,40 +219,140 @@ nav ul:not(.sidebar) a:hover {
 
 /* 1. DE BASIS (MOBIEL) */
 
-.hero-compact {
+.hero-container {
+    background-color: var(--grijze-achtergrond); /* De basiskleur van je site */
+    background-image: url('images/background-pattern.svg');
+    background-repeat: repeat; /* Het patroon herhaalt zich oneindig */
+    background-size: 400px;
     margin-top: 70px;
     min-height: 60vh; /* Iets korter zodat de rest sneller in beeld komt */
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 40px 20px;
-    color: #000;
+    align-items: flex-start;
+    text-align: left;
+    padding: 40px 5% 40px 15%; 
+    /* DEZE PADDING IS NOG NIET GOED MOET HERSCHREVEN WORDEN VOOR MOBILE!!!! */
 }
 
-/* 2. DE UPGRADE (DESKTOP) */
-@media (min-width: 500px) {
-    .hero-compact {
-       background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-        url('Images/achtergrond_hero.webp');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 40px 20px;
-        color: white;
+/* 1. De Tekst: komt één keer binnen van links en blijft staan */
+.welkom-text {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-30px); /* Start iets naar links */
+    animation: slideInOnce 0.8s ease-out forwards;
+    animation-delay: 0.5s;
+    font-size: clamp(0.7rem, 5vw, 1.0rem);
+    color: var(--tekst-donker); 
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+@keyframes slideInOnce {
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
-    
 }
 
-.hero-text h1{
-    font-size: clamp(3rem, 5vw, 4rem);
-    margin-bottom: 30px;
+/* 2. Het Streepje*/
+.welkom-text::after {
+    content: "";
+    display: block;
+    width: 40vw;
+    max-width: 250px;
+    min-width: 50px;
+    height: 2px; /* Iets dunner voor scherpte */
+    background-color: var(--hoofdkleur-rood);
+    border-radius: 5px;
+        
+    margin: 8px 0 0 0;
+    opacity: 0; 
+    transform-origin: right; 
+    animation: flyInRepeat 5s ease-out infinite;
+    animation-delay: 1.1s; 
 }
+
+@keyframes flyInRepeat {
+    0% {
+        transform: translateX(100px) scaleX(0);
+        opacity: 0;
+    }
+    15% {
+        /* Het streepje vliegt in en landt op zijn plek */
+        transform: translateX(0) scaleX(1);
+        opacity: 1;
+    }
+    70% {
+        /* Hij blijft lang genoeg staan zodat het rustig oogt */
+        transform: translateX(0) scaleX(1);
+        opacity: 1;
+    }
+    85%, 100% {
+        /* Hij vaagt zachtjes uit op zijn plek voordat hij weer rechts start */
+        transform: translateX(0) scaleX(1);
+        opacity: 0;
+    }
+}
+
+.hero-text h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 20px;
+    max-width: 600px;
+    color: var(--tekst-donker);
+    text-align: left;         /* Zorgt voor links uitlijnen */
+    
+    /* Animatie instellingen */
+    opacity: 0;               /* Start onzichtbaar */
+    transform: translateX(-60px); /* Start iets verder naar links dan de welkom-tekst */
+    animation: slideInLeft 0.8s ease-out forwards;
+    animation-delay: 0.8s;    /* Start iets later dan de welkom-tekst (die start op 0.5s) */
+}
+
+/* We hergebruiken de slideInLeft keyframes die je al had, 
+   of je kunt deze specifieke gebruiken voor meer controle: */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-text h2 {
+    font-size: clamp(0.75rem, 5vw, 1.25rem);
+    margin-bottom: 20px;
+    max-width: 600px;
+    color: var(--tekst-donker);
+    text-align: left;         /* Zorgt voor links uitlijnen */
+    
+    /* Animatie instellingen */
+    opacity: 0;               /* Start onzichtbaar */
+    transform: translateX(160px); /* Start iets verder naar links dan de welkom-tekst */
+    animation: slideInRight 0.8s ease-out forwards;
+    animation-delay: 0.8s;    /* Start iets later dan de welkom-tekst (die start op 0.5s) */
+}
+
+/* We hergebruiken de slideInLeft keyframes die je al had, 
+   of je kunt deze specifieke gebruiken voor meer controle: */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Mobiele knoppen */
 .quick-nav {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 kolommen naast elkaar */
@@ -254,22 +363,122 @@ nav ul:not(.sidebar) a:hover {
 }
 
 .nav-card {
-    background: white;
+    /* Achtergrond: Donkergrijs/Zwart voor maximaal contrast met het rood */
+    background: #1a1a1a; 
+    
+    /* Afgeronde hoeken zoals in je screenshot */
+    border-radius: 12px;
+    
     padding: 15px;
-    border-radius: 10px;
     text-align: center;
     text-decoration: none;
-    color: var(--tekst-donker);
-    transition: transform 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    
+    /* Tekstkleur op wit voor leesbaarheid op donkere achtergrond */
+    color: #ffffff;
+    
+    /* Zorgt dat het icoon en de tekst netjes onder elkaar staan */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* De rand: een subtiele rode gloed onderaan de knop */
+    border-bottom: 3px solid var(--wit);
+    
+    /* Schaduw: donkerder en dieper */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    
+    transition: transform 0.3s ease;
 }
 
-.nav-card:hover {
-    transform: translateY(-5px);
-    background-color: var(--hoofdkleur-rood); /* De kleur van je rijschool */
-    color: white;
+/* Kleur van het Icoon (SVG) */
+.nav-card svg {
+    /* We maken het icoon wit of rood, afhankelijk van wat jij mooier vindt */
+    fill: var(--wit); 
+    margin-bottom: 10px;
+    width: 35px;
+    height: 35px;
 }
 
+/* De Tekst (H3) */
+.nav-card h3 {
+    color: var(--wit);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.nav-card:active {
+    transform: scale(0.95); /* Subtiele feedback bij aanraken op mobiel */
+    background-color: #1a1a1a;
+}
+
+/* De basis van de knop */
+.opleiding-btn {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    appearance: none;
+    outline: none !important;
+    background-color: var(--hoofdkleur-rood); /* Je rode kleur */
+    color: var(--wit);
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 18px 40px;
+    border-radius: 5px;
+    transition: color 0.5s ease;
+    overflow: hidden; /* Cruciaal voor het liquid effect */
+    z-index: 1;
+    text-decoration: none;
+    margin-top: 25px;
+}
+
+/* De 'vloeistof' die eronder zit */
+.opleiding-btn::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 150%; /* Breder dan de knop voor een vloeiend effect */
+    height: 300%; /* Hoger zodat het van onder kan komen */
+    background-color: var(--zwart); /* De kleur die 'instroomt' (bijv. zwart of donkergrijs) */
+    transition: all 0.7s ease;
+    transform: translate(-25%, -100%) rotate(25deg); /* Start verborgen boven/naast de knop */
+    z-index: -1;
+    border-radius: 40%; /* Maakt het vloeibaar/rond */
+}
+
+/* Het effect bij Hover */
+.opleiding-btn:hover::before {
+    transform: translate(-25%, -10%) rotate(25deg);
+    scale: 110%; /* Stroomt naar beneden over de knop */
+}
+
+.opleiding-btn:hover {
+    color: var(--wit); /* Tekstkleur blijft wit */
+}
+
+/* Specifieke class voor variatie (zoals op de voorbeeld site) */
+.liquid-effect {
+    /* Hier kun je eventueel een afwijkende kleur instellen */
+    border: none;
+}
+
+/* Liquid knop enkel op desktop */
+@media (max-width: 1200px) {
+    .opleiding-btn {
+        display: none;
+    }
+}
+
+/* Ze enkel mobiel maken */
+@media (min-width: 1200px) {
+    .quick-nav {
+        display: none;
+    }
+}
 /* Mobiel: 2 rijen van 2 */
 @media (max-width: 600px) {
     .quick-nav {
