@@ -20,7 +20,7 @@ html, body {
     width: 100%;
     position: relative;
     background-color: var(--grijze-achtergrond); /* De basiskleur van je site */
-    background-image: url(../images/background-pattern.svg);
+    background-image: url(Images/background-pattern.svg);
     background-repeat: repeat; /* Het patroon herhaalt zich oneindig */
     background-size: 400px;
 }
