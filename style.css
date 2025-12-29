@@ -4,7 +4,7 @@
     --hoofdkleur-groen: #57ff24;
     --tekst-donker: #1d1d1b;
     --wit: #ffffff;
-    --grijze-achtergrond: #f4f4f4;
+    --grijze-achtergrond: #f2f2f2;
     --zwart: #000000;
     --donker-achtergrond: #222222;
 }
@@ -19,8 +19,10 @@ html, body {
     flex-direction: column;
     width: 100%;
     position: relative;
-    background-color: #cccccc;
-    background-attachment: fixed;
+    background-color: var(--grijze-achtergrond); /* De basiskleur van je site */
+    background-image: url('images/background-pattern.svg');
+    background-repeat: repeat; /* Het patroon herhaalt zich oneindig */
+    background-size: 400px;
 }
 
 *, ::after, ::before {
@@ -221,13 +223,9 @@ nav ul:not(.sidebar) a:hover {
 /* 1. DE BASIS (MOBIEL) */
 
 .hero-container {
-    background-color: var(--grijze-achtergrond); /* De basiskleur van je site */
-    background-image: url('images/background-pattern.svg');
-    background-repeat: repeat; /* Het patroon herhaalt zich oneindig */
-    background-size: 400px;
     margin-top: 70px;
-    min-height: 60vh; /* Iets korter zodat de rest sneller in beeld komt */
-    
+    min-height: 40vh; /* Iets korter zodat de rest sneller in beeld komt */
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -433,7 +431,7 @@ nav ul:not(.sidebar) a:hover {
     align-items: center;
     
     /* De rand: een subtiele rode gloed onderaan de knop */
-    border-bottom: 3px solid var(--wit);
+    border-bottom: 3px solid var(--hoofdkleur-rood);
     
     /* Schaduw: donkerder en dieper */
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
@@ -443,7 +441,6 @@ nav ul:not(.sidebar) a:hover {
 
 /* Kleur van het Icoon (SVG) */
 .nav-card svg {
-    /* We maken het icoon wit of rood, afhankelijk van wat jij mooier vindt */
     fill: var(--wit); 
     margin-bottom: 10px;
     width: 35px;
@@ -560,7 +557,7 @@ nav ul:not(.sidebar) a:hover {
 }
 
 .feature-item {
-    background-color: var(--grijze-achtergrond);
+    background-color: var(--wit);
     padding: 30px 20px;
     border-radius: 15px;
     text-align: center;
@@ -610,9 +607,15 @@ nav ul:not(.sidebar) a:hover {
 /* #region REVIEW SECTIE */
 
 .review-section {
-  max-width: 1000px;
-  margin: 40px auto;
+  background: var(--wit);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);  
+  max-width: 1400px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-right: auto;
+  margin-left: auto;
   padding: 20px;
+  border-radius: 15px;
 }
 
 .review-header {
@@ -626,13 +629,55 @@ nav ul:not(.sidebar) a:hover {
 .stars { color: #fbbc04; font-size: 1.2rem; }
 
 .review-btn {
-  background: var(--hoofdkleur-rood);
-  color: var(--tekst-donker);
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  font-size: 14px;
-  margin-left: auto;
+  position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    appearance: none;
+    outline: none !important;
+    background-color: var(--hoofdkleur-rood); /* Je rode kleur */
+    color: var(--wit);
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 18px 40px;
+    border-radius: 5px;
+    transition: color 0.5s ease;
+    overflow: hidden; /* Cruciaal voor het liquid effect */
+    z-index: 1;
+    text-decoration: none;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+/* De 'vloeistof' die eronder zit */
+.review-btn::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 150%; /* Breder dan de knop voor een vloeiend effect */
+    height: 300%; /* Hoger zodat het van onder kan komen */
+    background-color: var(--zwart); /* De kleur die 'instroomt' (bijv. zwart of donkergrijs) */
+    transition: all 0.7s ease;
+    transform: translate(-25%, -100%) rotate(25deg); /* Start verborgen boven/naast de knop */
+    z-index: -1;
+    border-radius: 40%; /* Maakt het vloeibaar/rond */
+}
+
+/* Het effect bij Hover */
+.review-btn:hover::before {
+    transform: translate(-25%, -10%) rotate(25deg);
+    scale: 115%; /* Stroomt naar beneden over de knop */
+}
+
+.review-btn:hover {
+    color: var(--wit); /* Tekstkleur blijft wit */
+}
+
+/* Specifieke class voor variatie (zoals op de voorbeeld site) */
+.liquid-effect {
+    /* Hier kun je eventueel een afwijkende kleur instellen */
+    border: none;
 }
 
 .review-carousel {
@@ -641,7 +686,7 @@ nav ul:not(.sidebar) a:hover {
   scroll-snap-type: x mandatory;
   gap: 20px;
   padding-bottom: 15px;
-  scrollbar-width: thin; /* Voor Firefox */
+  width: 100%; /* Zorg dat hij de volle breedte van .review-section pakt */
 }
 
 /* Custom scrollbar styling voor Chrome/Safari */
@@ -649,23 +694,32 @@ nav ul:not(.sidebar) a:hover {
 .review-carousel::-webkit-scrollbar-thumb { background: #ddd; border-radius: 10px; }
 
 .review-card {
-  flex: 0 0 300px; /* Breedte van de kaart */
+  flex: 1 1 300px; /* Groei mee, krimp mee, basis is 300px */
+  min-width: 280px; /* Voorkom dat ze op kleine schermen té smal worden */
+  max-width: 450px; /* Optioneel: voorkom dat 1 kaart de hele breedte pakt bij weinig reviews */
   scroll-snap-align: start;
   background: #f8f9fa;
   padding: 25px;
   border-radius: 12px;
   border: 1px solid #eee;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
 }
 
 .card-stars { color: #fbbc04; margin-bottom: 10px; }
+
+.review-card p {
+  flex-grow: 1;
+  color: var(--tekst-donker); /* Zorgt dat de paragraaf alle beschikbare ruimte inneemt */
+}
 
 .author {
   display: block;
   margin-top: 15px;
   font-weight: bold;
   font-size: 0.9rem;
-  color: #555;
+  color: var(--tekst-donker); /* De kleur was niet af, ik heb hem aangevuld */
 }
 
 .google-logo {
@@ -678,6 +732,12 @@ nav ul:not(.sidebar) a:hover {
 .yellow { fill: #FBBC05; }
 .green { fill: #34A853; }
 
+@media (max-width: 1450px) {
+    .review-section {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
 /* #endregion REVIEW SECTIE */
 
 

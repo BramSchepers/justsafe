@@ -47,11 +47,14 @@ sidebarLinks.forEach(link => {
 });
 
 //Zet juiste jaar op de site
-document.getElementById("current-year").innerHTML = new Date().getFullYear();
-
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("Script geladen en pagina is klaar!");
-    updateVrijePlaatsen();
+document.addEventListener('DOMContentLoaded', () => {
+    // We zoeken op alle elementen met de ID 'current-year'
+    const yearElements = document.querySelectorAll('#current-year');
+    const year = new Date().getFullYear();
+    
+    yearElements.forEach(element => {
+        element.textContent = year;
+    });
 });
 
 async function updateVrijePlaatsen() {
