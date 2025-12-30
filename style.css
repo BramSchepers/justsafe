@@ -888,9 +888,102 @@ footer {
 }
 /* #endregion FOOTER */
 
-/* #region Auto beweging */
+/* #region Auto opleidingen */
 
+.choice-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fcfcfc;
+}
 
+.choice-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.choice-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.choice-grid {
+    display: flex;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap; /* Voor mobiel */
+}
+
+.choice-card {
+    background: white;
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 280px;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.choice-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff3b3b;
+    box-shadow: 0 10px 20px rgba(255, 59, 59, 0.1);
+}
+
+.icon-box {
+    background: #fff5f5; /* Heel licht rood */
+    padding: 20px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    transition: background 0.3s ease;
+}
+
+.choice-card:hover .icon-box {
+    background: #ff3b3b;
+}
+
+.icon-box svg {
+    fill: #ff3b3b;
+}
+
+.choice-card:hover .icon-box svg {
+    fill: white;
+}
+
+.card-text h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.card-text p {
+    font-size: 0.95rem;
+    color: #777;
+    line-height: 1.5;
+}
+
+.arrow {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #ff3b3b;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.choice-card:hover .arrow {
+    opacity: 1;
+}
 
 
 /* #endregion  */
