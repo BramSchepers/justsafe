@@ -901,7 +901,7 @@ footer {
 
 .text-theorie-container {
     background: linear-gradient(to bottom, #ffffff, #fafafa);
-    max-width: 1100px; /* Iets smaller oogt vaak rustiger voor tekst */
+    max-width: 1400px; /* Iets smaller oogt vaak rustiger voor tekst */
     margin: 90px auto; 
     padding: 10px;
     border-radius: 15px;
@@ -910,7 +910,7 @@ footer {
 }
 
 .text-theorie {
-    max-width: 1000px; /* Houdt de tekst leesbaar op brede schermen */
+    max-width: 1300px; /* Houdt de tekst leesbaar op brede schermen */
     margin: 0 auto;
 }
 
@@ -958,7 +958,7 @@ footer {
 
 /* MOBIEL (KLEINER DAN 768PX) */
 
-@media (max-width: 1150px) {
+@media (max-width: 1450px) {
     .text-theorie-container {
         padding: 10px 20px;
         margin: 80px 10px;
