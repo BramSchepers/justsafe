@@ -81,6 +81,7 @@ nav ul:not(.sidebar) {
     margin: 0 auto;
     padding: 0;
     height: 100%;
+    max-width: 1600px;
 }
 
 nav ul:not(.sidebar) li {
@@ -218,6 +219,7 @@ nav ul:not(.sidebar) a:hover {
 }
 
 /* #endregion */
+
 /* #region HERO SECTION */
 
 /* 1. DE BASIS (MOBIEL) */
@@ -225,13 +227,16 @@ nav ul:not(.sidebar) a:hover {
 .hero-container {
     margin-top: 70px;
     min-height: 40vh; /* Iets korter zodat de rest sneller in beeld komt */
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     text-align: left;
-    padding: 40px 5% 40px 15%; /* Desktop: 15% links zorgt dat tekst meer in het midden staat */
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
     position: relative; /* Nodig om de motor absoluut te positioneren binnen dit blok */
     overflow: visible;  /* Zorgt dat de motor buiten de container mag steken */
     z-index: 10;        /* Zorgt dat de container (en dus de motor) boven de volgende sectie ligt */
@@ -356,7 +361,7 @@ nav ul:not(.sidebar) a:hover {
 /* 3. Motor Animatie */
 .hero-motor {
     position: absolute;
-    right: 400px;           /* Plakt hem tegen de rechterkant */
+    right: 20px;           /* Plakt hem tegen de rechterkant (gelijk met padding) */
     bottom: -100px;       /* Afstand van de onderkant, pas aan naar wens */
     width: clamp(400px, 35vw, 500px); /* Iets kleiner gemaakt voor betere kwaliteit */
     height: auto;
@@ -740,7 +745,6 @@ nav ul:not(.sidebar) a:hover {
 }
 /* #endregion REVIEW SECTIE */
 
-
 /* #region FOOTER */
 
 footer {
@@ -884,7 +888,14 @@ footer {
 }
 /* #endregion FOOTER */
 
-/* #region TEXT ON SITE */
+/* #region Auto beweging */
+
+
+
+
+/* #endregion  */
+
+/* #region Tekst op site */
 
 /* DESKTOP BASIS */
 
@@ -894,8 +905,7 @@ footer {
     margin: 90px auto; 
     padding: 10px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border-top: 3px solid var(--tekst-donker);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     display: flow-root;
 }
 
@@ -976,6 +986,11 @@ footer {
         margin-left: 20px;
     }
 }
+
+/* #endregion */
+
+/* #region Tabel */
+
 /* Basis styling voor de tabel */
 .responsive-table-container {
     background: linear-gradient(to bottom, #ffffff, #fafafa);
