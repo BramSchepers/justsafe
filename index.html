@@ -251,7 +251,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "DrivingSchool",
   "name": "Rijschool Just Safe",
   "url": "https://www.justsafe.be",
   "logo": "https://www.justsafe.be/Images/logo_justsafe.png",
@@ -259,6 +259,13 @@
   "description": "Rijschool Just Safe biedt opleidingen rijbewijs auto, rijbewijs motor, theorie opleiding en vormingsmoment begeleiders aan in Limburg.",
   "telephone": "+32474348807",
   "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Prins-Bisschopssingel 50",
+    "addressLocality": "Hasselt",
+    "postalCode": "3500",
+    "addressCountry": "BE"
+  },
   "areaServed": {
     "@type": "AdministrativeArea",
     "name": "Limburg"
@@ -271,7 +278,17 @@
     "ratingValue": "4.8",
     "bestRating": "5",
     "ratingCount": "50"
-  }
+  }, 
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Rijopleidingen",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rijbewijs B (Auto)" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Motorrijbewijs A, A1, A2" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Theoriebegeleiding" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vormingsmoment Begeleider" } }
+    ]
+  } 
 }
 </script>
 
