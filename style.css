@@ -898,19 +898,19 @@ footer {
 
 .choice-title {
     font-size: 2rem;
-    color: #333;
+    color: var(--tekst-donker);
     margin-bottom: 10px;
 }
 
 .choice-subtitle {
     font-size: 1.1rem;
-    color: #666;
+    color: var(--tekst-donker);
     margin-bottom: 40px;
 }
 
 .choice-grid {
     display: flex;
-    gap: 20px;
+    gap: 60px;
     max-width: 800px;
     margin: 0 auto;
     justify-content: center;
