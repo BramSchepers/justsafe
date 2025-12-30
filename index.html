@@ -251,7 +251,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "DrivingSchool",
+  "@type": ["LocalBusiness", "DrivingSchool"],
   "name": "Rijschool Just Safe",
   "url": "https://www.justsafe.be",
   "logo": "https://www.justsafe.be/Images/logo_justsafe.svg",
@@ -273,7 +273,7 @@
     "@type": "AggregateRating",
     "ratingValue": "4.8",
     "bestRating": "5",
-    "ratingCount": "54" 
+    "ratingCount": "54"
   },
   "areaServed": {
     "@type": "AdministrativeArea",
@@ -283,10 +283,34 @@
     "@type": "OfferCatalog",
     "name": "Rijopleidingen",
     "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rijbewijs B (Auto)" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Motorrijbewijs A, A1, A2" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Theoriebegeleiding" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vormingsmoment Begeleider" } }
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Rijbewijs B (Auto)"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Motorrijbewijs A, A1, A2"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Theoriebegeleiding"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Vormingsmoment Begeleider"
+        }
+      }
     ]
   }
 }

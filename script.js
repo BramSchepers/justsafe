@@ -57,8 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-//Vrije plaatsen update
-
 async function updateVrijePlaatsen() {
     // Gebruik hier de Web App URL van je Google Script
     const webAppUrl = "https://script.google.com/macros/s/AKfycbykNbbWjuSXfGrIU5f15yxuXkOHirG9g5Yo_xn_mnUQwX5GojJuAMGdmQyOG_In5ss/exec";
