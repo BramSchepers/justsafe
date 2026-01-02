@@ -153,13 +153,33 @@
 
                 <section class="responsive-container">
                     <h2>Beschikbare Data & Prijzen</h2>
-                    <p>Bekijk hieronder de beschikbare data voor de <strong>Theorie Rijbewijs B</strong> in
-                        <strong>Hasselt</strong>.
-                    </p>
-
                     <div id="theorie-cards-container" class="cards-grid">
-                        <p style="text-align:center;">Data wordt geladen...</p>
                     </div>
+
+                    <template id="course-card-template">
+                        <div class="course-card">
+                            <div class="card-header">
+                                <h3>Theorie Rijbewijs B</h3>
+                                <span class="status-badge"></span>
+                            </div>
+                            <div class="card-body">
+                                <div class="info-row">
+                                    <strong>📅 Lesdata:</strong>
+                                    <div class="lesdata" style="white-space: pre-line;"></div>
+                                </div>
+                                <div class="info-row">
+                                    <strong>👥 Plaatsen:</strong>
+                                    <span class="vrije-plaatsen"></span> vrije plaatsen
+                                </div>
+                                <div class="info-row">
+                                    <strong>💰 Prijs:</strong>
+                                    <span class="prijs">€120</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                            </div>
+                        </div>
+                    </template>
                 </section>
             </div>
         </div>

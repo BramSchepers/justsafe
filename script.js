@@ -10,7 +10,7 @@ function toggleMenu(event) {
 }
 
 // Sluiten als je op een link klikt of buiten de sidebar
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     const sidebar = document.querySelector('.sidebar');
     const menuButtonContainer = document.querySelector('.menu-button-container');
 
@@ -25,11 +25,11 @@ document.addEventListener('click', function(event) {
 });
 
 // Sluiten als de resolutie te groot wordt (Media Query check)
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
     if (window.innerWidth > 1400) { // Match dit getal met je CSS breakpoint
         const sidebar = document.querySelector('.sidebar');
         const menuButtonContainer = document.querySelector('.menu-button-container');
-        
+
         sidebar.classList.remove('show');
         menuButtonContainer.classList.remove('open');
     }
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // We zoeken op alle elementen met de ID 'current-year'
     const yearElements = document.querySelectorAll('#current-year');
     const year = new Date().getFullYear();
-    
+
     yearElements.forEach(element => {
         element.textContent = year;
     });
@@ -60,28 +60,28 @@ document.addEventListener('DOMContentLoaded', () => {
 async function updateVrijePlaatsen() {
     // Gebruik hier de Web App URL van je Google Script
     const webAppUrl = "https://script.google.com/macros/s/AKfycbykNbbWjuSXfGrIU5f15yxuXkOHirG9g5Yo_xn_mnUQwX5GojJuAMGdmQyOG_In5ss/exec";
-    
+
     // We zoeken de 'tbody' op waar de rijen in moeten komen
     const tableBody = document.getElementById('sessie-body');
-    
+
     if (!tableBody) return; // Veiligheidscheck
 
     console.log("Data ophalen van:", webAppUrl);
-    
+
     try {
         const response = await fetch(webAppUrl);
         const data = await response.json(); // Dit is nu een LIJST (Array) van sessies
-        
+
         console.log("Data ontvangen:", data);
-        
+
         // 1. Maak de tabel eerst leeg (haalt "Laden..." weg)
         tableBody.innerHTML = '';
-        
+
         // 2. Loop door elke sessie in de ontvangen data
         data.forEach((sessie) => {
             // Maak een nieuwe tabelrij aan
             const row = document.createElement('tr');
-            
+
             // Bepaal de status en knop instellingen
             let statusTekst = "Beschikbaar";
             let statusClass = "status-badge";
@@ -104,11 +104,11 @@ async function updateVrijePlaatsen() {
                 <td data-label="Status"><span class="${statusClass}">${statusTekst}</span></td>
                 <td data-label="Actie">${knopHTML}</td>
             `;
-            
+
             // 4. Voeg de rij toe aan de tabel
             tableBody.appendChild(row);
         });
-        
+
     } catch (error) {
         console.error("Fout bij het ophalen van Google data:", error);
         tableBody.innerHTML = '<tr><td colspan="7" style="text-align:center; color:red;">Kon de actuele data niet laden. Probeer later opnieuw.</td></tr>';
@@ -116,66 +116,48 @@ async function updateVrijePlaatsen() {
 }
 
 async function updateTheorieCards() {
-    // 1. Gebruik je nieuwe Web App URL
-    const webAppUrl = "https://script.google.com/macros/s/AKfycbygwbn59LcBY-o2epfr_mRDtmy7Gpl0-bVXik0qcZncl65iXEyXBKICPtI8ebELPyOYww/exec"; 
+    const webAppUrl = "https://script.google.com/macros/s/AKfycbygwbn59LcBY-o2epfr_mRDtmy7Gpl0-bVXik0qcZncl65iXEyXBKICPtI8ebELPyOYww/exec";
     const container = document.getElementById('theorie-cards-container');
-    
-    if (!container) return;
+    const template = document.getElementById('course-card-template');
 
     try {
         const response = await fetch(webAppUrl);
-        const data = await response.json(); 
-        
-        container.innerHTML = ''; 
+        const data = await response.json();
+
+        container.innerHTML = ''; // Maak de "Laden..." tekst leeg
 
         data.forEach((sessie) => {
-            const card = document.createElement('div');
-            card.className = 'course-card';
-            
-            let statusTekst = "Beschikbaar";
-            let statusClass = "badge-available";
-            let knopHTML = `<a href="inschrijving-theorie-rijbewijs-b.html" class="btn-card">Inschrijven</a>`;
+            // Maak een kopie van het bouwplan
+            const clone = template.content.cloneNode(true);
 
-            // Controleer of de sessie vol is
-            if (sessie.vrij <= 0) {
-                statusTekst = "Volgeboekt";
-                statusClass = "badge-full";
-                knopHTML = `<button class="btn-card btn-full" disabled>Volzet</button>`;
+            // Vul de gegevens in de kopie in
+            clone.querySelector('h3').innerText = sessie.cursusnaam || "Theorie Rijbewijs B";
+            clone.querySelector('.lesdata').innerText = sessie.datum;
+
+            const teller = sessie.vrij_teller || 0;
+            clone.querySelector('.vrije-plaatsen').innerText = teller;
+
+            // Status en Knop
+            const badge = clone.querySelector('.status-badge');
+            const footer = clone.querySelector('.card-footer');
+
+            if (teller <= 0) {
+                badge.innerText = "Volgeboekt";
+                badge.className = "status-badge badge-full";
+                footer.innerHTML = `<button class="btn-card btn-full" disabled>Volzet</button>`;
+            } else {
+                badge.innerText = "Beschikbaar";
+                badge.className = "status-badge badge-available";
+                footer.innerHTML = `<a href="inschrijving-rijbewijs-theorie-b.html" class="btn-card">Inschrijven</a>`;
             }
 
-            // Gebruik €120 als de prijs in de Sheet leeg is of 0 aangeeft
-            const prijsTonen = (sessie.prijs && sessie.prijs !== "0") ? sessie.prijs : "120";
-
-            card.innerHTML = `
-                <div class="card-header">
-                    <h3>${sessie.cursusnaam}</h3>
-                    <span class="status-badge ${statusClass}">${statusTekst}</span>
-                </div>
-                <div class="card-body">
-                    <div class="info-row">
-                        <strong>📅 Lesdata:</strong>
-                        <div class="dates-list" style="white-space: pre-line;">${sessie.datum}</div>
-                    </div>
-                    <div class="info-row">
-                        <strong>👥 Plaatsen:</strong> 
-                        <span>${sessie.vrij_teller} vrije plaatsen</span>
-                    </div>
-                    <div class="info-row">
-                        <strong>💰 Prijs:</strong> 
-                        <span>€${prijsTonen}</span>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    ${knopHTML}
-                </div>
-            `;
-            
-            container.appendChild(card);
+            // Voeg de gevulde kaart toe aan de website
+            container.appendChild(clone);
         });
-        
+
     } catch (error) {
-        console.error("Fout bij het laden:", error);
-        container.innerHTML = '<p style="text-align:center; color:red;">Kon de data niet laden.</p>';
+        console.error("Fout:", error);
+        container.innerHTML = '<p>Kon de data niet laden.</p>';
     }
 }
 
