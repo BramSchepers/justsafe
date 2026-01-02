@@ -1835,6 +1835,8 @@ footer {
     }
 }
 
+/* #region prijskaarten */
+
 .pakketten-container {
     padding: 60px 20px;
     background: linear-gradient(180deg, #ffffff 0%, #f4f4f4 100%);
@@ -1854,10 +1856,68 @@ footer {
 }
 
 .pakketten-grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    /* Gebruik 33% (min de gap) als basis om 3 kolommen te forceren */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1700px; /* Zorg dat de container niet oneindig breed wordt */
+    margin: 0 auto;
+
+    justify-content: center; /* Centreert de kolommen in de container */
+    justify-items: center;
+}
+
+@media (max-width: 1700px) {
+    .pakketten-grid {
+        grid-template-columns: repeat(2, minmax(300px, 400px));
+        justify-content: center; 
+        gap: 40px; 
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .pakketten-grid {
+        grid-template-columns: repeat(1, minmax(300px, 450px));
+    }
+}
+
+.pakketten-grid-scooter {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
     gap: 30px;
-    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+
+    justify-content: center;
+    justify-items: center;
+}
+
+@media (max-width: 768px) {
+    .pakketten-grid-scooter {
+        /* Spring naar 1 kolom */
+        grid-template-columns: repeat(1, minmax(300px, 450px));
+        gap: 20px;
+    }
+}
+
+.pakketten-grid-auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc(33.33% - 30px), 1fr));
+    gap: 30px;
+    max-width: 1200px; 
+    margin: 0 auto;
+    justify-content: center; 
+    justify-items: center;
+}
+
+
+@media (max-width: 1500px) {
+    .pakketten-grid-auto {
+       
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
 }
 
 .card-modern {
@@ -1895,7 +1955,6 @@ footer {
 /* Extra: Geef de populaire kaart een gekleurde rand zoals in het voorbeeld */
 .card-popular {
     border: 2px solid var(--hoofdkleur-rood) !important;
-    /* De gele kleur */
     border-radius: 20px;
     /* Zorg dat dit EXACT gelijk is aan .card-modern */
     /* Optioneel: voeg een heel zachte gele gloed toe om het nog mooier te maken */
@@ -1934,20 +1993,21 @@ footer {
 
 .card-header h3 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     letter-spacing: 1px;
+    text-transform: uppercase;    
 }
 
 .card-header p {
     margin: 5px 0 0;
-    opacity: 0.7;
-    text-transform: uppercase;
-    font-size: 0.9rem;
+    opacity: 0.5;
+    /* text-transform: uppercase; */
+    font-size: clamp(0.5rem, 5vw, 0.9rem);
 }
 
 .card-body {
     padding: 30px;
-    height: 275px;
+    height: 350px;
 }
 
 .feature-list {
@@ -1958,7 +2018,7 @@ footer {
 
 .feature-list li {
     margin-bottom: 15px;
-    color: #444;
+    color: (var(--donker-achtergrond));
     display: flex;
     align-items: center;
 }
@@ -1972,7 +2032,7 @@ footer {
 .of {
     font-weight: bold;
     margin-right: 10px;
-    font-size: 2rem;
+    font-size: clamp(1rem, 10vw, 2rem);
 }
 
 .card-footer {
@@ -2017,6 +2077,8 @@ footer {
     background: #b31419;
 }
 
+/* iets anders dan */
+
 /* Container instellingen */
 .cards-grid {
     display: grid;
@@ -2024,6 +2086,7 @@ footer {
     gap: 25px;
     padding: 20px 0;
 }
+
 
 /* Het Kaartje */
 .course-card {
@@ -2058,6 +2121,10 @@ footer {
     color: var(--wit);
     font-weight: 700;
 }
+
+/* #End region */
+
+/* #region raster */
 
 /* Status Badges */
 .status-badge {
@@ -2138,3 +2205,5 @@ footer {
     color: #868e96 !important;
     cursor: not-allowed;
 }
+
+/* #end region */
