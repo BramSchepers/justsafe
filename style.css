@@ -1606,10 +1606,18 @@ footer {
     margin-bottom: 50px;
 }
 
+.kantoor-item h2 {
+    margin-bottom: 10px;
+    color: var(--tekst-donker);
+    font-size: 30px;
+}
+
 .kantoor-item h3 {
     margin-bottom: 10px;
-    color: var(--hoofdkleur-rood);
-    font-size: 25px;
+    color: var(--tekst-donker);
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .map-container {
@@ -1794,7 +1802,7 @@ footer {
         margin-bottom: 5px;
     }
 }
-
+/* #region container van de google forms */
 .contact-form-container {
     margin-top: 80px;
     /* Iets meer dan 72px voor wat extra ademruimte */
@@ -1824,6 +1832,8 @@ footer {
     }
 }
 
+/* #endregion */
+
 /* #region prijskaarten */
 
 .pakketten-container {
@@ -1846,29 +1856,30 @@ footer {
 
 .pakketten-grid {
     display: grid;
-    /* Gebruik 33% (min de gap) als basis om 3 kolommen te forceren */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1700px; /* Zorg dat de container niet oneindig breed wordt */
-    margin: 0 auto;
-
-    justify-content: center; /* Centreert de kolommen in de container */
-    justify-items: center;
+    /* We vertellen de kolommen: wees maximaal 380px breed, 
+       maar nooit breder dan de kaart zelf */
+    grid-template-columns: repeat(3, minmax(0, 380px)); 
+    
+    gap: 30px;
+    max-width: 1250px;
+    margin: 40px auto;
+    
+    /* DIT IS DE KEY: dit centreert de kolommen zelf in de container */
+    justify-content: center; 
 }
 
-@media (max-width: 1700px) {
+/* Tablet: 2 kolommen */
+@media (max-width: 1200px) {
     .pakketten-grid {
-        grid-template-columns: repeat(2, minmax(300px, 400px));
-        justify-content: center; 
-        gap: 40px; 
-        width: 90%;
-        margin: 0 auto;
+        grid-template-columns: repeat(2, minmax(0, 380px));
+        justify-content: center;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .pakketten-grid {
-        grid-template-columns: repeat(1, minmax(300px, 450px));
+        grid-template-columns: minmax(0, 380px);
+        justify-content: center;
     }
 }
 
@@ -1911,13 +1922,15 @@ footer {
 
 .card-modern {
     background: white;
-    width: 320px;
+    width: 380px;
     border-radius: 20px;
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
     border: 1px solid #eee;
     overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .card-modern:hover {
