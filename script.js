@@ -120,24 +120,28 @@ async function updateTheorieCards() {
     const container = document.getElementById('theorie-cards-container');
     const template = document.getElementById('course-card-template');
 
+    // --- DE OPLOSSING ---
+    // Als de container OF het template niet bestaat, stop dan direct met de functie.
+    // Dit voorkomt foutmeldingen op andere pagina's.
+    if (!container || !template) {
+        return; 
+    }
+
     try {
         const response = await fetch(webAppUrl);
         const data = await response.json();
 
-        container.innerHTML = ''; // Maak de "Laden..." tekst leeg
+        container.innerHTML = ''; // Nu is dit veilig, want we weten dat container bestaat
 
         data.forEach((sessie) => {
-            // Maak een kopie van het bouwplan
             const clone = template.content.cloneNode(true);
 
-            // Vul de gegevens in de kopie in
             clone.querySelector('h3').innerText = sessie.cursusnaam || "Theorie Rijbewijs B";
             clone.querySelector('.lesdata').innerText = sessie.datum;
 
             const teller = sessie.vrij_teller || 0;
             clone.querySelector('.vrije-plaatsen').innerText = teller;
 
-            // Status en Knop
             const badge = clone.querySelector('.status-badge');
             const footer = clone.querySelector('.card-footer');
 
@@ -151,13 +155,15 @@ async function updateTheorieCards() {
                 footer.innerHTML = `<a href="inschrijving-rijbewijs-theorie-b.html" class="btn-card">Inschrijven</a>`;
             }
 
-            // Voeg de gevulde kaart toe aan de website
             container.appendChild(clone);
         });
 
     } catch (error) {
         console.error("Fout:", error);
-        container.innerHTML = '<p>Kon de data niet laden.</p>';
+        // Ook hier even checken of container wel bestaat voor je een foutmelding schrijft
+        if (container) {
+            container.innerHTML = '<p>Kon de data niet laden.</p>';
+        }
     }
 }
 
