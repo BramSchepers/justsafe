@@ -2387,10 +2387,11 @@ footer {
     .js-footer-note {
         margin-top: 40px;
         padding: 20px;
-        background: var(--hoofdkleur-rood);
-        color: white;
+        background: var(--wit);
+        color: var(--tekst-donker);
         border-radius: 4px;
         text-align: center;
+        font-weight: 700;
     }
 
     @media (max-width: 768px) {
