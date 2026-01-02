@@ -1458,26 +1458,22 @@ footer {
 /* Basis styling voor de tabel */
 .responsive-table-container {
     background: linear-gradient(to bottom, #ffffff, #fafafa);
-    max-width: 1200px;
-    /* Iets smaller oogt vaak rustiger voor tekst */
+    max-width: 1400px;
     margin: 90px auto;
     padding: 10px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    border-top: 3px solid var(--tekst-donker);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     display: flow-root;
 }
 
 .responsive-table {
     width: 100%;
     border-collapse: separate;
-    /* Veranderd van collapse naar separate voor border-radius */
     border-spacing: 0;
     background: white;
     border-radius: 12px;
-    /* Iets zachtere hoeken */
+    margin-bottom: 30px;
     overflow: hidden;
-    /* De zachte kader en schaduw waar je om vroeg */
     border: 1px solid #e5e7eb;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
@@ -1486,10 +1482,7 @@ footer {
 .responsive-table td {
     padding: 18px 15px;
     text-align: center;
-    /* Horizontale lijnen */
     border-bottom: 1px solid rgb(100, 100, 100);
-    /* Verticale lijnen (het zachte raster) */
-
     white-space: nowrap;
 }
 
@@ -1507,7 +1500,6 @@ footer {
     letter-spacing: 1px;
 }
 
-/* De kolom 'Cursus' mag wel over meerdere regels als de naam lang is */
 .responsive-table td[data-label="Cursus"] {
     white-space: normal;
     min-width: 180px;
@@ -1522,7 +1514,6 @@ footer {
     font-weight: bold;
     font-size: 0.9rem;
     display: inline-block;
-    /* Veranderd van block naar inline-block zodat hij niet de hele cel vult */
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -1530,7 +1521,6 @@ footer {
 .btn-table:hover {
     background-color: #e63535;
     transform: translateY(-2px);
-    /* Subtiel effect omhoog in plaats van schalen */
     box-shadow: 0 4px 8px rgba(230, 53, 53, 0.3);
 }
 
@@ -2207,3 +2197,74 @@ footer {
 }
 
 /* #end region */
+
+/* #region Vacature */
+
+.cta-buttons-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.btn-job {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 15px 25px;
+    background: var(--donker-achtergrond);
+    color: var(--wit);
+    border-radius: 12px;
+    border-bottom: 3px solid var(--hoofdkleur-rood);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    min-width: 250px;
+    margin-bottom: 50px;
+}
+
+.btn-job:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.btn-mail {
+    background: var(--donker-achtergrond);
+    color: var(--wit);
+    border-radius: 12px;
+    border-bottom: 3px solid var(--hoofdkleur-rood);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.btn-icon {
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+.btn-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.btn-value {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Mobiele weergave */
+@media (max-width: 600px) {
+    .btn-job {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* #endregion */
