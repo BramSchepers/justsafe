@@ -70,7 +70,7 @@
     <section>
       <div class="contact-form-container">
         <h1>Contacteer Rijschool Just Safe in Hasselt/Tessenderlo</h1>
-        <iframe
+        <iframe id="contact-form"
           src="https://docs.google.com/forms/d/e/1FAIpQLSe1obAxjojPQXaqDnQxDII_8nbzKZDcKDXcsoQUB6RRs_KdNQ/viewform?embedded=true"
           width="100%" style="width: 100%; border: none;" height="1300">
           Laden…
@@ -231,6 +231,27 @@
   }
 }
 </script>
+
+  <script>
+    (function () {
+      var loadCountContact = 0;
+      var iframeContact = document.getElementById('contact-form');
+
+      if (iframeContact) {
+        iframeContact.onload = function () {
+          loadCountContact++;
+
+          if (loadCountContact > 1) {
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: 'smooth'
+            });
+          }
+        };
+      }
+    })();
+  </script>
 
 </body>
 

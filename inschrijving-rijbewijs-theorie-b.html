@@ -69,10 +69,11 @@
 
     <section>
       <div class="contact-form-container">
-        <h1>Schrijf je in voor de lessen theorie</br>(Rijbewijs B)</h1>
-        <iframe
+        <h1>Schrijf je in voor de lessen theorie<br>(Rijbewijs B)</h1>
+        <iframe id="theorie-b-form"
           src="https://docs.google.com/forms/d/e/1FAIpQLSd0yWrJaQCSzPSIaXZHDlFXvI-RAV64tbDpt6OoGSJ7qqvaUQ/viewform?embedded=true"
           width="100%" height="1500" frameborder="0" marginheight="0" marginwidth="0">Laden…</iframe>
+      </div>
     </section>
 
   </main>
@@ -228,6 +229,27 @@
   }
 }
 </script>
+
+  <script>
+    (function () {
+      var loadCountTheorieB = 0;
+      var iframeTheorieB = document.getElementById('theorie-b-form');
+
+      if (iframeTheorieB) {
+        iframeTheorieB.onload = function () {
+          loadCountTheorieB++;
+
+          if (loadCountTheorieB > 1) {
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: 'smooth'
+            });
+          }
+        };
+      }
+    })();
+  </script>
 
 </body>
 

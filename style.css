@@ -1590,11 +1590,12 @@ footer {
 
 .kantoor-kolommen {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    /* Gebruik 1fr 1fr voor exact gelijke breedte */
+    grid-template-columns: 1fr 1fr; 
     justify-content: center;
-    /* 2 kolommen op desktop */
-    gap: 100px;
-    margin-top: 30px;
+    gap: 40px; /* 100px is vaak te veel op kleinere schermen, 40px is veiliger */
+    margin: 30px auto;
+    max-width: 1200px; /* Houdt de kaarten bij elkaar op hele brede schermen */
 }
 
 .kantoor-item {
@@ -1602,8 +1603,11 @@ footer {
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    width: 100%;
-    margin-bottom: 50px;
+    /* Verwijder vaste breedtes als die er staan */
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box; /* Cruciaal zodat padding de kaart niet breder maakt */
 }
 
 .kantoor-item h2 {
@@ -1626,12 +1630,23 @@ footer {
     border-radius: 10px;
 }
 
-/* Mobiel: kolommen onder elkaar */
-@media (max-width: 1400px) {
+/* 1. Zorg dat de kaart NOOIT breder is dan zijn container */
+.map-container iframe {
+    width: 100% !important;
+    height: 300px; /* Hoogte is prima op een vaste waarde */
+    border: 0;
+}
+
+/* 2. Verbeter de mobiele weergave in je media query */
+@media (max-width: 1250px) {
     .kantoor-kolommen {
         grid-template-columns: 1fr;
-        justify-content: center;
-        justify-items: center;
+        padding: 0 20px;
+    }
+    
+    .kantoor-item {
+        max-width: 500px; /* Zorgt dat ze op tablet niet over de hele breedte stretchen */
+        margin: 0 auto 30px auto;
     }
 }
 

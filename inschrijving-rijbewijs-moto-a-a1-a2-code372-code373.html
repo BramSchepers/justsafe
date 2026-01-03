@@ -69,9 +69,10 @@
 
     <section>
       <div class="contact-form-container">
-        <h1>Schrijf je in voor rijlessen</br>(Rijbewijs Moto)</h1>
-        <iframe src="https://forms.gle/r8vmLfgUCSDWKd7h8" width="100%" height="2200" frameborder="0" marginheight="0"
-          marginwidth="0">Laden…</iframe>
+        <h1>Schrijf je in voor rijlessen<br>(Rijbewijs Moto)</h1>
+        <iframe id="moto-form" src="https://forms.gle/r8vmLfgUCSDWKd7h8" width="100%" height="2200" frameborder="0"
+          marginheight="0" marginwidth="0">Laden…</iframe>
+      </div>
     </section>
 
   </main>
@@ -227,6 +228,25 @@
   }
 }
 </script>
+
+  <script>
+    var loadCount = 0;
+    var iframe = document.getElementById('moto-form');
+
+    if (iframe) {
+      iframe.onload = function () {
+        loadCount++;
+        
+        if (loadCount > 1) {
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
+        }
+      };
+    }
+  </script>
 
 </body>
 
