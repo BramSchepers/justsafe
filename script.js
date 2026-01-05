@@ -116,39 +116,41 @@ async function updateVrijePlaatsen() {
 }
 
 async function updateTheorieCards() {
-    const webAppUrl = "https://script.google.com/macros/s/AKfycbygwbn59LcBY-o2epfr_mRDtmy7Gpl0-bVXik0qcZncl65iXEyXBKICPtI8ebELPyOYww/exec";
+    const webAppUrl = "https://script.google.com/macros/s/AKfycbzywhmn0g1YD6NZkC3mvk5Dv4mq48P6AsdrJHT7IDs_pJzH1hEgp7EdFCS6SwDLjNZ_/exec";
     const container = document.getElementById('theorie-cards-container');
     const template = document.getElementById('course-card-template');
-
-    // --- DE OPLOSSING ---
-    // Als de container OF het template niet bestaat, stop dan direct met de functie.
-    // Dit voorkomt foutmeldingen op andere pagina's.
-    if (!container || !template) {
-        return; 
-    }
+    
+    if (!container || !template) return;
 
     try {
         const response = await fetch(webAppUrl);
         const data = await response.json();
 
-        container.innerHTML = ''; // Nu is dit veilig, want we weten dat container bestaat
+        // Maakt de container leeg (verwijdert het "worden geladen..." zinnetje)
+        container.innerHTML = '';
 
         data.forEach((sessie) => {
             const clone = template.content.cloneNode(true);
 
-            clone.querySelector('h3').innerText = sessie.cursusnaam || "Theorie Rijbewijs B";
+            // 1. Lesdata invullen
             clone.querySelector('.lesdata').innerText = sessie.datum;
 
-            const teller = sessie.vrij_teller || 0;
-            clone.querySelector('.vrije-plaatsen').innerText = teller;
+            // 2. Plaatsen weergave opbouwen: "5/20 vrije plaatsen"
+            // We gebruiken sessie.vrij_teller (kolom E) en sessie.max_plaatsen (kolom D)
+            const aantalVrij = sessie.vrij_teller;
+            const totaalPlaatsen = sessie.max_plaatsen || 20; // Fallback naar 20 als leeg
+            const plaatsenTekst = `${aantalVrij}/${totaalPlaatsen} vrije plaatsen`;
+
+            clone.querySelector('.vrije-plaatsen-weergave').innerText = plaatsenTekst;
 
             const badge = clone.querySelector('.status-badge');
             const footer = clone.querySelector('.card-footer');
 
-            if (teller <= 0) {
+            // 3. Status en knop bepalen
+            if (aantalVrij <= 0) {
                 badge.innerText = "Volgeboekt";
                 badge.className = "status-badge badge-full";
-                footer.innerHTML = `<button class="btn-card btn-full" disabled>Volzet</button>`;
+                footer.innerHTML = `<button class="btn-card btn-full" disabled style="background-color: #ccc; cursor: not-allowed;">Volzet</button>`;
             } else {
                 badge.innerText = "Beschikbaar";
                 badge.className = "status-badge badge-available";
@@ -160,12 +162,8 @@ async function updateTheorieCards() {
 
     } catch (error) {
         console.error("Fout:", error);
-        // Ook hier even checken of container wel bestaat voor je een foutmelding schrijft
-        if (container) {
-            container.innerHTML = '<p>Kon de data niet laden.</p>';
-        }
+        container.innerHTML = '<p>Kon de data niet laden. Probeer het later opnieuw.</p>';
     }
 }
-
 updateTheorieCards();
 updateVrijePlaatsen();

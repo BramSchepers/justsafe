@@ -23,10 +23,6 @@
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#ff3b3b">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 
@@ -152,8 +148,16 @@
                 </p>
 
                 <section class="responsive-container">
-                    <h2>Beschikbare Data & Prijzen</h2>
+                    <h2>Theorie Rijbewijs B in Hasselt</h2>
+
+                    <p class="course-intro-text">
+                        Volg je theoretische rijopleiding bij Rijschool Just Safe in <strong>Hasselt</strong>.
+                        De volledige cursus kost slechts <strong>€120</strong> (inclusief handboek).
+                        Bekijk hieronder de beschikbare startdata en schrijf je direct in.
+                    </p>
+
                     <div id="theorie-cards-container" class="cards-grid">
+                        <p class="loading-text">Beschikbare data worden geladen...</p>
                     </div>
 
                     <template id="course-card-template">
@@ -164,20 +168,23 @@
                             </div>
                             <div class="card-body">
                                 <div class="info-row">
+                                    <strong>📍 Locatie:</strong> Prins-Bisschopssingel 50,
+                                    3500 Hasselt
+                                </div>
+                                <div class="info-row">
                                     <strong>📅 Lesdata:</strong>
                                     <div class="lesdata"></div>
                                 </div>
                                 <div class="info-row">
                                     <strong>👥 Plaatsen:</strong>
-                                    <span class="vrije-plaatsen"></span> vrije plaatsen
+                                    <span class="vrije-plaatsen-weergave"></span>
                                 </div>
                                 <div class="info-row">
                                     <strong>💰 Prijs:</strong>
                                     <span class="prijs">€120</span>
                                 </div>
                             </div>
-                            <div class="card-footer">
-                            </div>
+                            <div class="card-footer"></div>
                         </div>
                     </template>
                 </section>
