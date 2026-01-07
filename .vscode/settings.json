@@ -1,3 +1,6 @@
 {
-    "livePreview.defaultPreviewPath": "/index.html"
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#16825d", 
+        "statusBar.foreground": "#ffffff"
+    }
 }
