@@ -2406,3 +2406,62 @@ footer {
     }
 
     /* #endregion */
+
+    /* #region faq */
+
+    /* De container voor de FAQ */
+details {
+  background-color: rgba(255, 255, 255, 0.8); /* Licht transparant wit voor over de topokaart */
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+/* Effect wanneer je met de muis over een vraag gaat */
+details:hover {
+  border-color: var(--hoofdkleur-rood);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* De 'knop' (vraag) styling */
+summary {
+  list-style: none; /* Verwijdert standaard pijltje op sommige browsers */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* Zorgt dat de H3 naast het pijltje staat en geen extra marges heeft */
+summary h3 {
+  display: inline;
+  margin: 0 0 0 10px; /* 10px ruimte links van de tekst */
+  font-size: 1.1rem;
+  color: #333;
+  vertical-align: middle;
+}
+
+/* Eigen pijltje toevoegen of het standaard pijltje stylen */
+summary::-webkit-details-marker {
+  display: block;
+  color: var(--hoofdkleur-rood);
+  font-size: 1.2rem;
+}
+
+/* Styling voor de tekst als het menu opengeklapt is */
+details[open] {
+  border-left: 4px solid var(--hoofdkleur-rood); /* Accentueer de actieve vraag */
+}
+
+details p {
+  margin-top: 15px;
+  padding-left: 28px; /* Zodat de tekst mooi uitlijnt onder de vraag */
+  line-height: 1.6;
+  color: var(--tekst-donker);
+}
+
+    /* #endregion faq */
