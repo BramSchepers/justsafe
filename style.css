@@ -39,8 +39,31 @@ body {
 a {
     cursor: pointer;
     text-decoration: none;
+    color: var(--hoofdkleur-rood); /* Gebruik je Just Safe rood */
+    font-weight: 600;              /* Maakt de link net iets duidelijker */
+    position: relative;            /* Nodig voor het lijntje hieronder */
+    transition: color 0.3s ease;   /* Zachte kleurovergang */
 }
 
+/* Een subtiel lijntje onder de link die verschijnt bij hover */
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--hoofdkleur-rood);
+    transition: width 0.3s ease;   /* Het lijntje "groeit" van links naar rechts */
+}
+
+a:hover {
+    color: var(--tekst-donker);    /* Kleur verandert subtiel bij aanwijzen */
+}
+
+a:hover::after {
+    width: 100%;                   /* Lijntje wordt volledig zichtbaar */
+}
 header+section,
 main,
 .hero-compact {
@@ -2227,6 +2250,14 @@ footer {
     margin-top: 30px;
 }
 
+.recencies-buttons-container {
+    display: flex;
+    gap: 20px;
+    justify-content:left;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
 .btn-job {
     display: flex;
     align-items: center;
@@ -2463,5 +2494,7 @@ details p {
   line-height: 1.6;
   color: var(--tekst-donker);
 }
+
+
 
     /* #endregion faq */
