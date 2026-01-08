@@ -167,3 +167,30 @@ async function updateTheorieCards() {
 }
 updateTheorieCards();
 updateVrijePlaatsen();
+
+// Wacht tot de pagina geladen is
+window.addEventListener('load', function() {
+    const heroImage = document.getElementById('heroImage');
+    
+    // De twee foto's die je wilt afwisselen
+    const fotos = [
+        "Images/moto-just-safe-grootV2.png", 
+        "Images/auto-just-safe-grootV2.png" // Zorg dat de naam klopt!
+    ];
+
+    // Haal de index van de vorige keer op uit het sessiegeheugen
+    let vorigeIndex = sessionStorage.getItem('laatsteFotoIndex');
+    let nieuweIndex;
+
+    if (vorigeIndex === null) {
+        // Eerste keer op de site? Kies willekeurig
+        nieuweIndex = Math.floor(Math.random() * fotos.length);
+    } else {
+        // Wissel af: als het 0 was wordt het 1, als het 1 was wordt het 0
+        nieuweIndex = (parseInt(vorigeIndex) + 1) % fotos.length;
+    }
+
+    // Update de afbeelding en sla de nieuwe index op
+    heroImage.src = fotos[nieuweIndex];
+    sessionStorage.setItem('laatsteFotoIndex', nieuweIndex);
+});
