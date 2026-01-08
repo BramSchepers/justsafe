@@ -148,21 +148,45 @@
                     niet geldig in Vlaanderen. Om een leerling in Vlaanderen te begeleiden, moet je de opleiding bij een
                     erkende Vlaamse rijschool zoals Just Safe volgen.</p>
 
-                <h2>Praktische Informatie & Inschrijven</h2>
-                <p>Klaar om je attest te behalen? We verwelkomen je graag in onze rijschool in Hasselt.</p>
-                <ul style="list-style: disc; margin-left: 20px; margin-bottom: 20px;">
-                    <li><strong>Locatie</strong>: Prins-Bisschopssingel 50, 3500 Hasselt.</li>
-                    <li><strong>Duur</strong>: 3 uur.</li>
-                    <li><strong>Prijs</strong>: € 20.</li>
-                    <li><strong>Lessen</strong>: Enkel fysieke lessen op locatie (geen online lessen mogelijk).</li>
-                </ul>
-                <p>Schrijf je vandaag nog in voor het volgende vormingsmoment bij Rijschool Just Safe!</p>
+                <section itemscope itemtype="https://schema.org/Course">
+                    <h2 itemprop="name">Praktische Informatie & Inschrijven</h2>
+
+                    <p itemprop="description">
+                        Klaar om je attest te behalen? We verwelkomen je graag in onze rijschool in
+                        <span itemprop="addressLocality">Hasselt</span> voor het officieel vormingsmoment.
+                    </p>
+
+                    <ul style="list-style: disc; margin-left: 20px; margin-bottom: 20px;">
+                        <li itemprop="location" itemscope itemtype="https://schema.org/Place">
+                            <strong>Locatie</strong>:
+                            <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                                <span itemprop="streetAddress">Prins-Bisschopssingel 50</span>,
+                                <span itemprop="postalCode">3500</span>
+                                <span itemprop="addressLocality">Hasselt</span>.
+                            </span>
+                        </li>
+
+                        <li><strong>Duur</strong>: <time itemprop="timeRequired" datetime="PT3H">3 uur</time>.</li>
+
+                        <li itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                            <strong>Prijs</strong>:
+                            <span itemprop="priceCurrency" content="EUR">€</span>
+                            <span itemprop="price" content="20.00">20</span>.
+                            <link itemprop="availability" href="https://schema.org/InStock" />
+                        </li>
+
+                        <li><strong>Lessen</strong>: Enkel fysieke lessen op locatie (geen online lessen mogelijk).</li>
+                    </ul>
+
+                    <p>Schrijf je vandaag nog in voor het volgende vormingsmoment bij <strong>Rijschool Just
+                            Safe</strong>!</p>
+                </section>
             </div>
         </section>
 
         <section class="responsive-table-container table-wrapper">
             <div class="text-theorie">
-                <h2>Beschikbare Data & Prijzen</h2>
+                <h2>Beschikbare datums</h2>
                 <p>Bekijk hieronder de beschikbare data voor het <strong>vormingsmoment voor begeleiders</strong> in
                     <strong>Hasselt</strong>.
                 </p>
@@ -193,11 +217,11 @@
         <div class="footer-container">
 
             <div class="footer-col">
-                <a href="#" class="footer-logo">
-                    <img src="Images/logo_justsafe.svg" alt="JustSafe Rijschool">
+                <a href="index.html" class="footer-logo">
+                    <img src="Images/logo_justsafe.svg" alt="Just Safe Rijschool">
                 </a>
                 <p class="footer-text">
-                    Rijschool JustSafe.<br>
+                    Rijschool Just Safe<br>
                 </p>
                 <div class="contact-info">
                     <p>
@@ -215,18 +239,24 @@
                         Steenoven 3A, 3945 Tessenderlo-Ham
                     </p>
                     <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path
-                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-                        </svg>
-                        +32 474 34 88 07
+                        <a href="tel:+32474348807" class="footer-links">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                style="width: 20px; vertical-align: middle;">
+                                <path
+                                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                            </svg>
+                            +32 474 34 88 07
+                        </a>
                     </p>
                     <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path
-                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                        </svg>
-                        info@justsafe.be
+                        <a href="mailto:info@justsafe.be" class="footer-links">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                style="width: 20px; vertical-align: middle;">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                            info@justsafe.be
+                        </a>
                     </p>
                 </div>
             </div>

@@ -39,31 +39,8 @@ body {
 a {
     cursor: pointer;
     text-decoration: none;
-    color: var(--hoofdkleur-rood); /* Gebruik je Just Safe rood */
-    font-weight: 600;              /* Maakt de link net iets duidelijker */
-    position: relative;            /* Nodig voor het lijntje hieronder */
-    transition: color 0.3s ease;   /* Zachte kleurovergang */
 }
 
-/* Een subtiel lijntje onder de link die verschijnt bij hover */
-a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: var(--hoofdkleur-rood);
-    transition: width 0.3s ease;   /* Het lijntje "groeit" van links naar rechts */
-}
-
-a:hover {
-    color: var(--tekst-donker);    /* Kleur verandert subtiel bij aanwijzen */
-}
-
-a:hover::after {
-    width: 100%;                   /* Lijntje wordt volledig zichtbaar */
-}
 header+section,
 main,
 .hero-compact {
@@ -1090,6 +1067,25 @@ footer {
     transform: translateX(5px);
     /* Schuift grappig op naar rechts */
     color: var(--hoofdkleur-rood);
+}
+
+/* Richt je direct op de <a> tag met die klasse (voor mail en tel) */
+a.footer-links {
+    color: #bbbbbb !important;
+    text-decoration: none;
+    transition: all 0.3s ease; /* Voeg deze toe voor de vloeiende beweging */
+}
+
+/* Zorg dat de kleur ook na het klikken grijs blijft */
+a.footer-links:visited {
+    color: #bbbbbb !important;
+}
+
+/* HIER zit de oplossing: voeg de transform toe aan de hover van de klasse zelf */
+a.footer-links:hover {
+    color: var(--hoofdkleur-rood) !important;
+    transform: translateX(5px); /* Nu schuiven mail en tel ook op! */
+    display: inline-block;      /* Nodig om transform te laten werken */
 }
 
 /* Social Media Rondjes */
@@ -2495,6 +2491,29 @@ details p {
   color: var(--tekst-donker);
 }
 
+/* #endregion faq */
 
+.link-slide {
+  text-decoration: none;
+  color: var(--tekst-donker); /* Je eigen themakleur */
+  position: relative;
+  font-weight: bold;
+}
 
-    /* #endregion faq */
+.link-slide::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--hoofdkleur-rood);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.link-slide:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
