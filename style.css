@@ -39,8 +39,31 @@ body {
 a {
     cursor: pointer;
     text-decoration: none;
+    color: var(--hoofdkleur-rood); /* Gebruik je Just Safe rood */
+    font-weight: 600;              /* Maakt de link net iets duidelijker */
+    position: relative;            /* Nodig voor het lijntje hieronder */
+    transition: color 0.3s ease;   /* Zachte kleurovergang */
 }
 
+/* Een subtiel lijntje onder de link die verschijnt bij hover */
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--hoofdkleur-rood);
+    transition: width 0.3s ease;   /* Het lijntje "groeit" van links naar rechts */
+}
+
+a:hover {
+    color: var(--tekst-donker);    /* Kleur verandert subtiel bij aanwijzen */
+}
+
+a:hover::after {
+    width: 100%;                   /* Lijntje wordt volledig zichtbaar */
+}
 header+section,
 main,
 .hero-compact {
@@ -2227,6 +2250,14 @@ footer {
     margin-top: 30px;
 }
 
+.recencies-buttons-container {
+    display: flex;
+    gap: 20px;
+    justify-content:left;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
 .btn-job {
     display: flex;
     align-items: center;
@@ -2406,3 +2437,64 @@ footer {
     }
 
     /* #endregion */
+
+    /* #region faq */
+
+    /* De container voor de FAQ */
+details {
+  background-color: rgba(255, 255, 255, 0.8); /* Licht transparant wit voor over de topokaart */
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+/* Effect wanneer je met de muis over een vraag gaat */
+details:hover {
+  border-color: var(--hoofdkleur-rood);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* De 'knop' (vraag) styling */
+summary {
+  list-style: none; /* Verwijdert standaard pijltje op sommige browsers */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* Zorgt dat de H3 naast het pijltje staat en geen extra marges heeft */
+summary h3 {
+  display: inline;
+  margin: 0 0 0 10px; /* 10px ruimte links van de tekst */
+  font-size: 1.1rem;
+  color: #333;
+  vertical-align: middle;
+}
+
+/* Eigen pijltje toevoegen of het standaard pijltje stylen */
+summary::-webkit-details-marker {
+  display: block;
+  color: var(--hoofdkleur-rood);
+  font-size: 1.2rem;
+}
+
+/* Styling voor de tekst als het menu opengeklapt is */
+details[open] {
+  border-left: 4px solid var(--hoofdkleur-rood); /* Accentueer de actieve vraag */
+}
+
+details p {
+  margin-top: 15px;
+  padding-left: 28px; /* Zodat de tekst mooi uitlijnt onder de vraag */
+  line-height: 1.6;
+  color: var(--tekst-donker);
+}
+
+
+
+    /* #endregion faq */
