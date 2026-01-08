@@ -119,7 +119,7 @@ async function updateTheorieCards() {
     const webAppUrl = "https://script.google.com/macros/s/AKfycbzywhmn0g1YD6NZkC3mvk5Dv4mq48P6AsdrJHT7IDs_pJzH1hEgp7EdFCS6SwDLjNZ_/exec";
     const container = document.getElementById('theorie-cards-container');
     const template = document.getElementById('course-card-template');
-    
+
     if (!container || !template) return;
 
     try {
@@ -168,29 +168,31 @@ async function updateTheorieCards() {
 updateTheorieCards();
 updateVrijePlaatsen();
 
-// Wacht tot de pagina geladen is
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const heroImage = document.getElementById('heroImage');
-    
-    // De twee foto's die je wilt afwisselen
-    const fotos = [
-        "Images/moto-just-safe-grootV2.png", 
-        "Images/auto-just-safe-grootV2.png" // Zorg dat de naam klopt!
-    ];
 
-    // Haal de index van de vorige keer op uit het sessiegeheugen
-    let vorigeIndex = sessionStorage.getItem('laatsteFotoIndex');
-    let nieuweIndex;
+    // De 'if' controleert of we op een pagina zijn met het heroImage (index pagina)
+    if (heroImage) {
+        const fotos = [
+            "Images/moto-just-safe-grootV2.webp",
+            "Images/auto-just-safe-grootV2.webp"
+        ];
 
-    if (vorigeIndex === null) {
-        // Eerste keer op de site? Kies willekeurig
-        nieuweIndex = Math.floor(Math.random() * fotos.length);
+        let vorigeIndex = sessionStorage.getItem('laatsteFotoIndex');
+        let nieuweIndex;
+
+        if (vorigeIndex === null) {
+            nieuweIndex = Math.floor(Math.random() * fotos.length);
+        } else {
+            nieuweIndex = (parseInt(vorigeIndex) + 1) % fotos.length;
+        }
+
+        heroImage.src = fotos[nieuweIndex];
+        sessionStorage.setItem('laatsteFotoIndex', nieuweIndex);
+
+        console.log("Hero image succesvol gewisseld naar index:", nieuweIndex);
     } else {
-        // Wissel af: als het 0 was wordt het 1, als het 1 was wordt het 0
-        nieuweIndex = (parseInt(vorigeIndex) + 1) % fotos.length;
+        // We zijn op een andere pagina (bijv. contact), doe niets.
+        console.log("Geen heroImage gevonden op deze pagina, script wordt overgeslagen.");
     }
-
-    // Update de afbeelding en sla de nieuwe index op
-    heroImage.src = fotos[nieuweIndex];
-    sessionStorage.setItem('laatsteFotoIndex', nieuweIndex);
 });

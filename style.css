@@ -431,7 +431,7 @@ nav ul:not(.sidebar) a:hover {
     }
 }
 
-@media (max-width: 1750px) {
+@media (max-width: 1000px) {
     .hero-motor {
         display: none;
     }
