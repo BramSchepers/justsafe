@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vacature Rijinstructeur Hasselt & Tessenderlo | Rijschool Just Safe</title>
+  <title>Rijschool Just Safe - Uw beste rijschool in regio Hasselt en Limburg</title>
   <meta name="description"
-    content="Rijschool Just Safe groeit! Wij zoeken gemotiveerde praktijklesgevers (Brevet II/III) voor onze kantoren in Tessenderlo en Hasselt. Solliciteer vandaag!">
+    content="Belgische rijschool voor rijopleidingen A, AM, A1, A2 en B. Professionele rijlessen, theorielessen en erkende vormingsmomenten in regio Limburg.">
   <meta name="keywords"
-    content="vacature rijinstructeur, rijlesgever worden, job rijschool Limburg, Brevet II instructeur, Brevet III theorie, flexijob rijschool">
+    content="Rijschool, Rijbewijs, M12, M18, M36, Vakbekwaamheid, Autorijbewijs, Theorie, Praktijk, Rijlessen, Motorrijlessen">
   <meta content="strict-origin-when-cross-origin" name="referrer">
   <meta property="og:site_name" content="Rijschool Just Safe">
   <meta property="og:title" content="Uw rijbewijs specialist! (A, A1, A2, AM, B & Theorie)">
@@ -45,7 +45,7 @@
 
       <ul>
         <li><a href="index.html" class="logo">
-            <img src="Images/logo_justsafe.svg" alt="Just Safe Rijschool Logo">
+            <img src="Images/logo_justsafe.svg" alt="JustSafe Rijschool Logo">
           </a></li>
         <li class="hideOnMobile"><a href="onze-rijbewijzen.html">Rijbewijzen</a></li>
         <li class="hideOnMobile"><a href="motor-training.html">Motortraining</a></li>
@@ -64,52 +64,20 @@
       </ul>
     </nav>
   </header>
+
   <main>
-    <article class="text-theorie-container">
-      <div class="text-theorie">
-        <h1>Contacteer ons</h1>
-        <p>
-          Heeft u vragen over onze rijopleidingen of wenst u meer informatie? Wij helpen u graag verder!
-          U kan ons makkelijk bereiken via onderstaande kanalen.
-        </p>
 
-        <div class="cta-buttons-container">
-          <a href="contact-form.html" class="btn-job">
-            <span class="btn-icon">📝</span>
-            <div class="btn-text">
-              <span class="btn-label">Vragenformulier</span>
-              <span class="btn-value">Klik hier</span>
-            </div>
-          </a>
+    <section>
+      <div class="contact-form-container">
+        <iframe id="contact-form"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSe1obAxjojPQXaqDnQxDII_8nbzKZDcKDXcsoQUB6RRs_KdNQ/viewform?embedded=true"
+          width="100%" style="width: 100%; border: none;" height="1300">
+          Laden…
+        </iframe>
+      </div>
+    </section>
 
-            <a href="mailto:info@justsafe.be" class="btn-job">
-              <span class="btn-icon">📧</span>
-              <div class="btn-text">
-                <span class="btn-label">Stuur een e-mail</span>
-                <span class="btn-value">info@justsafe.be</span>
-              </div>
-            </a>
-
-            <a href="tel:+32474348807" class="btn-job">
-              <span class="btn-icon">📞</span>
-              <div class="btn-text">
-                <span class="btn-label">Bel ons direct</span>
-                <span class="btn-value">0474 34 88 07</span>
-              </div>
-            </a>
-
-            <a href="https://wa.me/32474348807" target="_blank" class="btn-job">
-              <span class="btn-icon">💬</span>
-              <div class="btn-text">
-                <span class="btn-label">Stuur een bericht</span>
-                <span class="btn-value">WhatsApp</span>
-              </div>
-            </a>
-          </div>
-        </div>
-    </article>
   </main>
-
 
   <footer>
     <div class="footer-container">
@@ -266,6 +234,27 @@
   }
 }
 </script>
+
+  <script>
+    (function () {
+      var loadCountContact = 0;
+      var iframeContact = document.getElementById('contact-form');
+
+      if (iframeContact) {
+        iframeContact.onload = function () {
+          loadCountContact++;
+
+          if (loadCountContact > 1) {
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: 'smooth'
+            });
+          }
+        };
+      }
+    })();
+  </script>
 
 </body>
 

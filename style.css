@@ -116,16 +116,27 @@ nav ul:not(.sidebar) a {
 
     /* Zorg voor een zachte overgang voor alle eigenschappen */
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border-radius: 50px;
-    /* Maakt de hover-vorm volledig rond aan de zijkanten */
+    position: relative;
+}
+
+nav ul:not(.sidebar) a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2.5px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--tekst-donker);
+    transition: width 0.3s ease;
 }
 
 nav ul:not(.sidebar) a:hover {
-    /* Gebruik een heel lichte versie van je rode kleur of een zacht grijs */
-    background-color: rgba(104, 104, 104, 0.2);
-
-    /* Een hele kleine schaalvergroting maakt het 'levendig' */
+    background-color: transparent;
     transform: translateY(-2px);
+}
+
+nav ul:not(.sidebar) a:hover::after {
+    width: 100%;
 }
 
 /* 4. Hamburger Button */
@@ -1073,7 +1084,8 @@ footer {
 a.footer-links {
     color: #bbbbbb !important;
     text-decoration: none;
-    transition: all 0.3s ease; /* Voeg deze toe voor de vloeiende beweging */
+    transition: all 0.3s ease;
+    /* Voeg deze toe voor de vloeiende beweging */
 }
 
 /* Zorg dat de kleur ook na het klikken grijs blijft */
@@ -1084,8 +1096,10 @@ a.footer-links:visited {
 /* HIER zit de oplossing: voeg de transform toe aan de hover van de klasse zelf */
 a.footer-links:hover {
     color: var(--hoofdkleur-rood) !important;
-    transform: translateX(5px); /* Nu schuiven mail en tel ook op! */
-    display: inline-block;      /* Nodig om transform te laten werken */
+    transform: translateX(5px);
+    /* Nu schuiven mail en tel ook op! */
+    display: inline-block;
+    /* Nodig om transform te laten werken */
 }
 
 /* Social Media Rondjes */
@@ -1266,6 +1280,19 @@ a.footer-links:hover {
     display: flow-root;
 }
 
+.text-rijbewijzen-container {
+    background: linear-gradient(to bottom, #ffffff, #fafafa);
+    max-width: 1400px;
+    /* Iets smaller oogt vaak rustiger voor tekst */
+    margin-top: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px; 
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flow-root;
+}
+
 .text-theorie {
     max-width: 1300px;
     /* Houdt de tekst leesbaar op brede schermen */
@@ -1294,7 +1321,7 @@ a.footer-links:hover {
 }
 
 .text-theorie p {
-    color: #333;
+    color: var(--tekst-donker);
     line-height: 1.8;
     font-size: 1.2rem;
     margin-bottom: 20px;
@@ -1423,7 +1450,7 @@ a.footer-links:hover {
     background-color: var(--donker-achtergrond);
     color: var(--wit);
     position: relative;
-    border-bottom: none; 
+    border-bottom: none;
     box-shadow: inset 0 -4px 0 0 var(--hoofdkleur-rood);
     z-index: 250;
 }
@@ -1452,11 +1479,9 @@ a.footer-links:hover {
     margin-left: auto;
     margin-top: -10px;
     padding: 40px;
-    border-radius: 0 0 15px 15px;
     /* Alleen onderkant afgerond */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     /* Zachte, diepe schaduw */
-    border: 1px solid #eee;
     border-top: none;
 }
 
@@ -1602,11 +1627,13 @@ a.footer-links:hover {
 .kantoor-kolommen {
     display: grid;
     /* Gebruik 1fr 1fr voor exact gelijke breedte */
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
-    gap: 40px; /* 100px is vaak te veel op kleinere schermen, 40px is veiliger */
+    gap: 40px;
+    /* 100px is vaak te veel op kleinere schermen, 40px is veiliger */
     margin: 30px auto;
-    max-width: 1200px; /* Houdt de kaarten bij elkaar op hele brede schermen */
+    max-width: 1200px;
+    /* Houdt de kaarten bij elkaar op hele brede schermen */
 }
 
 .kantoor-item {
@@ -1615,10 +1642,11 @@ a.footer-links:hover {
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     /* Verwijder vaste breedtes als die er staan */
-    width: 100%; 
+    width: 100%;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box; /* Cruciaal zodat padding de kaart niet breder maakt */
+    box-sizing: border-box;
+    /* Cruciaal zodat padding de kaart niet breder maakt */
 }
 
 .kantoor-item h2 {
@@ -1644,7 +1672,8 @@ a.footer-links:hover {
 /* 1. Zorg dat de kaart NOOIT breder is dan zijn container */
 .map-container iframe {
     width: 100% !important;
-    height: 300px; /* Hoogte is prima op een vaste waarde */
+    height: 300px;
+    /* Hoogte is prima op een vaste waarde */
     border: 0;
 }
 
@@ -1654,9 +1683,10 @@ a.footer-links:hover {
         grid-template-columns: 1fr;
         padding: 0 20px;
     }
-    
+
     .kantoor-item {
-        max-width: 500px; /* Zorgt dat ze op tablet niet over de hele breedte stretchen */
+        max-width: 500px;
+        /* Zorgt dat ze op tablet niet over de hele breedte stretchen */
         margin: 0 auto 30px auto;
     }
 }
@@ -1828,6 +1858,7 @@ a.footer-links:hover {
         margin-bottom: 5px;
     }
 }
+
 /* #region container van de google forms */
 .contact-form-container {
     margin-top: 80px;
@@ -1864,7 +1895,7 @@ a.footer-links:hover {
 
 .pakketten-container {
     padding: 60px 20px;
-    background: linear-gradient(180deg, #ffffff 0%, #f4f4f4 100%);
+    background: linear-gradient(to bottom, #fafafa, #f4f4f4);
 }
 
 .section-title {
@@ -1884,14 +1915,14 @@ a.footer-links:hover {
     display: grid;
     /* We vertellen de kolommen: wees maximaal 380px breed, 
        maar nooit breder dan de kaart zelf */
-    grid-template-columns: repeat(3, minmax(0, 380px)); 
-    
+    grid-template-columns: repeat(3, minmax(0, 380px));
+
     gap: 30px;
     max-width: 1250px;
     margin: 40px auto;
-    
+
     /* DIT IS DE KEY: dit centreert de kolommen zelf in de container */
-    justify-content: center; 
+    justify-content: center;
 }
 
 /* Tablet: 2 kolommen */
@@ -1932,16 +1963,16 @@ a.footer-links:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(calc(33.33% - 30px), 1fr));
     gap: 30px;
-    max-width: 1200px; 
+    max-width: 1200px;
     margin: 0 auto;
-    justify-content: center; 
+    justify-content: center;
     justify-items: center;
 }
 
 
 @media (max-width: 1500px) {
     .pakketten-grid-auto {
-       
+
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
 }
@@ -2023,7 +2054,7 @@ a.footer-links:hover {
     margin: 0;
     font-size: clamp(1.5rem, 5vw, 2rem);
     letter-spacing: 1px;
-    text-transform: uppercase;    
+    text-transform: uppercase;
 }
 
 .card-header p {
@@ -2188,7 +2219,7 @@ a.footer-links:hover {
 }
 
 .info-row strong {
-    color: #495057;
+    color: var(--tekst-donker);
     font-size: 0.9rem;
     min-width: 80px;
     /* Zorgt dat de labels netjes uitgelijnd zijn */
@@ -2249,7 +2280,7 @@ a.footer-links:hover {
 .recencies-buttons-container {
     display: flex;
     gap: 20px;
-    justify-content:left;
+    justify-content: left;
     flex-wrap: wrap;
     margin-top: 30px;
 }
@@ -2271,7 +2302,7 @@ a.footer-links:hover {
 
 .btn-job:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .btn-mail {
@@ -2318,18 +2349,20 @@ a.footer-links:hover {
 /* #region video loading */
 
 .video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 ratio */
-  height: 0;
-  overflow: hidden;
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
 }
 
-.video-container iframe, .video-container lite-youtube {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.video-container iframe,
+.video-container lite-youtube {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* #endregion */
@@ -2337,183 +2370,191 @@ a.footer-links:hover {
 /* #region Moto training */
 
 .js-training-wrapper {
-        color: #444;
-        line-height: 1.6;
-        max-width: 1140px;
-        margin: 0 auto;
-        padding: 20px;
-    }
+    color: #444;
+    line-height: 1.6;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-    .js-header {
-        color: var(--tekst-donker);
-        border-bottom: 3px solid var(--donker-achtergrond);
-        padding-bottom: 10px;
-        margin-bottom: 30px;
-        text-transform: uppercase;
-        font-weight: 700;
-        letter-spacing: 1px;
-    }
+.js-header {
+    color: var(--tekst-donker);
+    border-bottom: 3px solid var(--donker-achtergrond);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
 
-    .js-category-title {
-        color: var(--tekst-donker);
-        background: #f8f9fa;
-        padding: 15px 20px;
-        border-left: 5px solid var(--hoofdkleur-rood);
-        margin: 40px 0 20px 0;
-        font-size: 1.5rem;
-    }
+.js-category-title {
+    color: var(--tekst-donker);
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-left: 5px solid var(--hoofdkleur-rood);
+    margin: 40px 0 20px 0;
+    font-size: 1.5rem;
+}
 
+.js-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.js-card {
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.js-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.js-card h3 {
+    color: var(--donker-achtergrond);
+    margin-top: 0;
+    font-size: 1.25rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.js-card p {
+    flex-grow: 1;
+    font-size: 0.95rem;
+}
+
+.js-btn {
+    display: inline-block;
+    background-color: var(--hoofdkleur-rood);
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+    transition: background 0.3s;
+    margin-top: 15px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.js-btn:hover {
+    background-color: var(--wit);
+    color: var(--tekst-donker);
+
+}
+
+.js-footer-note {
+    margin-top: 40px;
+    padding: 20px;
+    background: var(--wit);
+    color: var(--tekst-donker);
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
     .js-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
+        grid-template-columns: 1fr;
     }
+}
 
-    .js-card {
-        background: #ffffff;
-        border: 1px solid #e1e1e1;
-        border-radius: 4px;
-        padding: 25px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        display: flex;
-        flex-direction: column;
-    }
+/* #endregion */
 
-    .js-card:hover {
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        transform: translateY(-5px);
-    }
+/* #region faq */
 
-    .js-card h3 {
-        color: var(--donker-achtergrond);
-        margin-top: 0;
-        font-size: 1.25rem;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 10px;
-    }
-
-    .js-card p {
-        flex-grow: 1;
-        font-size: 0.95rem;
-    }
-
-    .js-btn {
-        display: inline-block;
-        background-color: var(--hoofdkleur-rood);
-        color: #ffffff;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 5px;
-        text-align: center;
-        font-weight: 600;
-        transition: background 0.3s;
-        margin-top: 15px;
-        text-transform: uppercase;
-        font-size: 0.85rem;
-    }
-
-    .js-btn:hover {
-        background-color: var(--wit);
-        color: var(--tekst-donker);
-
-    }
-
-    .js-footer-note {
-        margin-top: 40px;
-        padding: 20px;
-        background: var(--wit);
-        color: var(--tekst-donker);
-        border-radius: 4px;
-        text-align: center;
-        font-weight: 700;
-    }
-
-    @media (max-width: 768px) {
-        .js-grid { grid-template-columns: 1fr; }
-    }
-
-    /* #endregion */
-
-    /* #region faq */
-
-    /* De container voor de FAQ */
+/* De container voor de FAQ */
 details {
-  background-color: rgba(255, 255, 255, 0.8); /* Licht transparant wit voor over de topokaart */
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Licht transparant wit voor over de topokaart */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
 }
 
 /* Effect wanneer je met de muis over een vraag gaat */
 details:hover {
-  border-color: var(--hoofdkleur-rood);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border-color: var(--hoofdkleur-rood);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* De 'knop' (vraag) styling */
 summary {
-  list-style: none; /* Verwijdert standaard pijltje op sommige browsers */
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+    list-style: none;
+    /* Verwijdert standaard pijltje op sommige browsers */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 /* Zorgt dat de H3 naast het pijltje staat en geen extra marges heeft */
 summary h3 {
-  display: inline;
-  margin: 0 0 0 10px; /* 10px ruimte links van de tekst */
-  font-size: 1.1rem;
-  color: #333;
-  vertical-align: middle;
+    display: inline;
+    margin: 0 0 0 10px;
+    /* 10px ruimte links van de tekst */
+    font-size: 1.1rem;
+    color: #333;
+    vertical-align: middle;
 }
 
 /* Eigen pijltje toevoegen of het standaard pijltje stylen */
 summary::-webkit-details-marker {
-  display: block;
-  color: var(--hoofdkleur-rood);
-  font-size: 1.2rem;
+    display: block;
+    color: var(--hoofdkleur-rood);
+    font-size: 1.2rem;
 }
 
 /* Styling voor de tekst als het menu opengeklapt is */
 details[open] {
-  border-left: 4px solid var(--hoofdkleur-rood); /* Accentueer de actieve vraag */
+    border-left: 4px solid var(--hoofdkleur-rood);
+    /* Accentueer de actieve vraag */
 }
 
 details p {
-  margin-top: 15px;
-  padding-left: 28px; /* Zodat de tekst mooi uitlijnt onder de vraag */
-  line-height: 1.6;
-  color: var(--tekst-donker);
+    margin-top: 15px;
+    padding-left: 28px;
+    /* Zodat de tekst mooi uitlijnt onder de vraag */
+    line-height: 1.6;
+    color: var(--tekst-donker);
 }
 
 /* #endregion faq */
 
 .link-slide {
-  text-decoration: none;
-  color: var(--tekst-donker); /* Je eigen themakleur */
-  position: relative;
-  font-weight: bold;
+    text-decoration: none;
+    color: var(--tekst-donker);
+    /* Je eigen themakleur */
+    position: relative;
+    font-weight: bold;
 }
 
 .link-slide::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: var(--hoofdkleur-rood);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--hoofdkleur-rood);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
 }
 
 .link-slide:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
