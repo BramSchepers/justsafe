@@ -1287,7 +1287,7 @@ a.footer-links:hover {
     margin-top: 90px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 0px; 
+    margin-bottom: 0px;
     border-radius: 15px 15px 0 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     display: flow-root;
@@ -1299,7 +1299,7 @@ a.footer-links:hover {
     margin: 0 auto;
 }
 
-.margin-large{
+.margin-large {
     margin-top: 50px;
 }
 
@@ -1319,9 +1319,15 @@ a.footer-links:hover {
 
 .text-theorie h3 {
     color: var(--tekst-donker);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 10px;
     margin-top: 10px;
+}
+
+.text-theorie h4 {
+    font-size: 1.0rem;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .text-theorie p {
@@ -1335,7 +1341,8 @@ a.footer-links:hover {
 .text-theorie ul {
     list-style: disc;
     margin-left: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .text-theorie li {
@@ -1343,6 +1350,7 @@ a.footer-links:hover {
     line-height: 1.6;
     margin-bottom: 10px;
     color: var(--tekst-donker);
+    margin-left: 10px;
 }
 
 /* MOBIEL (KLEINER DAN 768PX) */
@@ -1365,8 +1373,13 @@ a.footer-links:hover {
         font-size: 1.4rem;
         margin-top: 30px;
     }
-    
+
     .text-theorie h3 {
+        font-size: 1.0rem;
+        margin-top: 10px;
+    }
+
+    .text-theorie h4 {
         font-size: 1.0rem;
         margin-top: 10px;
     }
