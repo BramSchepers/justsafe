@@ -1299,6 +1299,10 @@ a.footer-links:hover {
     margin: 0 auto;
 }
 
+.margin-large{
+    margin-top: 50px;
+}
+
 .text-theorie h1 {
     color: var(--tekst-donker);
     font-size: clamp(2rem, 5vw, 2.5rem);
@@ -1315,9 +1319,9 @@ a.footer-links:hover {
 
 .text-theorie h3 {
     color: var(--tekst-donker);
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-    margin-top: 12px;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .text-theorie p {
@@ -1338,7 +1342,7 @@ a.footer-links:hover {
     font-size: 1.15rem;
     line-height: 1.6;
     margin-bottom: 10px;
-    color: #333;
+    color: var(--tekst-donker);
 }
 
 /* MOBIEL (KLEINER DAN 768PX) */
@@ -1360,6 +1364,11 @@ a.footer-links:hover {
     .text-theorie h2 {
         font-size: 1.4rem;
         margin-top: 30px;
+    }
+    
+    .text-theorie h3 {
+        font-size: 1.0rem;
+        margin-top: 10px;
     }
 
     .text-theorie p,
@@ -2068,6 +2077,12 @@ a.footer-links:hover {
     padding: 30px;
     height: 350px;
 }
+
+.card-body-moto {
+    padding: 30px;
+    height: 300px;
+}
+
 
 .feature-list {
     list-style: none;

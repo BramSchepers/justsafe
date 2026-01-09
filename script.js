@@ -98,8 +98,8 @@ async function updateVrijePlaatsen() {
             row.innerHTML = `
                 <td data-label="Cursus">${sessie.cursusnaam || "Vormingsmoment Begeleiders"}</td>
                 <td data-label="Datum">${sessie.datum}</td>
-                <td data-label="Tijdstip">${sessie.tijdstip || "18:30 - 21:30"}</td>
-                <td data-label="Prijs">€${sessie.prijs || "20"}</td>
+                <td data-label="Tijdstip">18:30 - 21:30</td>
+                <td data-label="Prijs">€ 20</td>
                 <td data-label="Plaatsen"><span>${sessie.vrij}</span>/20</td>
                 <td data-label="Status"><span class="${statusClass}">${statusTekst}</span></td>
                 <td data-label="Actie">${knopHTML}</td>
