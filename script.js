@@ -174,8 +174,8 @@ window.addEventListener('load', function () {
     // De 'if' controleert of we op een pagina zijn met het heroImage (index pagina)
     if (heroImage) {
         const fotos = [
-            "Images/moto-just-safe-grootV2.webp",
-            "Images/auto-just-safe-grootV2.webp"
+            { src: "Images/moto-just-safe-grootV2.webp", alt: "Motorrijles bij Just Safe" },
+            { src: "Images/auto-just-safe-grootV2.webp", alt: "Autorijles bij Just Safe" }
         ];
 
         let vorigeIndex = sessionStorage.getItem('laatsteFotoIndex');
@@ -187,7 +187,8 @@ window.addEventListener('load', function () {
             nieuweIndex = (parseInt(vorigeIndex) + 1) % fotos.length;
         }
 
-        heroImage.src = fotos[nieuweIndex];
+        heroImage.src = fotos[nieuweIndex].src;
+        heroImage.alt = fotos[nieuweIndex].alt;
         sessionStorage.setItem('laatsteFotoIndex', nieuweIndex);
 
         console.log("Hero image succesvol gewisseld naar index:", nieuweIndex);
