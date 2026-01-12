@@ -442,7 +442,7 @@ nav ul:not(.sidebar) a:hover::after {
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1400px) {
     .hero-motor {
         display: none;
     }
@@ -1302,6 +1302,8 @@ a.footer-links:hover {
     font-size: 1.8rem;
     margin-bottom: 15px;
     margin-top: 30px;
+    border-left: 5px solid var(--hoofdkleur-rood);
+    padding-left: 15px;
 }
 
 .text-theorie h3 {
@@ -1338,6 +1340,15 @@ a.footer-links:hover {
     margin-bottom: 10px;
     color: var(--tekst-donker);
     margin-left: 10px;
+}
+
+.text-theorie li::marker {
+    color: var(--hoofdkleur-rood);
+    font-weight: bold;
+}
+
+.text-theorie strong {
+    color: var(--donker-achtergrond);
 }
 
 /* MOBIEL (KLEINER DAN 768PX) */
@@ -1492,6 +1503,7 @@ a.footer-links:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     /* Zachte, diepe schaduw */
     border-top: none;
+    border-bottom: 5px solid var(--hoofdkleur-rood);
 }
 
 
