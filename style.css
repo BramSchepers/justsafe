@@ -1272,13 +1272,14 @@ a.footer-links:hover {
 /* DESKTOP BASIS */
 
 .text-theorie-container {
-    background: linear-gradient(to bottom, #ffffff, #fafafa);
+    background: var(--wit);
     max-width: 1400px;
-    /* Iets smaller oogt vaak rustiger voor tekst */
     margin: 90px auto;
-    border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     display: flow-root;
+    border-bottom: 5px solid var(--hoofdkleur-rood);
+    border-top: none;
+    border-radius: 25px 25px 0 0;
 }
 
 .text-theorie {
@@ -1497,7 +1498,6 @@ a.footer-links:hover {
     background: #ffffff;
     max-width: 1400px;
     margin-right: auto;
-    margin-left: auto;
     margin-top: -10px;
     padding: 40px;
     /* Alleen onderkant afgerond */
@@ -1505,6 +1505,7 @@ a.footer-links:hover {
     /* Zachte, diepe schaduw */
     border-top: none;
     border-bottom: 5px solid var(--hoofdkleur-rood);
+    margin-left: auto;
 }
 
 
