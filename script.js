@@ -84,12 +84,12 @@ async function updateVrijePlaatsen() {
 
             // Bepaal de status en knop instellingen
             let statusTekst = "Beschikbaar";
-            let statusClass = "status-badge";
+            let statusClass = "status-badge badge-available";
             let knopHTML = `<a href="inschrijving-vormingsmoment-begeleiders.html" class="btn-table">Inschrijven</a>`;
 
             if (sessie.vrij <= 0) {
                 statusTekst = "Volgeboekt";
-                statusClass = "status-badge full";
+                statusClass = "status-badge badge-full";
                 knopHTML = `<a href="#" class="btn-table" style="pointer-events: none; background-color: #ccc; border-color: #ccc; color: #666;" aria-disabled="true">Volzet</a>`;
             }
 
