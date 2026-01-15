@@ -22,7 +22,7 @@ body {
     position: relative;
     background-color: var(--grijze-achtergrond);
     /* De basiskleur van je site */
-    background-image: url(Images/background-pattern.svg);
+    background-image: url(/Images/background-pattern.svg);
     background-repeat: repeat;
     /* Het patroon herhaalt zich oneindig */
     background-size: 400px;
@@ -2596,17 +2596,19 @@ details p {
     font-size: 1rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    overflow: hidden; /* Zorgt dat de afgeronde hoeken werken */
+    overflow: hidden;
+    /* Zorgt dat de afgeronde hoeken werken */
 }
 
 .jouw-tabel-class thead tr {
-    background-color: var(--hoofdkleur-rood); /* Donkerblauw/grijs, pas aan naar je merkkleur */
+    background-color: var(--hoofdkleur-rood);
+    /* Donkerblauw/grijs, pas aan naar je merkkleur */
     color: #ffffff;
     text-align: left;
     font-weight: bold;
 }
 
-.jouw-tabel-class th, 
+.jouw-tabel-class th,
 .jouw-tabel-class td {
     padding: 15px 20px;
 }
@@ -2617,9 +2619,11 @@ details p {
 
 /* De kolom van jouw rijschool extra accentueren */
 .jouw-tabel-class tbody tr td:last-child {
-    background-color: rgba(231, 76, 60, 0.05); /* Heel licht rode schijn */
+    background-color: rgba(231, 76, 60, 0.05);
+    /* Heel licht rode schijn */
     font-weight: bold;
-    color: #e74c3c; /* Je accentkleur */
+    color: #e74c3c;
+    /* Je accentkleur */
 }
 
 .jouw-tabel-class tbody tr:nth-of-type(even) {
@@ -2639,10 +2643,10 @@ details p {
 }
 
 /* Al deze secties stoppen nu netjes 100px onder de bovenkant van het scherm */
-#code372, 
-#code373, 
-#les9u, 
-#les12u, 
+#code372,
+#code373,
+#les9u,
+#les12u,
 #prijzen {
     scroll-margin-top: 100px;
 }
