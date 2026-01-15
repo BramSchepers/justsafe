@@ -85,7 +85,7 @@ async function updateVrijePlaatsen() {
             // Bepaal de status en knop instellingen
             let statusTekst = "Beschikbaar";
             let statusClass = "status-badge badge-available";
-            let knopHTML = `<a href="inschrijving-vormingsmoment-begeleiders.html" class="btn-table">Inschrijven</a>`;
+            let knopHTML = `<a href="/inschrijving-vormingsmoment-begeleiders.html" class="btn-table">Inschrijven</a>`;
 
             if (sessie.vrij <= 0) {
                 statusTekst = "Volgeboekt";
@@ -154,7 +154,7 @@ async function updateTheorieCards() {
             } else {
                 badge.innerText = "Beschikbaar";
                 badge.className = "status-badge badge-available";
-                footer.innerHTML = `<a href="inschrijving-rijbewijs-theorie-b.html" class="btn-card">Inschrijven</a>`;
+                footer.innerHTML = `<a href="/inschrijving-rijbewijs-theorie-b.html" class="btn-card">Inschrijven</a>`;
             }
 
             container.appendChild(clone);
@@ -174,8 +174,8 @@ window.addEventListener('load', function () {
     // De 'if' controleert of we op een pagina zijn met het heroImage (index pagina)
     if (heroImage) {
         const fotos = [
-            "Images/moto-just-safe-grootV2.webp",
-            "Images/auto-just-safe-grootV2.webp"
+            "/Images/moto-just-safe-grootV2.webp",
+            "/Images/auto-just-safe-grootV2.webp"
         ];
 
         let vorigeIndex = sessionStorage.getItem('laatsteFotoIndex');
