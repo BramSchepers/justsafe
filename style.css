@@ -690,6 +690,14 @@ nav ul:not(.sidebar) a:hover::after {
     margin: 0;
 }
 
+.rijbewijzen-card h2 {
+    color: var(--wit);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
 .rijbewijzen-card:active {
     transform: scale(0.95);
     /* Subtiele feedback bij aanraken op mobiel */
