@@ -2145,7 +2145,7 @@ a.footer-links:hover {
 
 .vat-info {
     font-size: 0.8rem;
-    color: #888;
+    color:  var(--tekst-donker);
     margin-bottom: 20px;
 }
 
@@ -2224,8 +2224,8 @@ a.footer-links:hover {
 }
 
 .badge-available {
-    background: #d3f9d8;
-    color: #2b8a3e;
+    background: #5df771;
+    color: var(--tekst-donker);
 }
 
 .badge-full {
@@ -2262,7 +2262,7 @@ a.footer-links:hover {
     display: block;
     width: 100%;
     padding: 14px;
-    background-color: #ff4d4d;
+    background-color: var(--hoofdkleur-rood);
     color: white !important;
     text-align: center;
     text-decoration: none;
@@ -2535,4 +2535,19 @@ details p {
 #les12u,
 #prijzen {
     scroll-margin-top: 100px;
+}
+
+/* Container voor tekst en video */
+.rpt-container {
+    display: flex;
+    flex-direction: column; /* Standaard onder elkaar (mobiel) */
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* De video zelf minder breed maken */
+.rpt-video {
+    width: 100%;
+    max-width: 400px; /* Hierdoor wordt hij niet meer schermvullend */
 }
