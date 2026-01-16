@@ -698,6 +698,7 @@ nav ul:not(.sidebar) a:hover::after {
     letter-spacing: 1px;
     margin: 0;
 }
+
 .rijbewijzen-card:active {
     transform: scale(0.95);
     /* Subtiele feedback bij aanraken op mobiel */
@@ -987,30 +988,32 @@ footer {
     color: #ffffff;
     padding-top: 60px;
     margin-top: auto;
+    width: 100%;
     /* Zorgt dat footer altijd onderaan staat, ook bij weinig content */
 }
 
 .footer-container {
     display: grid;
-    width: 90%;
-    max-width: 1500px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
     gap: 40px;
     padding-bottom: 60px;
-
-    /* 1. STANDAARD (Mobiel): Alles onder elkaar */
+    padding-left: 25px;
+    flex: 1;
     grid-template-columns: 1fr;
 }
 
 /* 2. TABLET: 2 kolommen naast elkaar */
-@media (min-width: 600px) {
+@media (min-width: 775px) {
     .footer-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 /* 3. DESKTOP: 4 kolommen naast elkaar */
-@media (min-width: 1000px) {
+@media (min-width: 1300px) {
     .footer-container {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -1281,7 +1284,10 @@ a.footer-links:hover {
 .text-theorie-container {
     background: var(--wit);
     max-width: 1400px;
-    margin: 90px auto;
+    margin-top: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     display: flow-root;
     border-bottom: 5px solid var(--hoofdkleur-rood);
@@ -1365,9 +1371,7 @@ a.footer-links:hover {
 @media (max-width: 1450px) {
     .text-theorie-container {
         padding: 10px 20px;
-        margin: 80px 10px;
         width: auto;
-        border-radius: 10px;
     }
 
     .text-theorie h1 {
@@ -2145,7 +2149,7 @@ a.footer-links:hover {
 
 .vat-info {
     font-size: 0.8rem;
-    color:  var(--tekst-donker);
+    color: var(--tekst-donker);
     margin-bottom: 20px;
 }
 
@@ -2390,10 +2394,9 @@ a.footer-links:hover {
 details {
     background-color: rgba(255, 255, 255, 0.8);
     /* Licht transparant wit voor over de topokaart */
-    margin-bottom: 10px;
     margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
     padding: 15px;
     border-radius: 8px;
     border: 1px solid #ddd;
@@ -2409,20 +2412,27 @@ details:hover {
 /* De 'knop' (vraag) styling */
 summary {
     list-style: none;
-    /* Verwijdert standaard pijltje op sommige browsers */
-    cursor: pointer;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-/* Zorgt dat de H3 naast het pijltje staat en geen extra marges heeft */
-summary h3 {
-    display: inline;
-    margin: 0 0 0 10px;
-    /* 10px ruimte links van de tekst */
-    font-size: 1.1rem;
-    color: #333;
-    vertical-align: middle;
+h2.detail-header {
+    color: var(--tekst-donker);
+    font-size: clamp(1.0rem, 1rem + 1.5vw, 1.8rem);
+    margin-bottom: 0;
+    margin-top: 0;
+    border-left: 5px solid var(--hoofdkleur-rood);
+    padding-left: 15px;
+}
+
+.detail-subheader {
+    font-size: 1rem;
+    color: var(--tekst-donker);
+    opacity: 0.8;
+    margin-top: 5px;
+    padding-left: 20px;
+    margin-bottom: 0 !important;
 }
 
 /* Eigen pijltje toevoegen of het standaard pijltje stylen */
@@ -2444,6 +2454,58 @@ details p {
     /* Zodat de tekst mooi uitlijnt onder de vraag */
     line-height: 1.6;
     color: var(--tekst-donker);
+}
+
+
+/* Voeg een eigen pijl toe (pseudo-element) */
+summary::after {
+    content: '\276F';
+    /* Dit is een > symbool */
+    font-size: 1.2rem;
+    color: #d32f2f;
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+}
+
+/* Draai de pijl wanneer het menu open is */
+details[open] summary::after {
+    transform: rotate(90deg);
+}
+
+/* Optioneel: subtiele fade-in voor de tekst binnenin */
+details[open] p,
+details[open] ul {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    details {
+        padding: 5px;
+    }
+
+    summary {
+        padding: 10px;
+    }
+
+    h2.detail-header {
+        font-size: clamp(0.8rem, 1rem + 1.5vw, 1.8rem);
+    }
+    details[open] ul {
+    animation: fadeIn 0.5s ease;
+    padding: 0;
+    }
 }
 
 /* #endregion faq */
@@ -2540,7 +2602,8 @@ details p {
 /* Container voor tekst en video */
 .rpt-container {
     display: flex;
-    flex-direction: column; /* Standaard onder elkaar (mobiel) */
+    flex-direction: column;
+    /* Standaard onder elkaar (mobiel) */
     gap: 20px;
     align-items: flex-start;
     margin-top: 20px;
@@ -2549,5 +2612,6 @@ details p {
 /* De video zelf minder breed maken */
 .rpt-video {
     width: 100%;
-    max-width: 400px; /* Hierdoor wordt hij niet meer schermvullend */
+    max-width: 400px;
+    /* Hierdoor wordt hij niet meer schermvullend */
 }
