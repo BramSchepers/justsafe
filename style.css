@@ -2539,16 +2539,21 @@ details[open] ul {
 }
 
 .button-row {
-    display: flex; /* Zet de elementen naast elkaar */
-    justify-content: space-between; /* Duwt de eerste naar links en de tweede naar rechts */
-    align-items: center; /* Zorgt dat ze verticaal mooi uitgelijnd zijn */
+    display: flex;
+    /* Zet de elementen naast elkaar */
+    justify-content: space-between;
+    /* Duwt de eerste naar links en de tweede naar rechts */
+    align-items: center;
+    /* Zorgt dat ze verticaal mooi uitgelijnd zijn */
     margin-top: 15px;
-    width: 100%; /* Zorgt dat de container de volledige breedte benut */
+    width: 100%;
+    /* Zorgt dat de container de volledige breedte benut */
 }
 
 /* Styling voor de vergelijkingstabel */
 .jouw-tabel-class {
     width: 100%;
+    max-width: 1000px;
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 1rem;
@@ -2597,6 +2602,12 @@ details[open] ul {
     .jouw-tabel-class {
         display: block;
         overflow-x: auto;
+         font-size: 0.85rem;
+    }
+
+    .jouw-tabel-class th,
+    .jouw-tabel-class td {
+        padding: 10px 10px;
     }
 }
 
