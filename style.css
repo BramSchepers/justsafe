@@ -761,11 +761,6 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feature-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
-}
-
 .feature-item svg {
     height: 55px;
     /* Vaste hoogte voor de iconen */
