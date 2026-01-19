@@ -1728,6 +1728,9 @@ a.footer-links:hover {
     /* 3 kolommen op desktop */
     gap: 30px;
     margin-top: 40px;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;   
 }
 
 .partner-card {
@@ -1735,7 +1738,7 @@ a.footer-links:hover {
     padding: 20px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -1779,18 +1782,6 @@ a.footer-links:hover {
     margin-bottom: 20px;
     flex-grow: 1;
     /* Zorgt dat de links altijd op dezelfde hoogte staan */
-}
-
-.partner-link {
-    color: var(--hoofdkleur-rood);
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-}
-
-.partner-link:hover {
-    text-decoration: underline;
 }
 
 /* Responsiveness */
