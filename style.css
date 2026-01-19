@@ -2602,7 +2602,7 @@ details[open] ul {
     .jouw-tabel-class {
         display: block;
         overflow-x: auto;
-         font-size: 0.85rem;
+        font-size: 0.85rem;
     }
 
     .jouw-tabel-class th,
@@ -2636,4 +2636,34 @@ details[open] ul {
     width: 100%;
     max-width: 400px;
     /* Hierdoor wordt hij niet meer schermvullend */
+}
+
+.tablefaq {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--hoofdkleur-rood);
+    color: var(--tekst-donker);
+    font-weight: bold;
+    padding: 12px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: top;
+    color: #555;
+}
+
+.line-break {
+    display: block;
+    margin-bottom: 5px;
 }
