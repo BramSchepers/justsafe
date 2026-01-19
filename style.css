@@ -2537,6 +2537,14 @@ details[open] ul {
     transform-origin: bottom left;
 }
 
+.button-row {
+    display: flex; /* Zet de elementen naast elkaar */
+    justify-content: space-between; /* Duwt de eerste naar links en de tweede naar rechts */
+    align-items: center; /* Zorgt dat ze verticaal mooi uitgelijnd zijn */
+    margin-top: 15px;
+    width: 100%; /* Zorgt dat de container de volledige breedte benut */
+}
+
 /* Styling voor de vergelijkingstabel */
 .jouw-tabel-class {
     width: 100%;
