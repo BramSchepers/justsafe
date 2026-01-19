@@ -119,7 +119,7 @@ nav ul:not(.sidebar) a {
     position: relative;
 }
 
-nav ul:not(.sidebar) a::after {
+nav ul:not(.sidebar) a:not(.logo)::after {
     content: '';
     position: absolute;
     width: 0;
@@ -130,12 +130,12 @@ nav ul:not(.sidebar) a::after {
     transition: width 0.3s ease;
 }
 
-nav ul:not(.sidebar) a:hover {
+nav ul:not(.sidebar) a:not(.logo):hover {
     background-color: transparent;
     transform: translateY(-2px);
 }
 
-nav ul:not(.sidebar) a:hover::after {
+nav ul:not(.sidebar) a:not(.logo):hover::after {
     width: 100%;
 }
 
@@ -2502,9 +2502,10 @@ details[open] ul {
     h2.detail-header {
         font-size: clamp(0.8rem, 1rem + 1.5vw, 1.8rem);
     }
+
     details[open] ul {
-    animation: fadeIn 0.5s ease;
-    padding: 0;
+        animation: fadeIn 0.5s ease;
+        padding: 0;
     }
 }
 
