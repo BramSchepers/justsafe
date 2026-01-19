@@ -103,4 +103,10 @@
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://www.justsafe.be/code-372</loc>
+        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
