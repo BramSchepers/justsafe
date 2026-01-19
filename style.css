@@ -1307,14 +1307,14 @@ a.footer-links:hover {
 
 .text-theorie h1 {
     color: var(--tekst-donker);
-    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-size: clamp(1.9rem, 5vw, 2.2rem);
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
 .text-theorie h2 {
     color: var(--tekst-donker);
-    font-size: 1.8rem;
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
     margin-bottom: 15px;
     margin-top: 30px;
     border-left: 5px solid var(--hoofdkleur-rood);
@@ -1329,7 +1329,8 @@ a.footer-links:hover {
 }
 
 .text-theorie h4 {
-    font-size: 1.0rem;
+    color: var(--tekst-donker);
+    font-size: 1.1rem;
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -1375,13 +1376,13 @@ a.footer-links:hover {
     }
 
     .text-theorie h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         line-height: 1.2;
         margin-top: 0;
     }
 
     .text-theorie h2 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         margin-top: 30px;
     }
 
@@ -1397,7 +1398,7 @@ a.footer-links:hover {
 
     .text-theorie p,
     .text-theorie li {
-        font-size: 1.1rem;
+        font-size: 1.0rem;
         line-height: 1.6;
     }
 
@@ -2604,7 +2605,8 @@ details[open] ul {
 #code373,
 #les9u,
 #les12u,
-#prijzen {
+#prijzen,
+#motorrijbewijs-informatie {
     scroll-margin-top: 100px;
 }
 
