@@ -109,4 +109,40 @@
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://www.justsafe.be/404</loc>
+        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.justsafe.be/inschrijving-motorrijbewijs</loc>
+        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.2</priority>
+    </url>
+    <url>
+        <loc>https://www.justsafe.be/inschrijving-rijbewijs-auto-b-praktijk</loc>
+        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.2</priority>
+    </url>
+    <url>
+        <loc>https://www.justsafe.be/inschrijving-rijbewijs-scooter-am</loc>
+        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.2</priority>
+    </url>
+    <url>
+        <loc>https://www.justsafe.be/inschrijving-rijbewijs-theorie-b</loc>
+        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.2</priority>
+    </url>
+     <url>
+        <loc>https://www.justsafe.be/inschrijving-vormingsmoment-begeleiders</loc>
+        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.2</priority>
+    </url>  
 </urlset>
