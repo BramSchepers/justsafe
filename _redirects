@@ -1,55 +1,74 @@
 # Algemeen
-/rijlessen/                /nl/rijbewijs/ 301
-/rijlessen                 /nl/rijbewijs/ 301
-/onze-rijbewijzen          /nl/rijbewijs/ 301
-onze-rijbewijzen.html /nl/rijbewijs/ 301
+/rijlessen/                 /nl/rijbewijs/ 301
+/rijlessen                  /nl/rijbewijs/ 301
+/rijlessen.html             /nl/rijbewijs/ 301
+/onze-rijbewijzen           /nl/rijbewijs/ 301
+/onze-rijbewijzen.html      /nl/rijbewijs/ 301
 
 # Auto Praktijk
-/rijbewijs-auto/           /nl/rijbewijs/auto/praktijk/ 301
-/rijbewijs-auto            /nl/rijbewijs/auto/praktijk/ 301
-/rijbewijs-b-praktijk      /nl/rijbewijs/auto/praktijk/ 301
+/rijbewijs-auto/            /nl/rijbewijs/auto/praktijk/ 301
+/rijbewijs-auto             /nl/rijbewijs/auto/praktijk/ 301
+/rijbewijs-auto.html        /nl/rijbewijs/auto/praktijk/ 301
+/rijbewijs-b-praktijk       /nl/rijbewijs/auto/praktijk/ 301
+/rijbewijs-b-praktijk.html  /nl/rijbewijs/auto/praktijk/ 301
 
 # Theorie
-/theorie/                  /nl/rijbewijs/auto/theorie/ 301
-/theorie                   /nl/rijbewijs/auto/theorie/ 301
-/rijbewijs-b-theorie       /nl/rijbewijs/auto/theorie/ 301
+/theorie/                   /nl/rijbewijs/auto/theorie/ 301
+/theorie                    /nl/rijbewijs/auto/theorie/ 301
+/theorie.html               /nl/rijbewijs/auto/theorie/ 301
+/rijbewijs-b-theorie        /nl/rijbewijs/auto/theorie/ 301
+/rijbewijs-b-theorie.html    /nl/rijbewijs/auto/theorie/ 301
 
 # Motor
-/motor-rijbewijs/          /nl/rijbewijs/moto/ 301
-/motor-rijbewijs           /nl/rijbewijs/moto/ 301
-/motorrijbewijs            /nl/rijbewijs/moto/ 301
+/motor-rijbewijs/           /nl/rijbewijs/moto/ 301
+/motor-rijbewijs            /nl/rijbewijs/moto/ 301
+/motor-rijbewijs.html       /nl/rijbewijs/moto/ 301
+/motorrijbewijs             /nl/rijbewijs/moto/ 301
+/motorrijbewijs.html        /nl/rijbewijs/moto/ 301
 /rijbewijs-moto-a-a1-a2-code372-code373.html /nl/rijbewijs/moto/ 301
 /rijbewijs-moto-a-a1-a2-code372-code373      /nl/rijbewijs/moto/ 301
 
 # Partners
-/links/                    /nl/onze-partners/ 301
-/links                     /nl/onze-partners/ 301
+/links/                     /nl/onze-partners/ 301
+/links                      /nl/onze-partners/ 301
+/links.html                 /nl/onze-partners/ 301
 
 # Brommer / Scooter
-/rijbewijs-brommer-scooter/ /nl/rijbewijs/scooter/ 301
-/rijbewijs-brommer-scooter  /nl/rijbewijs/scooter/ 301
-/rijbewijs-am-bromfiets     /nl/rijbewijs/scooter/ 301
+/rijbewijs-brommer-scooter/  /nl/rijbewijs/scooter/ 301
+/rijbewijs-brommer-scooter   /nl/rijbewijs/scooter/ 301
+/rijbewijs-brommer-scooter.html /nl/rijbewijs/scooter/ 301
+/rijbewijs-am-bromfiets      /nl/rijbewijs/scooter/ 301
+/rijbewijs-am-bromfiets.html /nl/rijbewijs/scooter/ 301
 /rijbewijs-brommer-scooter/4u-pakket-brommer/ /nl/rijbewijs/scooter/ 301
 
 # Vormingsmoment
-/vormingsmoment/           /nl/rijbewijs/vormingsmoment-begeleider/ 301
-/vormingsmoment            /nl/rijbewijs/vormingsmoment-begeleider/ 301
+/vormingsmoment/            /nl/rijbewijs/vormingsmoment-begeleider/ 301
+/vormingsmoment             /nl/rijbewijs/vormingsmoment-begeleider/ 301
+/vormingsmoment.html        /nl/rijbewijs/vormingsmoment-begeleider/ 301
 /vormingsmoment-begeleiders /nl/rijbewijs/vormingsmoment-begeleider/ 301
+/vormingsmoment-begeleiders.html /nl/rijbewijs/vormingsmoment-begeleider/ 301
 
 # Kantoren
-/kantoren/                 /nl/rijschool-vestigingen/ 301
-/kantoren                  /nl/rijschool-vestigingen/ 301
+/kantoren/                  /nl/rijschool-vestigingen/ 301
+/kantoren                   /nl/rijschool-vestigingen/ 301
+/kantoren.html              /nl/rijschool-vestigingen/ 301
 
 # Training & Bochtenstage
-/bochtenstage/             /nl/motor-training/ 301
-/bochtenstage              /nl/motor-training/ 301
-/bochtenstages/            /nl/motor-training/ 301
-/bochtenstages             /nl/motor-training/ 301
-/motor-opleiding/          /nl/motor-training/ 301
-/motor-opleiding           /nl/motor-training/ 301
-/motor-training            /nl/motor-training/ 301
+/bochtenstage/              /nl/motor-training/ 301
+/bochtenstage               /nl/motor-training/ 301
+/bochtenstage.html          /nl/motor-training/ 301
+/bochtenstages/             /nl/motor-training/ 301
+/bochtenstages              /nl/motor-training/ 301
+/bochtenstages.html         /nl/motor-training/ 301
+/motor-opleiding/           /nl/motor-training/ 301
+/motor-opleiding            /nl/motor-training/ 301
+/motor-opleiding.html       /nl/motor-training/ 301
+/motor-training             /nl/motor-training/ 301
+/motor-training.html        /nl/motor-training/ 301
 
 # Algemeen Auto
-/rijbewijs-b/              /nl/rijbewijs/auto/ 301
-/rijbewijs-b               /nl/rijbewijs/auto/ 301
-/rijbewijs-b-auto          /nl/rijbewijs/auto/ 301
+/rijbewijs-b/               /nl/rijbewijs/auto/ 301
+/rijbewijs-b                /nl/rijbewijs/auto/ 301
+/rijbewijs-b.html           /nl/rijbewijs/auto/ 301
+/rijbewijs-b-auto           /nl/rijbewijs/auto/ 301
+/rijbewijs-b-auto.html      /nl/rijbewijs/auto/ 301
