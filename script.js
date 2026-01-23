@@ -85,7 +85,7 @@ async function updateVrijePlaatsen() {
             // Bepaal de status en knop instellingen
             let statusTekst = "Beschikbaar";
             let statusClass = "status-badge badge-available";
-            let knopHTML = `<a href="/inschrijving-vormingsmoment-begeleiders.html" class="btn-table">Inschrijven</a>`;
+            let knopHTML = `<a href="/inschrijving-/nl/rijbewijs/vormingsmoment-begeleider/index.html" class="btn-table">Inschrijven</a>`;
 
             if (sessie.vrij <= 0) {
                 statusTekst = "Volgeboekt";
@@ -169,13 +169,13 @@ updateTheorieCards();
 updateVrijePlaatsen();
 
 window.addEventListener('load', function () {
-    const heroImage = document.getElementById('heroImage');
+    const heroimage = document.getElementById('heroimage');
 
-    // De 'if' controleert of we op een pagina zijn met het heroImage (index pagina)
-    if (heroImage) {
+    // De 'if' controleert of we op een pagina zijn met het heroimage (index pagina)
+    if (heroimage) {
         const fotos = [
-            "/Images/moto-just-safe-grootV2.webp",
-            "/Images/auto-just-safe-grootV2.webp"
+            "/image/moto-just-safe-grootV2.webp",
+            "/image/auto-just-safe-grootV2.webp"
         ];
 
         let vorigeIndex = sessionStorage.getItem('laatsteFotoIndex');
@@ -187,12 +187,12 @@ window.addEventListener('load', function () {
             nieuweIndex = (parseInt(vorigeIndex) + 1) % fotos.length;
         }
 
-        heroImage.src = fotos[nieuweIndex];
+        heroimage.src = fotos[nieuweIndex];
         sessionStorage.setItem('laatsteFotoIndex', nieuweIndex);
 
         console.log("Hero image succesvol gewisseld naar index:", nieuweIndex);
     } else {
         // We zijn op een andere pagina (bijv. contact), doe niets.
-        console.log("Geen heroImage gevonden op deze pagina, script wordt overgeslagen.");
+        console.log("Geen heroimage gevonden op deze pagina, script wordt overgeslagen.");
     }
 });

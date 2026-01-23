@@ -22,7 +22,7 @@ body {
     position: relative;
     background-color: var(--grijze-achtergrond);
     /* De basiskleur van je site */
-    background-image: url(/Images/background-pattern.svg);
+    background-image: url(/image/background-pattern.svg);
     background-repeat: repeat;
     /* Het patroon herhaalt zich oneindig */
     background-size: 400px;
@@ -1730,7 +1730,7 @@ a.footer-links:hover {
     margin-top: 40px;
     max-width: 1300px;
     margin-left: auto;
-    margin-right: auto;   
+    margin-right: auto;
 }
 
 .partner-card {
