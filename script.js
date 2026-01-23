@@ -85,7 +85,7 @@ async function updateVrijePlaatsen() {
             // Bepaal de status en knop instellingen
             let statusTekst = "Beschikbaar";
             let statusClass = "status-badge badge-available";
-            let knopHTML = `<a href="/inschrijving-/nl/rijbewijs/vormingsmoment-begeleider/index.html" class="btn-table">Inschrijven</a>`;
+            let knopHTML = `<a href="/nl/rijbewijs/vormingsmoment-begeleider/inschrijving.html" class="btn-table">Inschrijven</a>`;
 
             if (sessie.vrij <= 0) {
                 statusTekst = "Volgeboekt";
