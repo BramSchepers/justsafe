@@ -1,32 +1,54 @@
-/rijlessen/               /rijbewijs/index 301
-/rijlessen                /rijbewijs/index 301
-/onze-rijbewijzen           /rijbewijs/index 301
+/rijlessen/               /nl/rijbewijs/ 301
+/rijlessen                /nl/rijbewijs/ 301
+/onze-rijbewijzen         /nl/rijbewijs/ 301
 
-/rijbewijs-auto/          /rijbewijs-b-praktijk 301
-/rijbewijs-auto           /rijbewijs-b-praktijk 301
-/rijbewijs-b-praktijk       /nl/rijbewijs/auto/praktijk/index 301
+/rijbewijs-auto/          /nl/rijbewijs/auto/praktijk/index 301
+/rijbewijs-auto           /nl/rijbewijs/auto/praktijk/index 301
+/rijbewijs-b-praktijk     /nl/rijbewijs/auto/praktijk/index 301
 
-/theorie/                 /rijbewijs-b-theorie 301
-/theorie                  /rijbewijs-b-theorie 301
-/motor-rijbewijs/         /rijbewijs-moto-a-a1-a2-code372-code373 301
-/motor-rijbewijs          /rijbewijs-moto-a-a1-a2-code372-code373 301
-/links/                   /onze-partners 301
-/links                    /onze-partners 301
-/rijbewijs-brommer-scooter/ /rijbewijs-am-bromfiets 301
-/rijbewijs-brommer-scooter  /rijbewijs-am-bromfiets 301
-/vormingsmoment/          /vormingsmoment-begeleiders 301
-/vormingsmoment           /vormingsmoment-begeleiders 301
-/kantoren/                /rijschool-vestigingen 301
-/kantoren                 /rijschool-vestigingen 301
-/bochtenstage/            /motor-training 301
-/bochtenstage             /motor-training 301
-/rijbewijs-brommer-scooter/4u-pakket-brommer/   /rijbewijs-am-bromfiets 301
-rijbewijs-brommer-scooter/4u-pakket-brommer/    /rijbewijs-am-bromfiets 301
-/bochtenstages/                                 /motor-training 301
-bochtenstages/                                  /motor-training 301
-/motor-opleiding/                               /motor-training 301
-motor-opleiding/                                /motor-training 301
-/rijbewijs-moto-a-a1-a2-code372-code373.html  /motorrijbewijs  301
-/rijbewijs-moto-a-a1-a2-code372-code373       /motorrijbewijs  301
-/rijbewijs-b/   /rijbewijs-b-auto 301
-/rijbewijs-b   /rijbewijs-b-auto 301
+/theorie/                 /nl/rijbewijs/auto/theorie/ 301
+/theorie                  /nl/rijbewijs/auto/theorie/ 301
+/rijbewijs-b-theorie      /nl/rijbewijs/auto/theorie/ 301
+
+/motor-rijbewijs/         /nl/rijbewijs/moto/ 301
+/motor-rijbewijs          /nl/rijbewijs/moto/ 301
+/rijbewijs-moto-a-a1-a2-code372-code373 /nl/rijbewijs/moto/ 301
+
+/links/                   /nl/onze-partners 301
+/links                    /nl/onze-partners 301
+/onze-partners			  /nl/onze-partners 301
+
+/rijbewijs-brommer-scooter/ /nl/rijbewijs/scooter/ 301
+/rijbewijs-brommer-scooter  /nl/rijbewijs/scooter/ 301
+/rijbewijs-am-bromfiets		/nl/rijbewijs/scooter/ 301
+
+/vormingsmoment/          /nl/rijbewijs/vormingsmoment-begeleider/ 301
+/vormingsmoment           /nl/rijbewijs/vormingsmoment-begeleider/ 301
+/vormingsmoment-begeleiders /nl/rijbewijs/vormingsmoment-begeleider/ 301
+
+/kantoren/                /nl/rijschool-vestigingen 301
+/kantoren                 /nl/rijschool-vestigingen 301
+/rijschool-vestigingen 	  /nl/rijschool-vestigingen 301
+
+/bochtenstage/            /nl/motor-training/  301
+/bochtenstage             /nl/motor-training/ 301
+/motor-training			  /nl/motor-training/ 301
+
+/rijbewijs-brommer-scooter/4u-pakket-brommer/   /nl/rijbewijs/scooter/ 301
+rijbewijs-brommer-scooter/4u-pakket-brommer/    /nl/rijbewijs/scooter/ 301
+rijbewijs-am-bromfiets							/nl/rijbewijs/scooter/ 301
+
+/bochtenstages/                                 /nl/motor-training/ 301
+bochtenstages/                                  /nl/motor-training/ 301
+/motor-opleiding/                               /nl/motor-training/ 301
+motor-opleiding/                                /nl/motor-training/ 301
+/motor-training									/nl/motor-training/ 301
+
+/rijbewijs-moto-a-a1-a2-code372-code373.html  /nl/rijbewijs/moto/  301
+/rijbewijs-moto-a-a1-a2-code372-code373       /nl/rijbewijs/moto/  301
+/motorrijbewijs								  /nl/rijbewijs/moto/ 301
+
+/rijbewijs-b/   /nl/rijbewijs/auto/ 301
+/rijbewijs-b   /nl/rijbewijs/auto/ 301
+/rijbewijs-b-auto /nl/rijbewijs/auto/ 301
+
