@@ -1,148 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://www.justsafe.be/</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/onze-rijbewijzen</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/contact</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/motor-training</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/rijbewijs-b-praktijk</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/rijbewijs-b-theorie</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <url>
-        <loc>https://www.justsafe.be/rijbewijs-am-bromfiets</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/rijschool-vestigingen</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/vormingsmoment-begeleiders</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/veelgestelde-vragen-rijbewijs</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/onze-partners</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/rijinstructeur-worden</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/privacy-verklaringen</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/contact-form</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/motorrijbewijs</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/veelgestelde-vragen-rijbewijs</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/rijbewijs-moto-antwerpen</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/code-372</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/404</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/inschrijving-motorrijbewijs</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.2</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/inschrijving-rijbewijs-auto-b-praktijk</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.2</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/inschrijving-rijbewijs-scooter-am</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.2</priority>
-    </url>
-    <url>
-        <loc>https://www.justsafe.be/inschrijving-rijbewijs-theorie-b</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.2</priority>
-    </url>
-     <url>
-        <loc>https://www.justsafe.be/inschrijving-vormingsmoment-begeleiders</loc>
-        <lastmod>2026-01-12T08:16:03+01:00</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.2</priority>
-    </url>  
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://www.justsafe.be/</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/vormingsmoment-begeleider/</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/motor-training/</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijschool-vestigingen</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/onze-partners</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijinstructeur-worden</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/contact</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/auto/praktijk/</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/auto/theorie/</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/scooter/</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/veelgestelde-vragen/</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/privacy-verklaringen</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/moto/antwerpen</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/auto/</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/moto/</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/contact-form.html</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/auto/praktijk/inschrijving</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/scooter/inschrijving</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/auto/praktijk/veelgestelde-vragen</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/moto/veelgestelde-vragen</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/auto/theorie/veelgestelde-vragen</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/scooter/veelgestelde-vragen</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/vormingsmoment-begeleider/veelgestelde-vragen</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/moto/code372/veelgestelde-vragen</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/moto/code372/</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/moto/code373/</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/nl/rijbewijs/moto/inschrijving</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.justsafe.be/inschrijving-rijbewijs-theorie-b.html</loc>
+  <lastmod>2026-01-23T06:39:14+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
 </urlset>
