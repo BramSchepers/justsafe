@@ -1306,14 +1306,14 @@ a.footer-links:hover {
 
 .text-theorie h1 {
     color: var(--tekst-donker);
-    font-size: clamp(1.9rem, 5vw, 2.2rem);
+    font-size: clamp(1.5rem, 2.5vw + 1rem, 2.2rem);
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
 .text-theorie h2 {
     color: var(--tekst-donker);
-    font-size: clamp(1.3rem, 5vw, 1.8rem);
+    font-size: clamp(1.2rem, 2vw + 0.8rem, 1.8rem);
     margin-bottom: 15px;
     margin-top: 30px;
     border-left: 5px solid var(--hoofdkleur-rood);
@@ -1322,14 +1322,14 @@ a.footer-links:hover {
 
 .text-theorie h3 {
     color: var(--tekst-donker);
-    font-size: 1.2rem;
+    font-size: clamp(1.0rem, 1.5vw + 0.5rem, 1.3rem);
     margin-bottom: 10px;
     margin-top: 10px;
 }
 
 .text-theorie h4 {
     color: var(--tekst-donker);
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 1.2vw + 0.5rem, 1.15rem);
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -1337,7 +1337,7 @@ a.footer-links:hover {
 .text-theorie p {
     color: var(--tekst-donker);
     line-height: 1.8;
-    font-size: 1.2rem;
+    font-size: clamp(0.95rem, 1.2vw + 0.5rem, 1.2rem);
     margin-bottom: 20px;
 }
 
@@ -1350,7 +1350,7 @@ a.footer-links:hover {
 }
 
 .text-theorie li {
-    font-size: 1.15rem;
+    font-size: clamp(0.9rem, 1.1vw + 0.5rem, 1.15rem);
     line-height: 1.6;
     margin-bottom: 10px;
     color: var(--tekst-donker);
@@ -1366,39 +1366,12 @@ a.footer-links:hover {
     color: var(--donker-achtergrond);
 }
 
-/* MOBIEL (KLEINER DAN 768PX) */
+/* MOBIEL (KLEINER DAN 1450PX) */
 
 @media (max-width: 1450px) {
     .text-theorie-container {
         padding: 10px 20px;
         width: auto;
-    }
-
-    .text-theorie h1 {
-        font-size: 1.5rem;
-        line-height: 1.2;
-        margin-top: 0;
-    }
-
-    .text-theorie h2 {
-        font-size: 1.3rem;
-        margin-top: 30px;
-    }
-
-    .text-theorie h3 {
-        font-size: 1.0rem;
-        margin-top: 10px;
-    }
-
-    .text-theorie h4 {
-        font-size: 1.0rem;
-        margin-top: 10px;
-    }
-
-    .text-theorie p,
-    .text-theorie li {
-        font-size: 1.0rem;
-        line-height: 1.6;
     }
 
     .text-theorie ul {
@@ -1546,6 +1519,12 @@ a.footer-links:hover {
     overflow: hidden;
     border: 1px solid #e5e7eb;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Tabel binnen text-theorie-container: geïntegreerd, geen aparte doos */
+.text-theorie-container .responsive-table {
+    box-shadow: none;
+    border: 1px solid #e8e8e8;
 }
 
 .responsive-table th,
@@ -2348,11 +2327,29 @@ a.footer-links:hover {
     font-weight: bold;
 }
 
-/* Mobiele weergave */
+/* Mobiele weergave – compactere knop */
 @media (max-width: 600px) {
     .btn-job {
-        width: 100%;
+        width: auto;
+        max-width: 100%;
+        min-width: unset;
+        padding: 10px 18px;
         justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .btn-job .btn-icon {
+        font-size: 1.35rem;
+        margin-right: 10px;
+    }
+
+    .btn-job .btn-value {
+        font-size: 1rem;
+    }
+
+    .btn-job .btn-label {
+        font-size: 0.72rem;
+        letter-spacing: 0.5px;
     }
 }
 
@@ -2385,7 +2382,8 @@ a.footer-links:hover {
 details {
     background-color: rgba(255, 255, 255, 0.8);
     /* Licht transparant wit voor over de topokaart */
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     margin-left: 0px;
     margin-right: 0px;
     padding: 15px;
@@ -2410,7 +2408,7 @@ summary {
 
 h2.detail-header {
     color: var(--tekst-donker);
-    font-size: clamp(1.0rem, 1rem + 1.5vw, 1.8rem);
+    font-size: clamp(1.0rem, 1.5vw + 0.8rem, 1.8rem);
     margin-bottom: 0;
     margin-top: 0;
     border-left: 5px solid var(--hoofdkleur-rood);
@@ -2418,7 +2416,7 @@ h2.detail-header {
 }
 
 .detail-subheader {
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 1vw + 0.4rem, 1rem);
     color: var(--tekst-donker);
     opacity: 0.8;
     margin-top: 5px;
@@ -2430,7 +2428,7 @@ h2.detail-header {
 summary::-webkit-details-marker {
     display: block;
     color: var(--hoofdkleur-rood);
-    font-size: 1.2rem;
+    font-size: clamp(1.0rem, 1.2vw + 0.5rem, 1.2rem);
 }
 
 /* Styling voor de tekst als het menu opengeklapt is */
@@ -2445,6 +2443,7 @@ details p {
     /* Zodat de tekst mooi uitlijnt onder de vraag */
     line-height: 1.6;
     color: var(--tekst-donker);
+    font-size: clamp(0.9rem, 1.1vw + 0.5rem, 1.1rem);
 }
 
 
@@ -2452,7 +2451,7 @@ details p {
 summary::after {
     content: '\276F';
     /* Dit is een > symbool */
-    font-size: 1.2rem;
+    font-size: clamp(1.0rem, 1.2vw + 0.5rem, 1.2rem);
     color: #d32f2f;
     transition: transform 0.3s ease;
     margin-left: 10px;
@@ -2491,7 +2490,7 @@ details[open] ul {
     }
 
     h2.detail-header {
-        font-size: clamp(0.8rem, 1rem + 1.5vw, 1.8rem);
+        font-size: clamp(0.95rem, 1.5vw + 0.7rem, 1.8rem);
     }
 
     details[open] ul {
@@ -2607,6 +2606,7 @@ details[open] ul {
 #les9u,
 #les12u,
 #prijzen,
+#pakket-2u,
 #motorrijbewijs-informatie {
     scroll-margin-top: 100px;
 }
@@ -2636,24 +2636,142 @@ details[open] ul {
     margin: 20px 0;
     font-size: 16px;
     text-align: left;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-th {
+.tablefaq thead {
+    display: table-header-group;
+}
+
+.tablefaq tbody {
+    display: table-row-group;
+}
+
+.tablefaq th {
     background-color: var(--hoofdkleur-rood);
     color: var(--tekst-donker);
     font-weight: bold;
-    padding: 12px;
+    padding: 14px 16px;
     border-bottom: 2px solid #dee2e6;
+    text-align: left;
 }
 
-td {
-    padding: 12px;
-    border-bottom: 1px solid #dee2e6;
+.tablefaq td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e9ecef;
     vertical-align: top;
-    color: #555;
+    color: #333;
+    background-color: #fff;
+}
+
+.tablefaq tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tablefaq tbody tr.tablefaq-total {
+    background-color: #fff5f5;
+    border-top: 3px solid var(--hoofdkleur-rood);
+}
+
+.tablefaq tbody tr.tablefaq-total td {
+    background-color: #fff5f5;
+    font-weight: 600;
+    color: #333;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.tablefaq tbody tr.tablefaq-total td:first-child {
+    color: var(--hoofdkleur-rood);
+    font-size: 18px;
+}
+
+.tablefaq tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.tablefaq tbody tr:hover td {
+    background-color: #f8f9fa;
+}
+
+.tablefaq tbody tr.tablefaq-total:hover {
+    background-color: #ffe5e5;
+}
+
+.tablefaq tbody tr.tablefaq-total:hover td {
+    background-color: #ffe5e5;
 }
 
 .line-break {
     display: block;
     margin-bottom: 5px;
+}
+
+/* Mobile responsive: unified table layout */
+@media (max-width: 768px) {
+    .tablefaq {
+        display: table;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .tablefaq thead {
+        display: table-header-group;
+    }
+
+    .tablefaq tbody {
+        display: table-row-group;
+    }
+
+    .tablefaq tbody tr {
+        display: table-row;
+        margin-bottom: 0;
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .tablefaq td {
+        display: table-cell;
+        padding: 12px 14px;
+        border-bottom: 1px solid #e9ecef;
+        text-align: left;
+    }
+
+    .tablefaq td:first-child {
+        font-weight: 600;
+        color: var(--hoofdkleur-rood);
+        width: 40%;
+        min-width: 120px;
+    }
+
+    .tablefaq tbody tr.tablefaq-total {
+        border-top: 2px solid var(--hoofdkleur-rood);
+    }
+
+    .tablefaq tbody tr.tablefaq-total td {
+        background-color: #fff5f5;
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+    .tablefaq tbody tr.tablefaq-total td:first-child {
+        font-size: 17px;
+    }
+
+    .tablefaq tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .tablefaq tbody tr:hover td {
+        background-color: #f8f9fa;
+    }
+
+    .tablefaq tbody tr.tablefaq-total:hover td {
+        background-color: #ffe5e5;
+    }
 }
