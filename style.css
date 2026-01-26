@@ -1086,6 +1086,10 @@ footer {
     color: var(--hoofdkleur-rood);
 }
 
+.footer-link-moto {
+    white-space: nowrap;
+}
+
 /* Richt je direct op de <a> tag met die klasse (voor mail en tel) */
 a.footer-links {
     color: #bbbbbb !important;
