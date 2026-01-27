@@ -1912,7 +1912,7 @@ a.footer-links:hover {
     grid-template-columns: repeat(auto-fit, minmax(calc(33.33% - 30px), 1fr));
     gap: 30px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 80px auto;
     justify-content: center;
     justify-items: center;
 }
@@ -2087,6 +2087,7 @@ a.footer-links:hover {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     position: relative;
+    margin-top: 28px;
 }
 
 .card-popular .card-header {
