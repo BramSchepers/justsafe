@@ -21,10 +21,10 @@ body {
     width: 100%;
     position: relative;
     background-color: var(--grijze-achtergrond);
-    /* De basiskleur van je site */
+
     background-image: url(/image/background-pattern.svg);
     background-repeat: repeat;
-    /* Het patroon herhaalt zich oneindig */
+
     background-size: 400px;
     scroll-behavior: smooth;
 }
@@ -51,7 +51,6 @@ main {
 
 /* #region HEADER & NAVIGATIE SECTION */
 
-/* 1. Algemene Navigatie Balk */
 nav {
     position: fixed;
     top: 0;
@@ -66,7 +65,6 @@ nav {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* 2. Logo */
 .logo img {
     max-width: 100%;
     height: auto;
@@ -79,7 +77,6 @@ nav {
     transform: scale(1.05);
 }
 
-/* 3. Desktop Menu (Alleen de horizontale lijst) */
 nav ul:not(.sidebar) {
     width: 97%;
     list-style: none;
@@ -96,8 +93,6 @@ nav ul:not(.sidebar) li {
     height: 100%;
 }
 
-
-/* De 'auto' margin zorgt dat het logo links blijft en de rest rechts */
 nav ul:not(.sidebar) li:first-child {
     margin-right: auto;
 }
@@ -114,7 +109,6 @@ nav ul:not(.sidebar) a {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 
-    /* Zorg voor een zachte overgang voor alle eigenschappen */
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
 }
@@ -139,7 +133,6 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     width: 100%;
 }
 
-/* 4. Hamburger Button */
 .menu-button-container {
     display: none;
     cursor: pointer;
@@ -169,7 +162,6 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
 }
 
-/* Kruisje Animatie */
 .open .bar1 {
     transform: translateY(9.5px) rotate(-45deg);
 }
@@ -183,7 +175,6 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     transform: translateY(-9.5px) rotate(45deg);
 }
 
-/* 5. SIDEBAR (Mobiel/Tablet menu) */
 .sidebar {
     position: fixed;
     top: 0px;
@@ -202,8 +193,6 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     opacity: 0;
     transition: right 0.4s ease, visibility 0.4s, opacity 0.4s;
 
-    /* We halen de border-top weg mocht die er per ongeluk zijn 
-       en verfijnen de schaduw */
     border-top: none;
     box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.05);
     overflow-y: auto;
@@ -218,7 +207,7 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
 .sidebar li {
     width: 100%;
     flex-shrink: 0;
-    /* Voorkomt platdrukken */
+
     border-top: 1px solid var(--tekst-donker);
 }
 
@@ -227,7 +216,7 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     align-items: center;
     width: 100%;
     height: 60px;
-    /* Compacte vaste hoogte */
+
     padding: 0 25px;
     color: var(--tekst-donker);
     font-size: 1rem;
@@ -240,10 +229,9 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     background-color: rgba(0, 0, 0, 0.03);
     color: var(--hoofdkleur-rood);
     padding-left: 30px;
-    /* Subtiel effect */
+
 }
 
-/* 6. Media Queries */
 @media (max-width: 1750px) {
     .hideOnMobile {
         display: none !important;
@@ -264,12 +252,10 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
 
 /* #region HERO SECTION */
 
-/* 1. DE BASIS (MOBIEL) */
-
 .hero-container {
     margin-top: 70px;
     min-height: 40vh;
-    /* Iets korter zodat de rest sneller in beeld komt */
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -281,19 +267,18 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    /* Nodig om de motor absoluut te positioneren binnen dit blok */
+
     overflow: visible;
-    /* Zorgt dat de motor buiten de container mag steken */
+
     z-index: 10;
-    /* Zorgt dat de container (en dus de motor) boven de volgende sectie ligt */
+
 }
 
-/* 1. De Tekst: komt één keer binnen van links en blijft staan */
 .welkom-text {
     display: inline-block;
     opacity: 0;
     transform: translateX(-30px);
-    /* Start iets naar links */
+
     animation: slideInOnce 0.8s ease-out forwards;
     animation-delay: 0.5s;
     font-size: clamp(0.7rem, 5vw, 1.0rem);
@@ -311,7 +296,6 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     }
 }
 
-/* 2. Het Streepje*/
 .welkom-text::after {
     content: "";
     display: block;
@@ -319,7 +303,7 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     max-width: 250px;
     min-width: 50px;
     height: 2px;
-    /* Iets dunner voor scherpte */
+
     background-color: var(--hoofdkleur-rood);
     border-radius: 5px;
 
@@ -337,20 +321,20 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     }
 
     15% {
-        /* Het streepje vliegt in en landt op zijn plek */
+
         transform: translateX(0) scaleX(1);
         opacity: 1;
     }
 
     70% {
-        /* Hij blijft lang genoeg staan zodat het rustig oogt */
+
         transform: translateX(0) scaleX(1);
         opacity: 1;
     }
 
     85%,
     100% {
-        /* Hij vaagt zachtjes uit op zijn plek voordat hij weer rechts start */
+
         transform: translateX(0) scaleX(1);
         opacity: 0;
     }
@@ -362,20 +346,16 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     max-width: 600px;
     color: var(--tekst-donker);
     text-align: left;
-    /* Zorgt voor links uitlijnen */
 
-    /* Animatie instellingen */
     opacity: 0;
-    /* Start onzichtbaar */
+
     transform: translateX(-60px);
-    /* Start iets verder naar links dan de welkom-tekst */
+
     animation: slideInLeft 0.8s ease-out forwards;
     animation-delay: 0.8s;
-    /* Start iets later dan de welkom-tekst (die start op 0.5s) */
+
 }
 
-/* We hergebruiken de slideInLeft keyframes die je al had, 
-   of je kunt deze specifieke gebruiken voor meer controle: */
 @keyframes slideInLeft {
     from {
         opacity: 0;
@@ -394,20 +374,16 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     max-width: 600px;
     color: var(--tekst-donker);
     text-align: left;
-    /* Zorgt voor links uitlijnen */
 
-    /* Animatie instellingen */
     opacity: 0;
-    /* Start onzichtbaar */
+
     transform: translateX(160px);
-    /* Start iets verder naar links dan de welkom-tekst */
+
     animation: slideInRight 0.8s ease-out forwards;
     animation-delay: 0.8s;
-    /* Start iets later dan de welkom-tekst (die start op 0.5s) */
+
 }
 
-/* We hergebruiken de slideInLeft keyframes die je al had, 
-   of je kunt deze specifieke gebruiken voor meer controle: */
 @keyframes slideInRight {
     from {
         opacity: 0;
@@ -420,12 +396,11 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     }
 }
 
-/* 3. Motor Animatie */
 .hero-motor {
     position: absolute;
     right: 0px;
     max-width: 1061px;
-    /* top: 135px; */
+
     z-index: 20;
     pointer-events: none;
     opacity: 0;
@@ -433,7 +408,6 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     animation: driveInRight 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
     animation-delay: 0.6s;
 }
-
 
 @keyframes driveInRight {
     to {
@@ -448,20 +422,18 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     }
 }
 
-/* FIX: Voorkom te veel witruimte op tablets (iPad Pro) en laptops */
 @media (max-width: 1366px) {
     .hero-container {
         min-height: auto;
-        /* Laat de hoogte bepalen door de tekst, niet de schermhoogte */
+
         padding-top: 60px;
-        /* Vaste afstand vanaf de header */
+
         padding-bottom: 60px;
         justify-content: flex-start;
-        /* Zet de inhoud bovenaan in plaats van in het midden */
+
     }
 }
 
-/* FIX: Op mobiel minder padding links zodat de tekst breder kan */
 @media (max-width: 768px) {
     .hero-container {
         padding-left: 20px;
@@ -470,12 +442,10 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     }
 }
 
-
-/* Mobiele knoppen */
 .quick-nav {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* 4 kolommen naast elkaar */
+
     gap: 20px;
     margin-top: 30px;
     width: 100%;
@@ -487,34 +457,28 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
 }
 
 .nav-card {
-    /* Achtergrond: Donkergrijs/Zwart voor maximaal contrast met het rood */
+
     background: var(--donker-achtergrond);
 
-    /* Afgeronde hoeken zoals in je screenshot */
     border-radius: 12px;
 
     padding: 10px;
     text-align: center;
     text-decoration: none;
 
-    /* Tekstkleur op wit voor leesbaarheid op donkere achtergrond */
     color: #ffffff;
 
-    /* Zorgt dat het icoon en de tekst netjes onder elkaar staan */
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    /* De rand: een subtiele rode gloed onderaan de knop */
     border-bottom: 3px solid var(--hoofdkleur-rood);
 
-    /* Schaduw: donkerder en dieper */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 
     transition: transform 0.3s ease;
 }
 
-/* Kleur van het Icoon (SVG) */
 .nav-card svg {
     fill: var(--wit);
     margin-bottom: 10px;
@@ -522,7 +486,6 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     height: 35px;
 }
 
-/* De Tekst (H3) */
 .nav-card h3 {
     color: var(--wit);
     font-size: 0.8rem;
@@ -534,7 +497,7 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
 
 .nav-card:active {
     transform: scale(0.95);
-    /* Subtiele feedback bij aanraken op mobiel */
+
     background-color: #1a1a1a;
 }
 
@@ -542,7 +505,6 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     transform: scale(1.05);
 }
 
-/* De basis van de knop */
 .opleiding-btn {
     position: relative;
     display: inline-block;
@@ -550,7 +512,7 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     appearance: none;
     outline: none !important;
     background-color: var(--hoofdkleur-rood);
-    /* Je rode kleur */
+
     color: var(--wit);
     font-size: 16px;
     font-weight: 700;
@@ -559,90 +521,76 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     border-radius: 5px;
     transition: color 0.5s ease;
     overflow: hidden;
-    /* Cruciaal voor het liquid effect */
+
     z-index: 1;
     text-decoration: none;
     margin-top: 25px;
 }
 
-/* De 'vloeistof' die eronder zit */
 .opleiding-btn::before {
     content: "";
     position: absolute;
     top: -50px;
     left: 0;
     width: 150%;
-    /* Breder dan de knop voor een vloeiend effect */
+
     height: 300%;
-    /* Hoger zodat het van onder kan komen */
+
     background-color: var(--zwart);
-    /* De kleur die 'instroomt' (bijv. zwart of donkergrijs) */
+
     transition: all 0.7s ease;
     transform: translate(-25%, -100%) rotate(25deg);
-    /* Start verborgen boven/naast de knop */
+
     z-index: -1;
     border-radius: 40%;
-    /* Maakt het vloeibaar/rond */
+
 }
 
-/* Het effect bij Hover */
 .opleiding-btn:hover::before {
     transform: translate(-25%, -10%) rotate(25deg);
     scale: 110%;
-    /* Stroomt naar beneden over de knop */
+
 }
 
 .opleiding-btn:hover {
     color: var(--wit);
-    /* Tekstkleur blijft wit */
+
 }
 
-/* Specifieke class voor variatie (zoals op de voorbeeld site) */
-.liquid-effect {
-    /* Hier kun je eventueel een afwijkende kleur instellen */
-    border: none;
-}
-
-/* Liquid knop enkel op desktop */
 @media (max-width: 1200px) {
     .opleiding-btn {
         display: none;
     }
 }
 
-/* Ze enkel mobiel maken */
 @media (min-width: 1200px) {
     .quick-nav {
         display: none;
     }
 }
 
-/* Mobiel: 2 rijen van 2 */
 @media (max-width: 1200px) {
     .quick-nav {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Mobiel: 2 rijen van 2 */
 @media (max-width: 600px) {
     .quick-nav {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Mobiel: 2 rijen van 2 */
 @media (max-width: 300px) {
     .quick-nav {
         grid-template-columns: repeat(1, 1fr);
     }
 }
 
-
 .rijbewijzen-nav {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* 4 kolommen naast elkaar */
+
     width: 100%;
     max-width: 1000px;
     margin-left: auto;
@@ -680,7 +628,6 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     height: 35px;
 }
 
-/* De Tekst (H3) */
 .rijbewijzen-card h3 {
     color: var(--wit);
     font-size: 1rem;
@@ -701,7 +648,7 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
 
 .rijbewijzen-card:active {
     transform: scale(0.95);
-    /* Subtiele feedback bij aanraken op mobiel */
+
     background-color: #1a1a1a;
 }
 
@@ -715,14 +662,32 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     }
 }
 
-/* Mobiel: 2 rijen van 2 */
 @media (max-width: 575px) {
     .rijbewijzen-nav {
         grid-template-columns: repeat(1, 1fr);
     }
 }
 
-/* Zorgt dat de kaarten schalen op hele kleine schermen (< 350px) */
+@media (max-width: 768px) {
+    .rijbewijzen-card {
+        padding: 20px;
+    }
+
+    .rijbewijzen-card svg {
+        width: 28px;
+        height: 28px;
+        margin-bottom: 8px;
+    }
+
+    .rijbewijzen-card h2 {
+        font-size: 0.9rem;
+    }
+
+    .rijbewijzen-card h3 {
+        font-size: 0.9rem;
+    }
+}
+
 @media (max-width: 350px) {
     .rijbewijzen-card {
         padding: 15px;
@@ -730,6 +695,15 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
 
     .rijbewijzen-card h3 {
         font-size: 0.85rem;
+    }
+
+    .rijbewijzen-card h2 {
+        font-size: 0.85rem;
+    }
+
+    .rijbewijzen-card svg {
+        width: 24px;
+        height: 24px;
     }
 }
 
@@ -740,13 +714,13 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
 .features-section {
     padding: 110px 20px;
     background-color: var(--tekst-donker);
-    /* Witte achtergrond om het te scheiden */
+
 }
 
 .features-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* 4 kolommen op desktop */
+
     gap: 30px;
     max-width: 1400px;
     margin: 0 auto;
@@ -763,10 +737,10 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
 
 .feature-item svg {
     height: 55px;
-    /* Vaste hoogte voor de iconen */
+
     width: 55px;
     fill: var(--hoofdkleur-rood);
-    /* Maakt de icoontjes rood */
+
     margin-bottom: 20px;
 }
 
@@ -782,18 +756,17 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     line-height: 1.6;
 }
 
-/* Responsive aanpassingen */
 @media (max-width: 1100px) {
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* 2 kolommen op tablets */
+
     }
 }
 
 @media (max-width: 600px) {
     .features-grid {
         grid-template-columns: 1fr;
-        /* 1 kolom op mobiel */
+
     }
 }
 
@@ -833,7 +806,7 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     appearance: none;
     outline: none !important;
     background-color: var(--hoofdkleur-rood);
-    /* Je rode kleur */
+
     color: var(--wit);
     font-size: 16px;
     font-weight: 700;
@@ -842,49 +815,41 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     border-radius: 5px;
     transition: color 0.5s ease;
     overflow: hidden;
-    /* Cruciaal voor het liquid effect */
+
     z-index: 1;
     text-decoration: none;
     margin-top: auto;
     margin-left: auto;
 }
 
-/* De 'vloeistof' die eronder zit */
 .review-btn::before {
     content: "";
     position: absolute;
     top: -50px;
     left: 0;
     width: 150%;
-    /* Breder dan de knop voor een vloeiend effect */
+
     height: 300%;
-    /* Hoger zodat het van onder kan komen */
+
     background-color: var(--zwart);
-    /* De kleur die 'instroomt' (bijv. zwart of donkergrijs) */
+
     transition: all 0.7s ease;
     transform: translate(-25%, -100%) rotate(25deg);
-    /* Start verborgen boven/naast de knop */
+
     z-index: -1;
     border-radius: 40%;
-    /* Maakt het vloeibaar/rond */
+
 }
 
-/* Het effect bij Hover */
 .review-btn:hover::before {
     transform: translate(-25%, -10%) rotate(25deg);
     scale: 115%;
-    /* Stroomt naar beneden over de knop */
+
 }
 
 .review-btn:hover {
     color: var(--wit);
-    /* Tekstkleur blijft wit */
-}
 
-/* Specifieke class voor variatie (zoals op de voorbeeld site) */
-.liquid-effect {
-    /* Hier kun je eventueel een afwijkende kleur instellen */
-    border: none;
 }
 
 .review-carousel {
@@ -894,10 +859,9 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     gap: 20px;
     padding-bottom: 15px;
     width: 100%;
-    /* Zorg dat hij de volle breedte van .review-section pakt */
+
 }
 
-/* Custom scrollbar styling voor Chrome/Safari */
 .review-carousel::-webkit-scrollbar {
     height: 6px;
 }
@@ -909,11 +873,11 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
 
 .review-card {
     flex: 1 1 300px;
-    /* Groei mee, krimp mee, basis is 300px */
+
     min-width: 280px;
-    /* Voorkom dat ze op kleine schermen té smal worden */
+
     max-width: 450px;
-    /* Optioneel: voorkom dat 1 kaart de hele breedte pakt bij weinig reviews */
+
     scroll-snap-align: start;
     background: #f8f9fa;
     padding: 25px;
@@ -932,7 +896,7 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
 .review-card p {
     flex-grow: 1;
     color: var(--tekst-donker);
-    /* Zorgt dat de paragraaf alle beschikbare ruimte inneemt */
+
 }
 
 .author {
@@ -941,12 +905,12 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     font-weight: bold;
     font-size: 0.9rem;
     color: var(--tekst-donker);
-    /* De kleur was niet af, ik heb hem aangevuld */
+
 }
 
 .google-logo {
     width: 50px;
-    /* Pas de grootte aan */
+
     height: auto;
 }
 
@@ -979,12 +943,12 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
 
 footer {
     background-color: var(--tekst-donker);
-    /* Donkergrijze achtergrond */
+
     color: #ffffff;
     padding-top: 60px;
     margin-top: auto;
     width: 100%;
-    /* Zorgt dat footer altijd onderaan staat, ook bij weinig content */
+
 }
 
 .footer-container {
@@ -1000,21 +964,18 @@ footer {
     grid-template-columns: 1fr;
 }
 
-/* 2. TABLET: 2 kolommen naast elkaar */
 @media (min-width: 775px) {
     .footer-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* 3. DESKTOP: 4 kolommen naast elkaar */
 @media (min-width: 1300px) {
     .footer-container {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
-/* Styling van de kolommen */
 .footer-col h3 {
     font-size: 1.2rem;
     margin-bottom: 20px;
@@ -1022,7 +983,6 @@ footer {
     padding-bottom: 10px;
 }
 
-/* Het rode streepje onder de titels */
 .footer-col h3::after {
     content: '';
     position: absolute;
@@ -1035,7 +995,7 @@ footer {
 
 .footer-logo img {
     max-width: 150px;
-    /* Logo niet te groot in de footer */
+
     margin-bottom: 20px;
     filter: brightness(0) invert(1);
 }
@@ -1043,7 +1003,7 @@ footer {
 .footer-text,
 .contact-info p {
     color: #bbbbbb;
-    /* Iets lichter grijs voor de tekst */
+
     line-height: 1.6;
     margin-bottom: 15px;
     font-size: 0.95rem;
@@ -1053,10 +1013,10 @@ footer {
 .contact-info svg {
     color: var(--hoofdkleur-rood);
     fill: var(--hoofdkleur-rood);
-    /* Voor de SVG's */
+
     margin-right: 10px;
     vertical-align: middle;
-    /* Zorgt dat ze mooi uitlijnen met de tekst */
+
 }
 
 .contact-info svg {
@@ -1064,7 +1024,6 @@ footer {
     height: 18px;
 }
 
-/* Links Styling */
 .footer-links {
     list-style: none;
     padding: 0;
@@ -1082,7 +1041,7 @@ footer {
 
 .footer-links a:hover {
     transform: translateX(5px);
-    /* Schuift grappig op naar rechts */
+
     color: var(--hoofdkleur-rood);
 }
 
@@ -1090,29 +1049,25 @@ footer {
     white-space: nowrap;
 }
 
-/* Richt je direct op de <a> tag met die klasse (voor mail en tel) */
 a.footer-links {
     color: #bbbbbb !important;
     text-decoration: none;
     transition: all 0.3s ease;
-    /* Voeg deze toe voor de vloeiende beweging */
+
 }
 
-/* Zorg dat de kleur ook na het klikken grijs blijft */
 a.footer-links:visited {
     color: #bbbbbb !important;
 }
 
-/* HIER zit de oplossing: voeg de transform toe aan de hover van de klasse zelf */
 a.footer-links:hover {
     color: var(--hoofdkleur-rood) !important;
     transform: translateX(5px);
-    /* Nu schuiven mail en tel ook op! */
+
     display: inline-block;
-    /* Nodig om transform te laten werken */
+
 }
 
-/* Social Media Rondjes */
 .social-icons {
     display: flex;
     gap: 15px;
@@ -1126,7 +1081,7 @@ a.footer-links:hover {
     height: 40px;
     background-color: var(--hoofdkleur-rood);
     border-radius: 50%;
-    /* Maakt ze rond */
+
     color: var(--wit);
     transition: 0.3s;
     font-size: 1.1rem;
@@ -1138,17 +1093,15 @@ a.footer-links:hover {
     color: var(--hoofdkleur-rood);
 }
 
-
 .social-icons svg {
     height: 20px;
     fill: currentColor;
-    /* Neemt de tekstkleur over (rood normaal, wit bij hover) */
+
 }
 
-/* Onderste balkje */
 .footer-bottom {
     background-color: #1a1a1a;
-    /* Net iets donkerder dan de rest */
+
     text-align: center;
     padding: 20px;
     color: #dadada;
@@ -1182,7 +1135,7 @@ a.footer-links:hover {
     margin: 0 auto;
     justify-content: center;
     flex-wrap: wrap;
-    /* Voor mobiel */
+
 }
 
 .choice-card {
@@ -1213,7 +1166,7 @@ a.footer-links:hover {
 
 .icon-box {
     background: var(--wit);
-    /* Heel licht rood */
+
     padding: 20px;
     border-radius: 50%;
     margin-bottom: 20px;
@@ -1227,7 +1180,6 @@ a.footer-links:hover {
 .icon-box svg {
     fill: var(--hoofdkleur-rood);
 }
-
 
 .card-text h3 {
     font-size: 1.4rem;
@@ -1257,28 +1209,58 @@ a.footer-links:hover {
     opacity: 1;
 }
 
-/* Zorgt dat de keuze-kaarten schalen op hele kleine schermen (< 350px) */
+@media (max-width: 768px) {
+    .choice-card {
+        padding: 12px;
+        min-width: 200px;
+        max-width: 100%;
+    }
+
+    .icon-box {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .icon-box svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .card-text h3 {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+
+    .card-text p {
+        font-size: 0.7rem;
+        line-height: 1.3;
+    }
+
+    .arrow {
+        font-size: 0.9rem;
+        margin-top: 6px;
+    }
+}
+
 @media (max-width: 350px) {
     .choice-grid {
         gap: 20px;
-        /* Minder ruimte tussen de kaarten onder elkaar */
+
         padding: 0 20px;
-        /* Zorgt dat de kaarten niet tegen de schermrand plakken */
+
     }
 
     .choice-card {
         flex: 1 1 100%;
-        /* Dwingt de kaart om 100% van de breedte te pakken */
+
         min-width: 0;
-        /* Verwijdert de blokkade voor hele smalle telefoons */
+
     }
 }
 
 /* #endregion  */
 
 /* #region Tekst op site */
-
-/* DESKTOP BASIS */
 
 .text-theorie-container {
     background: var(--wit);
@@ -1296,7 +1278,7 @@ a.footer-links:hover {
 
 .text-theorie {
     max-width: 1300px;
-    /* Houdt de tekst leesbaar op brede schermen */
+
     margin: 0 auto;
 }
 
@@ -1320,6 +1302,11 @@ a.footer-links:hover {
     padding-left: 15px;
 }
 
+.text-theorie details summary h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .text-theorie h3 {
     color: var(--tekst-donker);
     font-size: clamp(1.0rem, 1.5vw + 0.5rem, 1.3rem);
@@ -1341,7 +1328,6 @@ a.footer-links:hover {
     margin-bottom: 20px;
 }
 
-/* STYLING VOOR DE LIJSTJES (ter vervanging van de inline styles) */
 .text-theorie ul {
     list-style: disc;
     margin-left: 25px;
@@ -1366,19 +1352,6 @@ a.footer-links:hover {
     color: var(--donker-achtergrond);
 }
 
-/* MOBIEL (KLEINER DAN 1450PX) */
-
-@media (max-width: 1450px) {
-    .text-theorie-container {
-        padding: 10px 20px;
-        width: auto;
-    }
-
-    .text-theorie ul {
-        margin-left: 20px;
-    }
-}
-
 /* #endregion */
 
 /* #region Knoppen theorie/auto */
@@ -1386,40 +1359,19 @@ a.footer-links:hover {
 .container {
     max-width: 1400px;
     margin: 90px auto 0 auto;
-    /* Boven, Rechts, Onder, Links */
+
     padding: 0;
     border-radius: 15px 15px 0 0;
-    /* Alleen bovenkant afgerond */
+
     display: flow-root;
     overflow: hidden;
-    /* We halen de schaduw hier weg en zetten hem op de onderste container */
+
 }
 
 .button-wrapper {
     display: flex;
     width: 100%;
-    /* Geen margin-bottom nodig voor een naadloze overgang */
-}
 
-.tab-button {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    padding: 22px;
-    cursor: pointer;
-    border: none;
-    background-color: rgb(240, 240, 240);
-    color: var(--donker-achtergrond);
-    font-size: 18px;
-    font-weight: 700;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    border-bottom: 2px solid var(--donker-achtergrond);
 }
 
 .tab-button {
@@ -1442,7 +1394,6 @@ a.footer-links:hover {
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Hover effect voor de knop die NIET actief is */
 .tab-button:hover:not(.active) {
     background-color: var(--wit);
     transform: translateY(-3px) scale(1.03);
@@ -1451,7 +1402,6 @@ a.footer-links:hover {
 
 }
 
-/* De Actieve status */
 .tab-button.active {
     background-color: var(--donker-achtergrond);
     color: var(--wit);
@@ -1461,7 +1411,6 @@ a.footer-links:hover {
     z-index: 250;
 }
 
-/* Het rode lijntje dat tevoorschijn komt bij hover */
 .tab-button::after {
     content: '';
     position: absolute;
@@ -1484,21 +1433,40 @@ a.footer-links:hover {
     margin-right: auto;
     margin-top: -10px;
     padding: 40px;
-    /* Alleen onderkant afgerond */
+
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    /* Zachte, diepe schaduw */
+
     border-top: none;
     border-bottom: 5px solid var(--hoofdkleur-rood);
     margin-left: auto;
 }
+@media (max-width: 1450px) {
+    .text-theorie-container {
+        padding: 10px 20px;
+        width: auto;
+    }
 
+    main .echte-text-theorie-container {
+        padding: 10px 20px;
+        width: auto;
+    }
+
+    .text-theorie ul {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    main .echte-text-theorie-container {
+        padding: 10px 20px;
+        width: auto;
+    }
+}
 
 /* #endregion */
 
-
 /* #region Tabel */
 
-/* Basis styling voor de tabel */
 .responsive-table-container {
     background: linear-gradient(to bottom, #ffffff, #fafafa);
     max-width: 1400px;
@@ -1521,7 +1489,6 @@ a.footer-links:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-/* Tabel binnen text-theorie-container: geïntegreerd, geen aparte doos */
 .text-theorie-container .responsive-table {
     box-shadow: none;
     border: 1px solid #e8e8e8;
@@ -1539,7 +1506,6 @@ a.footer-links:hover {
 .responsive-table td:last-child {
     border-right: none;
 }
-
 
 .responsive-table th {
     background-color: var(--hoofdkleur-rood);
@@ -1573,7 +1539,6 @@ a.footer-links:hover {
     box-shadow: 0 4px 8px rgba(230, 53, 53, 0.3);
 }
 
-/* Mobiele versie (vrijwel hetzelfde gebleven, maar geoptimaliseerd) */
 @media (max-width: 950px) {
     .table-wrapper {
         padding: 0 10px;
@@ -1605,7 +1570,7 @@ a.footer-links:hover {
         padding-left: 50%;
         position: relative;
         border-bottom: 1px solid #f9f9f9;
-        /* Op mobiel mag de tekst wel weer verspringen indien nodig */
+
         white-space: normal;
     }
 
@@ -1633,20 +1598,20 @@ a.footer-links:hover {
 
     .btn-table {
         width: 100%;
-        /* Op mobiel de knop wel over de volle breedte */
+
     }
 }
 
 .kantoor-kolommen {
     display: grid;
-    /* Gebruik 1fr 1fr voor exact gelijke breedte */
+
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     gap: 40px;
-    /* 100px is vaak te veel op kleinere schermen, 40px is veiliger */
+
     margin: 30px auto;
     max-width: 1200px;
-    /* Houdt de kaarten bij elkaar op hele brede schermen */
+
 }
 
 .kantoor-item {
@@ -1654,12 +1619,12 @@ a.footer-links:hover {
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    /* Verwijder vaste breedtes als die er staan */
+
     width: 100%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    /* Cruciaal zodat padding de kaart niet breder maakt */
+
 }
 
 .kantoor-item h2 {
@@ -1682,15 +1647,13 @@ a.footer-links:hover {
     border-radius: 10px;
 }
 
-/* 1. Zorg dat de kaart NOOIT breder is dan zijn container */
 .map-container iframe {
     width: 100% !important;
     height: 300px;
-    /* Hoogte is prima op een vaste waarde */
+
     border: 0;
 }
 
-/* 2. Verbeter de mobiele weergave in je media query */
 @media (max-width: 1250px) {
     .kantoor-kolommen {
         grid-template-columns: 1fr;
@@ -1699,16 +1662,15 @@ a.footer-links:hover {
 
     .kantoor-item {
         max-width: 500px;
-        /* Zorgt dat ze op tablet niet over de hele breedte stretchen */
+
         margin: 0 auto 30px auto;
     }
 }
 
-/* Partners Grid Layout */
 .partners-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* 3 kolommen op desktop */
+
     gap: 30px;
     margin-top: 40px;
     max-width: 1300px;
@@ -1748,7 +1710,7 @@ a.footer-links:hover {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    /* Zorgt dat logo's niet vervormen */
+
     transition: 0.3s;
 }
 
@@ -1764,21 +1726,20 @@ a.footer-links:hover {
     color: #666;
     margin-bottom: 20px;
     flex-grow: 1;
-    /* Zorgt dat de links altijd op dezelfde hoogte staan */
+
 }
 
-/* Responsiveness */
 @media (max-width: 1100px) {
     .partners-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* 2 kolommen op tablets */
+
     }
 }
 
 @media (max-width: 700px) {
     .partners-grid {
         grid-template-columns: 1fr;
-        /* 1 kolom op mobiel */
+
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
@@ -1787,31 +1748,31 @@ a.footer-links:hover {
 
     .partner-card {
         padding: 15px;
-        /* Minder padding geeft meer ruimte aan de foto */
+
     }
 
 }
 
 .knop-container {
     text-align: center;
-    /* Zorgt dat alles in de div in het midden komt staan */
+
     margin-top: 20px;
-    /* Wat ruimte tussen de tekst en de knop */
+
 }
 
 .bel-knop {
     display: inline-block;
-    /* Vergroot de padding (boven/onder en links/rechts) */
+
     padding: 20px 45px;
-    /* Maak de tekst groter */
+
     font-size: 1.4rem;
     background-color: var(--hoofdkleur-rood);
-    /* Een mooie groene kleur */
+
     color: var(--wit);
     text-decoration: none;
     font-weight: bold;
     border-radius: 50px;
-    /* Maakt de knop rond */
+
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
     margin-bottom: 40px;
@@ -1819,9 +1780,9 @@ a.footer-links:hover {
 
 .bel-knop:hover {
     background-color: var(--tekst-donker);
-    /* Donkerder groen bij hover */
+
     transform: scale(1.05);
-    /* De knop wordt iets groter */
+
 }
 
 .openingsuren-lijst {
@@ -1844,7 +1805,7 @@ a.footer-links:hover {
     color: var(--tekst-donker);
     display: inline-block;
     width: 150px;
-    /* Zorgt dat de tijden mooi uitgelijnd zijn */
+
 }
 
 @media (max-width: 480px) {
@@ -1858,30 +1819,24 @@ a.footer-links:hover {
 /* #region container van de google forms */
 .contact-form-container {
     margin-top: 80px;
-    /* Iets meer dan 72px voor wat extra ademruimte */
-    padding: 20px;
+
     background: linear-gradient(to bottom, #ffffff, #fafafa);
     max-width: 1200px;
-    /* Iets smaller oogt vaak rustiger voor tekst */
+
     margin: 90px auto;
     padding: 10px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.contact-form-container h1 {
-    color: var(--tekst-donker);
-    margin: 20px;
-    font-size: clamp(24px, 4vw, 36px);
-    text-align: center;
-}
-
 @media (max-width: 1150px) {
     .contact-form-container {
-        padding: 10px 20px;
         margin: 80px auto;
-        width: 90%;
-        border-radius: 10px;
+        padding: 0;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
     }
 }
 
@@ -1909,19 +1864,16 @@ a.footer-links:hover {
 
 .pakketten-grid {
     display: grid;
-    /* We vertellen de kolommen: wees maximaal 380px breed, 
-       maar nooit breder dan de kaart zelf */
+
     grid-template-columns: repeat(3, minmax(0, 380px));
 
     gap: 30px;
     max-width: 1250px;
     margin: 40px auto;
 
-    /* DIT IS DE KEY: dit centreert de kolommen zelf in de container */
     justify-content: center;
 }
 
-/* Tablet: 2 kolommen */
 @media (max-width: 1200px) {
     .pakketten-grid {
         grid-template-columns: repeat(2, minmax(0, 380px));
@@ -1949,7 +1901,7 @@ a.footer-links:hover {
 
 @media (max-width: 768px) {
     .pakketten-grid-scooter {
-        /* Spring naar 1 kolom */
+
         grid-template-columns: repeat(1, minmax(300px, 450px));
         gap: 20px;
     }
@@ -1965,7 +1917,6 @@ a.footer-links:hover {
     justify-items: center;
 }
 
-
 @media (max-width: 1500px) {
     .pakketten-grid-auto {
 
@@ -1973,68 +1924,175 @@ a.footer-links:hover {
     }
 }
 
+/* Mobiele aanpassingen voor kleinere prijskaarten */
+@media (max-width: 768px) {
+    .pakketten-grid-auto {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .card-modern {
+        max-width: 100%;
+        margin: 10px auto 0 auto;
+    }
+
+    .card-header {
+        padding: 20px 15px;
+    }
+
+    .card-header h3 {
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
+    }
+
+    .card-header p {
+        font-size: clamp(0.5rem, 3vw, 0.8rem);
+    }
+
+    .card-body {
+        padding: 20px 15px 20px 15px;
+        min-height: 280px;
+    }
+
+    .card-footer {
+        padding: 0 20px 20px;
+    }
+
+    .amount {
+        font-size: 2.5rem;
+    }
+
+    .currency {
+        font-size: 1.2rem;
+    }
+
+    .vat-info {
+        font-size: 0.75rem;
+        margin-bottom: 15px;
+    }
+
+    .cta-button {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+
+    .feature-list li {
+        margin-bottom: 12px;
+        font-size: 0.9rem;
+    }
+
+    .badge-popular {
+        font-size: 11px;
+        padding: 5px 14px;
+        top: -12px;
+        right: 15px;
+    }
+}
+
+/* Extra kleine schermen - nog compacter */
+@media (max-width: 480px) {
+    .pakketten-grid-auto {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .card-modern {
+        max-width: 100%;
+        border-radius: 15px;
+        margin: 5px 0;
+    }
+
+    .card-header {
+        padding: 15px 12px;
+    }
+
+    .card-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .card-body {
+        padding: 15px 12px;
+        min-height: 250px;
+    }
+
+    .card-footer {
+        padding: 0 15px 15px;
+    }
+
+    .amount {
+        font-size: 2rem;
+    }
+
+    .currency {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+    }
+
+    .feature-list li {
+        margin-bottom: 10px;
+        font-size: 0.85rem;
+    }
+}
+
 .card-modern {
     background: white;
-    width: 380px;
+    width: 100%;
+    max-width: 380px;
     border-radius: 20px;
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
     border: 1px solid #eee;
-    overflow: hidden;
-    width: 100%;
-    margin: 0 auto;
+    overflow: visible;
+    margin: 20px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.card-modern:hover {
-    transform: translateY(-10px);
-}
+/* Hover effect verwijderd - kaarten zijn niet klikbaar, alleen de "nu boeken" knop */
 
 .badge-popular {
     position: absolute;
     top: -15px;
-    /* Zweeft half boven de kaart */
     right: 20px;
-    background-color: #ffcc00;
-    /* De gele kleur uit je voorbeeld */
-    color: #1a1a1a;
-    padding: 5px 15px;
-    border-radius: 10px;
-    /* Mooie afgeronde hoeken */
-    font-size: 14px;
-    font-weight: bold;
+    background: var(--hoofdkleur-rood);
+    color: var(--wit);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
     z-index: 10;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(255, 59, 59, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    animation: pulse-badge 3s ease-in-out infinite;
+    will-change: transform;
 }
 
-/* Extra: Geef de populaire kaart een gekleurde rand zoals in het voorbeeld */
+@keyframes pulse-badge {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
 .card-popular {
     border: 2px solid var(--hoofdkleur-rood) !important;
     border-radius: 20px;
-    /* Zorg dat dit EXACT gelijk is aan .card-modern */
-    /* Optioneel: voeg een heel zachte gele gloed toe om het nog mooier te maken */
-    box-shadow: 0 10px 30px rgba(255, 204, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
 .card-popular .card-header {
     border-top-left-radius: 18px;
-    /* Iets kleiner dan de kaart zelf door de 2px border */
-    border-top-right-radius: 18px;
-}
 
-/* Zorg dat de kaart zelf de badge niet afsnijdt */
-.card-modern {
-    background: white;
-    width: 320px;
-    border-radius: 20px;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-    border: 1px rgba(0, 0, 0, 0.5);
-    overflow: visible;
-    /* BELANGRIJK: zet dit op visible zodat de badge erboven kan zweven! */
-    margin-top: 20px;
-    /* Extra ruimte boven de kaart voor de badge */
+    border-top-right-radius: 18px;
 }
 
 .card-header {
@@ -2056,20 +2114,22 @@ a.footer-links:hover {
 .card-header p {
     margin: 5px 0 0;
     opacity: 0.5;
-    /* text-transform: uppercase; */
+
     font-size: clamp(0.5rem, 5vw, 0.9rem);
 }
 
 .card-body {
-    padding: 30px;
-    height: 350px;
+    padding: 30px 20px 25px 20px;
+    min-height: 250px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-body-moto {
     padding: 30px;
     height: 300px;
 }
-
 
 .feature-list {
     list-style: none;
@@ -2082,6 +2142,7 @@ a.footer-links:hover {
     color: var(--donker-achtergrond);
     display: flex;
     align-items: center;
+    font-size: 1.2rem;
 }
 
 .icon {
@@ -2099,6 +2160,7 @@ a.footer-links:hover {
 .card-footer {
     padding: 0 30px 30px;
     text-align: center;
+    margin-top: auto;
 }
 
 .price-wrap {
@@ -2138,9 +2200,6 @@ a.footer-links:hover {
     background: #b31419;
 }
 
-/* iets anders dan */
-
-/* Container instellingen */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -2148,8 +2207,6 @@ a.footer-links:hover {
     padding: 20px 0;
 }
 
-
-/* Het Kaartje */
 .course-card {
     background: #ffffff;
     border-radius: 15px;
@@ -2158,7 +2215,7 @@ a.footer-links:hover {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    /* Zorgt dat de rode header netjes afgerond is */
+
     transition: all 0.3s ease;
 }
 
@@ -2167,27 +2224,23 @@ a.footer-links:hover {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Header van het kaartje */
-.card-header {
+.course-card .card-header {
     background-color: #141414;
     padding: 20px;
     border-bottom: 2px solid var(--hoofdkleur-rood);
-    /* Een subtiele rode lijn */
+
     text-align: center;
 }
 
-.card-header h3 {
+.course-card .card-header h3 {
     margin: 0 0 10px 0;
     font-size: 1.25rem;
     color: var(--wit);
     font-weight: 700;
 }
 
-/* #End region */
-
 /* #region raster */
 
-/* Status Badges */
 .status-badge {
     padding: 5px 15px;
     border-radius: 50px;
@@ -2207,10 +2260,11 @@ a.footer-links:hover {
     color: #c92a2a;
 }
 
-/* Inhoud van het kaartje */
-.card-body {
+.course-card .card-body {
     padding: 25px;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .info-row {
@@ -2224,12 +2278,11 @@ a.footer-links:hover {
     color: var(--tekst-donker);
     font-size: 0.9rem;
     min-width: 80px;
-    /* Zorgt dat de labels netjes uitgelijnd zijn */
+
 }
 
-/* Footer & Knop */
-.card-footer {
-    padding: 0 25px 25px 25px;
+.course-card .card-footer {
+    padding: 20px 25px 25px 25px;
 }
 
 .btn-card {
@@ -2255,8 +2308,6 @@ a.footer-links:hover {
     color: #868e96 !important;
     cursor: not-allowed;
 }
-
-/* #end region */
 
 /* #region Vacature */
 
@@ -2327,7 +2378,6 @@ a.footer-links:hover {
     font-weight: bold;
 }
 
-/* Mobiele weergave – compactere knop */
 @media (max-width: 600px) {
     .btn-job {
         width: auto;
@@ -2360,7 +2410,7 @@ a.footer-links:hover {
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
-    /* 16:9 ratio */
+
     height: 0;
     overflow: hidden;
 }
@@ -2378,10 +2428,9 @@ a.footer-links:hover {
 
 /* #region faq */
 
-/* De container voor de FAQ */
 details {
     background-color: rgba(255, 255, 255, 0.8);
-    /* Licht transparant wit voor over de topokaart */
+
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 0px;
@@ -2392,13 +2441,11 @@ details {
     transition: all 0.3s ease;
 }
 
-/* Effect wanneer je met de muis over een vraag gaat */
 details:hover {
     border-color: var(--hoofdkleur-rood);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* De 'knop' (vraag) styling */
 summary {
     list-style: none;
     display: flex;
@@ -2424,45 +2471,42 @@ h2.detail-header {
     margin-bottom: 0 !important;
 }
 
-/* Eigen pijltje toevoegen of het standaard pijltje stylen */
 summary::-webkit-details-marker {
     display: block;
     color: var(--hoofdkleur-rood);
     font-size: clamp(1.0rem, 1.2vw + 0.5rem, 1.2rem);
 }
 
-/* Styling voor de tekst als het menu opengeklapt is */
 details[open] {
     border-left: 4px solid var(--hoofdkleur-rood);
-    /* Accentueer de actieve vraag */
+
+}
+
+details p,
+details ul {
+    margin-top: 15px;
 }
 
 details p {
-    margin-top: 15px;
     padding-left: 28px;
-    /* Zodat de tekst mooi uitlijnt onder de vraag */
     line-height: 1.6;
     color: var(--tekst-donker);
     font-size: clamp(0.9rem, 1.1vw + 0.5rem, 1.1rem);
 }
 
-
-/* Voeg een eigen pijl toe (pseudo-element) */
 summary::after {
     content: '\276F';
-    /* Dit is een > symbool */
+
     font-size: clamp(1.0rem, 1.2vw + 0.5rem, 1.2rem);
     color: #d32f2f;
     transition: transform 0.3s ease;
     margin-left: 10px;
 }
 
-/* Draai de pijl wanneer het menu open is */
 details[open] summary::after {
     transform: rotate(90deg);
 }
 
-/* Optioneel: subtiele fade-in voor de tekst binnenin */
 details[open] p,
 details[open] ul {
     animation: fadeIn 0.5s ease;
@@ -2504,7 +2548,7 @@ details[open] ul {
 .link-slide {
     text-decoration: none;
     color: var(--tekst-donker);
-    /* Je eigen themakleur */
+
     position: relative;
     font-weight: bold;
 }
@@ -2529,17 +2573,16 @@ details[open] ul {
 
 .button-row {
     display: flex;
-    /* Zet de elementen naast elkaar */
+
     justify-content: space-between;
-    /* Duwt de eerste naar links en de tweede naar rechts */
+
     align-items: center;
-    /* Zorgt dat ze verticaal mooi uitgelijnd zijn */
+
     margin-top: 15px;
     width: 100%;
-    /* Zorgt dat de container de volledige breedte benut */
+
 }
 
-/* Styling voor de vergelijkingstabel */
 .jouw-tabel-class {
     width: 100%;
     max-width: 1000px;
@@ -2549,12 +2592,12 @@ details[open] ul {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
-    /* Zorgt dat de afgeronde hoeken werken */
+
 }
 
 .jouw-tabel-class thead tr {
     background-color: var(--hoofdkleur-rood);
-    /* Donkerblauw/grijs, pas aan naar je merkkleur */
+
     color: #ffffff;
     text-align: left;
     font-weight: bold;
@@ -2569,13 +2612,12 @@ details[open] ul {
     border-bottom: 1px solid #dddddd;
 }
 
-/* De kolom van jouw rijschool extra accentueren */
 .jouw-tabel-class tbody tr td:last-child {
     background-color: rgba(231, 76, 60, 0.05);
-    /* Heel licht rode schijn */
+
     font-weight: bold;
     color: #e74c3c;
-    /* Je accentkleur */
+
 }
 
 .jouw-tabel-class tbody tr:nth-of-type(even) {
@@ -2586,7 +2628,6 @@ details[open] ul {
     border-bottom: 2px solid #e74c3c;
 }
 
-/* Mobiele optimalisatie: Tabel scrollbaar maken op kleine schermen */
 @media screen and (max-width: 600px) {
     .jouw-tabel-class {
         display: block;
@@ -2600,7 +2641,6 @@ details[open] ul {
     }
 }
 
-/* Al deze secties stoppen nu netjes 100px onder de bovenkant van het scherm */
 #code372,
 #code373,
 #les9u,
@@ -2611,21 +2651,19 @@ details[open] ul {
     scroll-margin-top: 100px;
 }
 
-/* Container voor tekst en video */
 .rpt-container {
     display: flex;
     flex-direction: column;
-    /* Standaard onder elkaar (mobiel) */
+
     gap: 20px;
     align-items: flex-start;
     margin-top: 20px;
 }
 
-/* De video zelf minder breed maken */
 .rpt-video {
     width: 100%;
     max-width: 400px;
-    /* Hierdoor wordt hij niet meer schermvullend */
+
 }
 
 .tablefaq {
@@ -2709,7 +2747,6 @@ details[open] ul {
     margin-bottom: 5px;
 }
 
-/* Mobile responsive: unified table layout */
 @media (max-width: 768px) {
     .tablefaq {
         display: table;
