@@ -154,7 +154,7 @@ async function updateTheorieCards() {
             } else {
                 badge.innerText = "Beschikbaar";
                 badge.className = "status-badge badge-available";
-                footer.innerHTML = `<a href="https://www.justsafe.be/nl/rijbewijs/auto/theorie/inschrijving" class="btn-card">Inschrijven</a>`;
+                footer.innerHTML = `<a href="https://justsafe.be/nl/rijbewijs/auto/theorie/inschrijving" class="btn-card">Inschrijven</a>`;
             }
 
             container.appendChild(clone);

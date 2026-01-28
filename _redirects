@@ -29,9 +29,9 @@
 /rijbewijs-moto-a-a1-a2-code372-code373      /nl/rijbewijs/moto/ 301
 
 # Partners
-/links/                     /nl/onze-partners/ 301
-/links                      /nl/onze-partners/ 301
-/links.html                 /nl/onze-partners/ 301
+/links/                     /nl/onze-partners.html 301
+/links                      /nl/onze-partners.html 301
+/links.html                 /nl/onze-partners.html 301
 
 # Brommer / Scooter
 /rijbewijs-brommer-scooter/  /nl/rijbewijs/scooter/ 301
@@ -48,10 +48,13 @@
 /vormingsmoment-begeleiders /nl/rijbewijs/vormingsmoment-begeleider/ 301
 /vormingsmoment-begeleiders.html /nl/rijbewijs/vormingsmoment-begeleider/ 301
 
-# Kantoren
-/kantoren/                  /nl/rijschool-vestigingen/ 301
-/kantoren                   /nl/rijschool-vestigingen/ 301
-/kantoren.html              /nl/rijschool-vestigingen/ 301
+# Kantoren / Rijschool vestigingen
+/rijschool-vestigingen/     /nl/rijschool-vestigingen.html 301
+/rijschool-vestigingen      /nl/rijschool-vestigingen.html 301
+/rijschool-vestigingen.html /nl/rijschool-vestigingen.html 301
+/kantoren/                  /nl/rijschool-vestigingen.html 301
+/kantoren                   /nl/rijschool-vestigingen.html 301
+/kantoren.html              /nl/rijschool-vestigingen.html 301
 
 # Training & Bochtenstage
 /bochtenstage/              /nl/motor-training/ 301
