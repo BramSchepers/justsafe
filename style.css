@@ -144,6 +144,18 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     margin-right: 10px;
 }
 
+.menu-button-container button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .menu-button {
     width: 30px;
     height: 22px;

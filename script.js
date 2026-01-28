@@ -1,12 +1,23 @@
+function updateMenuAria() {
+    const sidebar = document.querySelector('.sidebar');
+    const menuButtonContainer = document.querySelector('.menu-button-container');
+    const button = menuButtonContainer ? menuButtonContainer.querySelector('button') : null;
+    if (!button) return;
+    const isOpen = sidebar && sidebar.classList.contains('show');
+    button.setAttribute('aria-expanded', isOpen);
+    button.setAttribute('aria-label', isOpen ? 'Menu sluiten' : 'Menu openen');
+}
+
 function toggleMenu(event) {
     // Voorkom dat de klik "doorvloeit" naar het document (stopPropagation)
     if (event) event.stopPropagation();
 
     const sidebar = document.querySelector('.sidebar');
-    const menuButton = document.querySelector('.menu-button-container'); // Gebruik de container
+    const menuButton = document.querySelector('.menu-button-container');
 
     sidebar.classList.toggle('show');
     menuButton.classList.toggle('open');
+    updateMenuAria();
 }
 
 // Sluiten als je op een link klikt of buiten de sidebar
@@ -20,6 +31,7 @@ document.addEventListener('click', function (event) {
         if (!sidebar.contains(event.target) && !menuButtonContainer.contains(event.target)) {
             sidebar.classList.remove('show');
             menuButtonContainer.classList.remove('open');
+            updateMenuAria();
         }
     }
 });
@@ -32,6 +44,7 @@ window.addEventListener('resize', function () {
 
         sidebar.classList.remove('show');
         menuButtonContainer.classList.remove('open');
+        updateMenuAria();
     }
 });
 
@@ -43,6 +56,7 @@ sidebarLinks.forEach(link => {
         const menuButtonContainer = document.querySelector('.menu-button-container');
         sidebar.classList.remove('show');
         menuButtonContainer.classList.remove('open');
+        updateMenuAria();
     });
 });
 
@@ -66,13 +80,9 @@ async function updateVrijePlaatsen() {
 
     if (!tableBody) return; // Veiligheidscheck
 
-    console.log("Data ophalen van:", webAppUrl);
-
     try {
         const response = await fetch(webAppUrl);
         const data = await response.json(); // Dit is nu een LIJST (Array) van sessies
-
-        console.log("Data ontvangen:", data);
 
         // 1. Maak de tabel eerst leeg (haalt "Laden..." weg)
         tableBody.innerHTML = '';
@@ -110,7 +120,6 @@ async function updateVrijePlaatsen() {
         });
 
     } catch (error) {
-        console.error("Fout bij het ophalen van Google data:", error);
         tableBody.innerHTML = '<tr><td colspan="7" style="text-align:center; color:red;">Kon de actuele data niet laden. Probeer later opnieuw.</td></tr>';
     }
 }
@@ -154,19 +163,18 @@ async function updateTheorieCards() {
             } else {
                 badge.innerText = "Beschikbaar";
                 badge.className = "status-badge badge-available";
-                footer.innerHTML = `<a href="https://justsafe.be/nl/rijbewijs/auto/theorie/inschrijving" class="btn-card">Inschrijven</a>`;
+                footer.innerHTML = `<a href="https://justsafe.be/nl/rijbewijs/auto/theorie/inschrijving.html" class="btn-card">Inschrijven</a>`;
             }
 
             container.appendChild(clone);
         });
 
     } catch (error) {
-        console.error("Fout:", error);
         container.innerHTML = '<p>Kon de data niet laden. Probeer het later opnieuw.</p>';
     }
 }
-updateTheorieCards();
-updateVrijePlaatsen();
+if (document.getElementById('theorie-cards-container')) updateTheorieCards();
+if (document.getElementById('sessie-body')) updateVrijePlaatsen();
 
 window.addEventListener('load', function () {
     const heroimage = document.getElementById('heroimage');
@@ -189,10 +197,5 @@ window.addEventListener('load', function () {
 
         heroimage.src = fotos[nieuweIndex];
         sessionStorage.setItem('laatsteFotoIndex', nieuweIndex);
-
-        console.log("Hero image succesvol gewisseld naar index:", nieuweIndex);
-    } else {
-        // We zijn op een andere pagina (bijv. contact), doe niets.
-        console.log("Geen heroimage gevonden op deze pagina, script wordt overgeslagen.");
     }
 });

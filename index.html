@@ -11,17 +11,17 @@
         content="Rijschool, Rijbewijs, M12, M18, M36, Vakbekwaamheid, Autorijbewijs, Theorie, Praktijk, Rijlessen, Motorrijlessen, vormingsmoment begeleider rijbewijs B,hasselt,tessenderlo,limburg,rijbewijs B,rijbewijs AM, rijbewijs A, rijbewijs A1, rijbewijs A2, rijbewijs theorie">
     <meta content="strict-origin-when-cross-origin" name="referrer">
     <meta property="og:site_name" content="Rijschool Just Safe">
-    <meta property="og:title" content="Uw rijbewijs specialist! (A, A1, A2, AM, B & Theorie)">
+    <meta property="og:title" content="Rijschool Just Safe | Dé Rijbewijs Specialist van Limburg">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://justsafe.be/image/socialmedia.png">
     <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://justsafe.be/" />
     <link rel="icon" type="image/svg+xml" href="/favi-icon-just-safe.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#BE1E2D">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff3b3b">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="preload" href="/style.css" as="style">
     <link rel="stylesheet" href="/style.css">
@@ -31,7 +31,7 @@
 <body>
     <header>
         <nav>
-            <ul class="sidebar">
+            <ul class="sidebar" id="sidebar-nav" role="navigation" aria-label="Hoofdnavigatie">
                 <li><a href="/nl/rijbewijs/index.html">Rijbewijzen</a></li>
                 <li><a href="/nl/rijbewijs/vormingsmoment-begeleider/index.html">Vormingsmomenten</a></li>
                 <li><a href="/nl/motor-training/index.html">Motortraining</a></li>
@@ -53,12 +53,14 @@
                 <li class="hideOnMobile"><a href="/nl/onze-partners.html">Partners</a></li>
                 <li class="hideOnMobile"><a href="/nl/rijinstructeur-worden.html">Vacature</a></li>
                 <li class="hideOnMobile"><a href="/nl/contact.html">Contact</a></li>
-                <li class="menu-button-container" onclick="toggleMenu(event)">
-                    <div class="menu-button">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
-                    </div>
+                <li class="menu-button-container">
+                    <button type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="sidebar-nav" onclick="toggleMenu(event)">
+                        <div class="menu-button">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+                    </button>
                 </li>
             </ul>
         </nav>
@@ -209,7 +211,7 @@
                     <div class="stars">★★★★★</div>
                 </div>
                 <a href="https://www.google.com/search?q=Rijschool+Just+Safe+Tessenderlo&stick=H4sIAAAAAAAA_-NgU1I1qDAxTzY0NkgySjRNTEkzSDK2MqhIMUw2MjZNSTKzME2xSEqxXMQqH5SZVZyckZ-fo-BVWlyiEJyYlqoQklpcnJqXklqUkw8APT4b50sAAAA&hl=nl&mat=CelmrKXahlbtElcBTVDHnrr9LnAP9xSQFMjw3zjp0Ql8Pz438LvQaHWOnWcUxXiNbtN1G4PAtKn_rwHA0cpjGbwnXWFY9QDIBT_v5rPcqWXx72gqH08xMw41dnooVU5bSc8&authuser=2#mpd=~17102004908626568937/customers/reviews"
-                    target="_blank" class="review-btn">Bekijk alle reviews</a>
+                    target="_blank" rel="noopener noreferrer" class="review-btn" aria-label="Bekijk alle reviews op Google (opent in nieuw venster)">Bekijk alle reviews</a>
             </div>
 
             <div class="review-carousel">
@@ -325,7 +327,7 @@
                 <h3>Onze Regio's</h3>
                 <ul class="footer-links">
                     <li><a href="/nl/rijbewijs/auto/praktijk/limburg.html">Limburg</a></li>
-                    <li><a href="/">Vlaams-Brabant</a></li>
+                    <li><a href="/nl/vlaams-brabant.html">Vlaams-Brabant</a></li>
                     <li><a href="/nl/rijbewijs/moto/antwerpen.html">Antwerpen</a></li>
                 </ul>
 
@@ -354,7 +356,7 @@
   "name": "Rijschool Just Safe",
   "url": "https://justsafe.be",
   "logo": "https://justsafe.be/image/logo_justsafe.svg",
-  "image": "https://justsafe.be/image/lesauto_justsafe.webp",
+  "image": "https://justsafe.be/image/auto-just-safe-grootV2.webp",
   "description": "Rijschool Just Safe biedt opleidingen rijbewijs auto, rijbewijs motor, theorie opleiding en vormingsmoment begeleiders aan in Limburg.",
   "telephone": "+32474348807",
   "priceRange": "€€",
