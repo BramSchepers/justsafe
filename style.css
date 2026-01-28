@@ -260,6 +260,19 @@ nav ul:not(.sidebar) a:not(.logo):hover::after {
     }
 }
 
+/* Introtekst: korte variant op mobiel */
+.intro-short {
+    display: none;
+}
+@media (max-width: 640px) {
+    .intro-long {
+        display: none;
+    }
+    .intro-short {
+        display: inline;
+    }
+}
+
 /* #endregion */
 
 /* #region HERO SECTION */
