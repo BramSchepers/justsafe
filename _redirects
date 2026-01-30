@@ -1,3 +1,7 @@
+# www → non-www (canonieke domein voor Google)
+https://www.justsafe.be/*    https://justsafe.be/:splat   301
+http://www.justsafe.be/*     https://justsafe.be/:splat   301
+
 # Algemeen
 /rijlessen/                 /nl/rijbewijs/ 301
 /rijlessen                  /nl/rijbewijs/ 301
