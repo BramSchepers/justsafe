@@ -2,7 +2,47 @@
 https://www.justsafe.be/*    https://justsafe.be/:splat   301
 http://www.justsafe.be/*     https://justsafe.be/:splat   301
 
+# Oude WordPress-URL's → 404 (snel uit Google-index)
+/tickets-order/*            /404.html    404
+/event-organizers/*         /404.html    404
+/event-organizer             /404.html    404
+/event-organizer/            /404.html    404
+/event-organizer/*           /404.html    404
+/events                       /404.html    404
+/events/                      /404.html    404
+/events/*                     /404.html    404
+/inschrijven-vormingsmoment/*   /404.html    404
+/rijbewijs-b/onze-rijbewijzen.html   /404.html    404
+/rijbewijs-b/rijbewijs-b-theorie.html   /404.html    404
+/rijbewijs-b/vormingsmoment-begeleiders.html   /404.html    404
+/rijbewijs-b/onze-partners.html                /404.html    404
+/rijbewijs-brommer                            /404.html    404
+/rijbewijs-brommer/                           /404.html    404
+/rijbewijs-brommer/*                          /404.html    404
+/rijbewijs-brommer-                           /404.html    404
+/rijbewijs-brommer-/                          /404.html    404
+/rijbewijs-brommer-/*                         /404.html    404
+/rijbewijs-brommer-scooter/*/trackback        /404.html    404
+/rijbewijs-brommer-scooter/*/trackback/       /404.html    404
+/rijbewijs-brommer-scooter/*/trackback/*      /404.html    404
+/links/examen-center-alken/trackback           /404.html    404
+/links/examen-center-alken/trackback/         /404.html    404
+/links/examen-center-alken/trackback/*        /404.html    404
+/motor-rijbewijs//*                          /404.html    404
+/motor-rijbewijs/*/trackback                  /404.html    404
+/motor-rijbewijs/*/trackback/                 /404.html    404
+/motor-rijbewijs/*/trackback/*                /404.html    404
+/motor-rijbewijs/*/feed                       /404.html    404
+/motor-rijbewijs/*/feed/                      /404.html    404
+/rijinstructeur-worden                        /404.html    404
+/rijinstructeur-worden/                       /404.html    404
+/veelgestelde-vragen-rijbewijs               /404.html    404
+/veelgestelde-vragen-rijbewijs/               /404.html    404
+
 # Algemeen
+/contact                    /nl/contact 301
+/contact/                   /nl/contact 301
+/contact.html               /nl/contact 301
 /rijlessen/                 /nl/rijbewijs/ 301
 /rijlessen                  /nl/rijbewijs/ 301
 /rijlessen.html             /nl/rijbewijs/ 301
