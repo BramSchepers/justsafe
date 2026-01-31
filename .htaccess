@@ -1,1 +1,11 @@
 ErrorDocument 404 /404.html
+
+# www → non-www (301 permanent redirect)
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.justsafe\.be [NC]
+RewriteRule ^(.*)$ https://justsafe.be/$1 [L,R=301]
+
+# http → https (301 permanent redirect)
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^(www\.)?justsafe\.be [NC]
+RewriteRule ^(.*)$ https://justsafe.be/$1 [L,R=301]
