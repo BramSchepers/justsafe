@@ -110,7 +110,7 @@ async function updateVrijePlaatsen() {
                 <td data-label="Datum">${sessie.datum}</td>
                 <td data-label="Tijdstip">18:30 - 21:30</td>
                 <td data-label="Prijs">€ 21</td>
-                <td data-label="Plaatsen"><span>${sessie.vrij}</span>/20</td>
+                <td data-label="Plaatsen"><span>${sessie.vrij}</span></td>
                 <td data-label="Status"><span class="${statusClass}">${statusTekst}</span></td>
                 <td data-label="Actie">${knopHTML}</td>
             `;

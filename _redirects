@@ -3,6 +3,8 @@ https://www.justsafe.be/*    https://justsafe.be/:splat   301
 http://www.justsafe.be/*     https://justsafe.be/:splat   301
 
 # Oude WordPress-URL's → 404 (snel uit Google-index)
+/wp-login.php               /404.html    404
+/wp-login.php/*             /404.html    404
 /tickets-order/*            /404.html    404
 /event-organizers/*         /404.html    404
 /event-organizer             /404.html    404
